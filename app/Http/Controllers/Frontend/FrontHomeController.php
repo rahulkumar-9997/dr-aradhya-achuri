@@ -34,6 +34,10 @@ class FrontHomeController extends Controller
         return view('frontend.pages.about-us.index');
     }
 
+    public function servicesList(){
+        return view('frontend.pages.services.sevices-list');
+    }
+
     
     public function blogList(){
         $blogs = Blog::orderBy('id', 'desc')->where('status', 'published')->paginate(30);

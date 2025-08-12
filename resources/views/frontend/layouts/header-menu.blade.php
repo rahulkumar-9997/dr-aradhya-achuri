@@ -33,7 +33,8 @@
                         <li><a href="{{ route('about-us') }}">About Us</a></li>
 
                         <li>
-                            <a href="javascript:;">Services <i class="fas fa-plus"></i></a>
+                            <!-- <a href="javascript:;">Services <i class="fas fa-plus"></i></a> -->
+                            <a href="{{ route('services') }}">Services <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu">
                                 <li class="add-menu-left">
                                     <ul>

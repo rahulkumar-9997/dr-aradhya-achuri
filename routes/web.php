@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\GalleryController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
 Route::get('about-us', [FrontHomeController::class, 'aboutUs'])->name('about-us');
+Route::get('services', [FrontHomeController::class, 'servicesList'])->name('services');
 Route::get('blog', [FrontHomeController::class, 'blogList'])->name('blog');
 Route::get('blog/{slug}', [FrontHomeController::class, 'blogDetails'])->name('blog.details');
 Route::get('contact-us', [FrontHomeController::class, 'contactUs'])->name('contact-us');
