@@ -21,7 +21,7 @@
                 <div class="secondary-menu">
                     <ul>
                         <li class="num-bx"><a href="tel:+91 70935 32797"><i class="fas fa-phone-alt"></i> +91 70935 32797</a></li>
-                        <li class="btn-area"><a href="contact-us.html" class="btn btn-primary shadow">CONTACT US <i class="btn-icon-bx fas fa-chevron-right"></i></a></li>
+                        <li class="btn-area"><a href="{{ route('contact-us') }}" class="btn btn-primary shadow">CONTACT US <i class="btn-icon-bx fas fa-chevron-right"></i></a></li>
                     </ul>
                 </div>
                 <div class="menu-links navbar-collapse collapse justify-content-center" id="menuDropdown">

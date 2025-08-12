@@ -438,31 +438,7 @@
                   <div class="col-xl-5 col-lg-6 col-md-6">
                      <div class="appointment-form form-wraper">
                         <h3 class="title">Book An Appointment From Our Doctor</h3>
-                        <form action="#">
-                           <div class="form-group">
-                              <input type="text" class="form-control"
-                                 placeholder="Enter your full name *">
-                           </div>
-                           <div class="form-group">
-                              <input type="number" class="form-control"
-                                 placeholder="Enter your phone number *" maxlength="10">
-                           </div>
-                           <div class="form-group">
-                              <input type="email" class="form-control"
-                                 placeholder="Enter your email address ">
-                           </div>
-                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Service">
-                           </div>
-                           <div class="form-group">
-                              <textarea name="message" class="form-control"
-                                 placeholder="Describe your consultation needs *"></textarea>
-                           </div>
-
-                           <button type="submit" class="btn btn-secondary btn-lg">
-                              Submit
-                           </button>
-                        </form>
+                        @include('frontend.layouts.enquiry-form')
                      </div>
                   </div>
                   <div class="col-xl-7 col-lg-6 col-md-6">

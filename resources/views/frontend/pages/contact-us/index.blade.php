@@ -21,30 +21,9 @@
             <div class="contact-wraper">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-30">
-                        <form class="form-wraper contact-form ajax-form" action="">
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <input name="name" type="text" class="form-control" placeholder="Enter your full name *">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input name="email" type="email" class="form-control" placeholder="Enter your email address">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input name="phone" type="text" class="form-control" placeholder="Enter your phone number *">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input name="service" type="text" class="form-control" placeholder="Service ">
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <textarea name="message" required="" class="form-control" placeholder="Type Message"></textarea>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <button name="submit" type="submit" value="Submit" class="btn w-100 btn-secondary btn-lg">Submit</button>
-                                </div>
-                            </div>
-                        </form>
+                        <div class="form-wraper">
+                            @include('frontend.layouts.enquiry-form')
+                        </div>
                     </div>
                     <div class="col-lg-6 mb-30">
                         <div class="contact-info ovpr-dark" style="background-image: url({{ asset('fronted/assets/aradhya/my-expertise.jpg')}});">

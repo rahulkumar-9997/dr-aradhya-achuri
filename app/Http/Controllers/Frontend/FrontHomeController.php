@@ -58,13 +58,14 @@ class FrontHomeController extends Controller
         return view('frontend.pages.contact-us.index');
     }
 
-    public function contactSubmitForm(Request $request)
+    public function EnquirySubmitForm(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
-            'phone' => 'required|string|max:10',
-            'message' => 'nullable|string|max:1000',
+            'phone_number' => 'required|string|max:10',
+            'service' => 'nullable|string|max:10',
+            'message' => 'required|string|max:1000',
         ]);
 
         if ($validator->fails()) {
@@ -78,11 +79,12 @@ class FrontHomeController extends Controller
         $data = [
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'phone' => $validated['phone'] ?? null,
+            'phone' => $validated['phone_number'] ?? null,
+            'service' => $validated['service'] ?? null,
             'message' => $validated['message'] ?? null,
         ];
         try {
-            Mail::to('rahulkumarmaurya464@gmail.com')->send(new EnquiryMail($data));
+            Mail::to('info.draradhyaachuri@gmail.com')->send(new EnquiryMail($data));
         } catch (\Exception $e) {
             Log::error('Failed to send enquiry email: ' . $e->getMessage());
         }
