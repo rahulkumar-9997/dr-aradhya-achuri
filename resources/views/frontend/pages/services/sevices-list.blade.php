@@ -18,12 +18,12 @@
     <section class="section-area section-sp1 team-wraper service-inner-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service4-boxarea">
                         <div class="content-area">
-                            <a href="service-single.html" class="title">Cardiology</a>
+                            <a href="service-single.html" class="title">Timed Intercourse</a>
                             <div class="space16"></div>
-                            <p>Specializing in the diagnosis and treatment of heart-related conditions.</p>
+                            <p>Timed intercourse is a natural fertility treatment designed to enhance the chances of conception...</p>
                             <div class="space24"></div>
                             <a href="service-single.html" class="readmore">
                                 Learn More
@@ -39,7 +39,11 @@
                                 </svg>
                             </a>
                         </div>
-
+                        <div class="services-shap-icon">
+                           <span>
+                              <img src="{{asset('fronted/assets/aradhya/services/1.png')}}">
+                           </span>
+                        </div>
                         <div class="img1 image-anime">
                             <img src="{{asset('fronted/assets/aradhya/services/1.jpg')}}" alt="">
                         </div>
