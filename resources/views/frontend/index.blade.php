@@ -22,7 +22,7 @@
                      The better you plan, the closer you are to your dream of parenthood. We’ll guide you
                      every step of the way, turning hope into reality.
                   </p>
-                  <a href="about-us.html" class="btn btn-secondary btn-lg shadow">Read More</a>
+                  <a href="{{ route('about-us') }}" class="btn btn-secondary btn-lg shadow">Read More</a>
                </div>
 
             </div>
@@ -34,7 +34,7 @@
          </div>
       </div>
    </div>
-   <section class="section-sp1 about-area">
+   <section class="section-sp1 about-area feature-home">
       <div class="container">
          <div class="row align-items-center">
             <div class="col-lg-6 mb-30">
@@ -62,7 +62,7 @@
                   </p>
                </div>
                <div class="row">
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
                      <div class="feature-container feature-bx1 feature1">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -90,7 +90,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
                      <div class="feature-container feature-bx1 feature2">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -113,7 +113,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
                      <div class="feature-container feature-bx1 feature3">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -136,7 +136,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
                      <div class="feature-container feature-bx1 feature4">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -157,7 +157,7 @@
                      </div>
                   </div>
                </div>
-               <a href="about-us.html" class="btn btn-primary shadow">Learn More About Us</a>
+               <a href="{{ route('about-us') }}" class="btn btn-primary shadow">Learn More About Us</a>
             </div>
          </div>
       </div>

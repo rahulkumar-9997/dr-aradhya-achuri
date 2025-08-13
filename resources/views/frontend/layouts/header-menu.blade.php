@@ -26,28 +26,34 @@
                 </div>
                 <div class="menu-links navbar-collapse collapse justify-content-center" id="menuDropdown">
                     <div class="menu-logo">
-                        <a href="index.html"><img src="assets/images/logo-white.png" alt=""></a>
+                        <a href="{{ url('/') }}">
+                            <h3>
+                                Dr Aradhya Achuri
+                            </h3>
+                        </a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Home</a></li>
                         <li><a href="{{ route('about-us') }}">About Us</a></li>
-
+                        @if(isset($menuServices))
                         <li>
-                            <!-- <a href="javascript:;">Services <i class="fas fa-plus"></i></a> -->
-                            <a href="{{ route('services') }}">Services <i class="fas fa-plus"></i></a>
+                            <a href="javascript:;">Services <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu">
                                 <li class="add-menu-left">
                                     <ul>
-                                        <li><a href="#"><span>Timed Intercourse</span></a></li>
-                                        <li><a href="#"><span>Follicular Study</span></a></li>
-                                        <li><a href="#"><span>HSG</span></a></li>
-                                        <li><a href="#"><span>IUI </span></a></li>
-                                        <li><a href="#"><span>IVF </span></a></li>
-                                        <li><a href="#"><span>ICSI</span></a></li>
+                                        @foreach ($menuServices as $menuService)
+                                        <li>
+                                            <a href="{{ route('services.details', $menuService->slug) }}">
+                                                <span>{{ $menuService->title }}</span>
+                                            </a>
+                                        </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                             </ul>
                         </li>
+                        @endif
+
                         <li><a href="{{ route('blog') }}">Blog</a></li>
                         <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                     </ul>

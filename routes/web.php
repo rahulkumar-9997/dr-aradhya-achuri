@@ -12,10 +12,12 @@ use App\Http\Controllers\Backend\CacheController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\ServicesController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
 Route::get('about-us', [FrontHomeController::class, 'aboutUs'])->name('about-us');
 Route::get('services', [FrontHomeController::class, 'servicesList'])->name('services');
+Route::get('services/{slug}', [FrontHomeController::class, 'servicesDetails'])->name('services.details');
 Route::get('blog', [FrontHomeController::class, 'blogList'])->name('blog');
 Route::get('blog/{slug}', [FrontHomeController::class, 'blogDetails'])->name('blog.details');
 Route::get('contact-us', [FrontHomeController::class, 'contactUs'])->name('contact-us');
@@ -41,6 +43,7 @@ Route::group(['middleware' => ['auth']], function() {
    
     Route::resource('manage-blog', BlogController::class)->names('manage-blog');
     Route::resource('manage-testimonials', TestimonialController::class)->names('manage-testimonials');
+    Route::resource('manage-services', ServicesController::class)->names('manage-services');
     Route::resource('manage-gallery', GalleryController::class)->names('manage-gallery');
     Route::get('/clear-cache', [CacheController::class, 'clearCache'])->name('clear-cache');
     Route::resource('pages', PageController::class);

@@ -83,7 +83,7 @@
                         <span class="menu-arrow"></span>
                      </a>
                      <ul>
-                        <li><a href="{{ route('manage-blog.index') }}">Gallery</a></li>
+                        <li><a href="{{ route('manage-services.index') }}">Services</a></li>
                      </ul>
                   </li>                
                   

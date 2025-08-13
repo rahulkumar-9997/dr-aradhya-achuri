@@ -58,31 +58,34 @@
                 </div>
                 <div class="col-xl-3 col-lg-3 col-6">
                     <div class="widget footer_widget ml-50">
-                        <h3 class="footer-title">Useful Links</h3>
+                        <h3 class="footer-title">Quick Links</h3>
                         <ul>
-                            <li><a href="#"><span>About Us</span></a></li>
-                            <li><a href="#"><span>Services</span></a></li>
-                            <li><a href="#"><span>Booking an Appointment</span></a></li>
-                            <li><a href="#"><span>Faq's</span></a></li>
-                            <li><a href="#"><span>Blogs</span></a></li>
-                            <li><a href="#"><span>Contact Us</span></a></li>
+                            <li><a href="{{ url('/') }}"><span>Home</span></a></li>
+                            <li><a href="{{ route('about-us') }}"><span>About Us</span></a></li>
+                            <li><a href="{{ route('services') }}"><span>Services</span></a></li>
+                            <li><a href="{{ route('services') }}"><span>FAQs</span></a></li>
+                            <li><a href="{{ route('blog') }}"><span>Blogs</span></a></li>
+                            <li><a href="{{ route('contact-us') }}"><span>Contact Us</span></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-1">
+                <div class="col-xl-1 col-6 mobile-dnone-col">
 
                 </div>
                 <div class="col-xl-3 col-lg-3 col-6">
                     <div class="widget footer_widget">
                         <h3 class="footer-title">Our Service</h3>
-                        <ul>
-                            <li><a href="#"><span>Follicular Study</span></a></li>
-                            <li><a href="#"><span>HSG</span></a></li>
-                            <li><a href="#"><span>IUI</span></a></li>
-                            <li><a href="#"><span>IVF</span></a></li>
-                            <li><a href="#"><span>ICSI</span></a></li>
-
-                        </ul>
+                        @if(isset($footerServices))
+                            <ul>
+                                @foreach ($footerServices as $footerService)
+                                    <li>
+                                        <a href="{{ route('services.details', $footerService->slug) }}">
+                                            <span>{{ $footerService->title }}</span>
+                                        </a>
+                                    </li>
+                                @endforeach                                
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -445,7 +445,7 @@
             </div>
         </div>
     </section>
-    <section class="section-sp1 service-wraper2 mb-5">
+    <section class="section-sp1 service-wraper2 mb-5 why-choose-section">
         <div class="container">
             <div class="heading-bx text-center">
                 <h2 class="title">Why Choose Dr. Aradhya Achuri?</h2>

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Blog;
 use App\Models\Testimonial;
 use App\Models\Gallery;
+use App\Models\Service;
 
 class FrontHomeController extends Controller
 {
@@ -35,7 +36,23 @@ class FrontHomeController extends Controller
     }
 
     public function servicesList(){
-        return view('frontend.pages.services.sevices-list');
+        $servicesList = Service::with('serviceCategory')
+            ->orderBy('id', 'desc')
+            ->paginate(30)
+            ->groupBy(function($item) {
+                return $item->serviceCategory->title;
+            });
+        //return response()->json($servicesList);
+        return view('frontend.pages.services.sevices-list', compact('servicesList'));
+    }
+
+    public function servicesDetails($slug){
+        $services = Service::with(['serviceCategory'])
+                ->where('slug', $slug)
+                ->firstOrFail();
+        $servicesList = Service::inRandomOrder()
+                ->get();
+        return view('frontend.pages.services.services-details', compact('services', 'servicesList'));
     }
 
     
