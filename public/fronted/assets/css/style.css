@@ -23310,7 +23310,7 @@ h3.footer-title{
   color: var(--bs-theme-primary);
   font-family: var(--bs-heading-font-family);
   font-weight: 600;
-  font-size: 28px;
+  font-size: 23px;
   line-height: 30px;
   display: inline-block;
   transition: all 0.4s;
@@ -23330,6 +23330,10 @@ h3.footer-title{
 }
 .services-title p{
   margin-bottom: 5px;
+  display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .service-inner-area .service4-boxarea .img1 {
   position: relative;
