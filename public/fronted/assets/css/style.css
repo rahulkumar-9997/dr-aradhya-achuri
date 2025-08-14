@@ -21394,9 +21394,10 @@ blockquote p {
 .menu-links .nav>li .mega-menu li a,
 .menu-links .nav>li .sub-menu li a {
   color: #666;
-  display: block;
-  font-size: 16px;
-    padding: 5px 25px;
+    display: block;
+    font-size: 16px;
+    padding: 5px 10px;
+    line-height: 21px;
   text-transform: capitalize;
   position: relative;
   transition: all 0.15s linear;
