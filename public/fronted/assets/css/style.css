@@ -17079,6 +17079,7 @@ label.error {
   background-color: var(--bs-theme-primary);
   padding: 20px;
   margin: 50px 5px 5px;
+  height: 100%;
 }
 
 .testimonial-bx:after {
@@ -17101,6 +17102,12 @@ label.error {
   font-weight: 400;
   font-style: italic;
   margin-bottom: 10px;
+}
+.testimonial-slide .testimonial-bx .testimonial-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 7; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .read_more_test{
   margin-bottom: 10px;
@@ -23490,6 +23497,9 @@ service-inner-area .service4-boxarea .img1 img {
     height: 100%;
     opacity: 0.08;
     z-index: -1;
+}
+.testimonial-slide .swiper-slide{
+  height: unset;
 }
 @media (max-width: 767px) {
   .menu-logo h3{
