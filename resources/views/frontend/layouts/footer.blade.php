@@ -63,7 +63,7 @@
                             <li><a href="{{ url('/') }}"><span>Home</span></a></li>
                             <li><a href="{{ route('about-us') }}"><span>About Us</span></a></li>
                             <li><a href="{{ route('services') }}"><span>Services</span></a></li>
-                            <li><a href="{{ route('services') }}"><span>FAQs</span></a></li>
+                            <li><a href="{{ route('faq') }}"><span>FAQs</span></a></li>
                             <li><a href="{{ route('blog') }}"><span>Blogs</span></a></li>
                             <li><a href="{{ route('contact-us') }}"><span>Contact Us</span></a></li>
                         </ul>

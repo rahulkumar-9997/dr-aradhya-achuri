@@ -148,5 +148,8 @@ class FrontHomeController extends Controller
         ]);
     }
 
+    public function faq(){
+         return view('frontend.pages.faq.index');
+    }
     
 }
