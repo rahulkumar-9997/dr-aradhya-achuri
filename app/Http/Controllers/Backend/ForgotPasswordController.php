@@ -26,26 +26,33 @@ class ForgotPasswordController extends Controller
             'email' => 'required|email|exists:users',
         ]);
         $token = Str::random(64);
-        DB::table('password_resets')->insert([
+        DB::table('password_reset_tokens')
+            ->where('email', $request->email)
+            ->delete();
+        DB::table('password_reset_tokens')->insert([
             'email' => $request->email, 
             'token' => $token, 
-            'created_at' => Carbon::now()
+            'created_at' => now()
         ]);
         try {
             $data = [
                 'token' => $token,
+                'email' => $request->email,
             ];
-            Mail::to($request->email)->queue(new AdminResetPasswordMail($data));
-            Log::info('Email sent successfully to '.$request->email.'');
-        } 
-        catch(Exception $e){
-            Log::error('Error sending email: ' . $e->getMessage());
+            
+            Mail::to($request->email)->send(new AdminResetPasswordMail($data));
+            Log::info('Password reset email sent successfully to '.$request->email);
+            
+        } catch(Exception $e) {
+            Log::error('Error sending password reset email: ' . $e->getMessage());
+            return back()->with('error', 'Failed to send password reset email. Please try again.');
         }
+
         return back()->with('success', 'We have e-mailed your password reset link!');
     }
 
     public function showResetPasswordForm(Request $request, $token) {
-        $resetRequest = DB::table('password_resets')
+        $resetRequest = DB::table('password_reset_tokens')
         ->where('token', $token)
         ->first();
         if (!$resetRequest) {
@@ -62,7 +69,7 @@ class ForgotPasswordController extends Controller
             'password_confirmation' => 'required'
         ]);
   
-        $updatePassword = DB::table('password_resets')
+        $updatePassword = DB::table('password_reset_tokens')
         ->where([
         'email' => $request->email, 
         'token' => $request->token
@@ -76,7 +83,7 @@ class ForgotPasswordController extends Controller
         $user = User::where('email', $request->email)
                 ->update(['password' => Hash::make($request->password)]);
  
-        DB::table('password_resets')->where(['email'=> $request->email])->delete();
+        DB::table('password_reset_tokens')->where(['email'=> $request->email])->delete();
   
         return redirect('admin/login')->with('success', 'Your password has been changed!');
       }
