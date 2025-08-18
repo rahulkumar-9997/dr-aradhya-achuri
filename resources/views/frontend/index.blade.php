@@ -44,7 +44,7 @@
                      <li><img class="about-thumb2" src="{{asset('fronted/assets/aradhya/about-299x299.jpg')}}" alt=""></li>
                      <li><img class="about-thumb3" src="{{asset('fronted/assets/aradhya/about-185x185.jpg')}}" alt=""></li>
                      <li>
-                        <div class="exp-bx">10 <span>Year Experience</span></div>
+                        <div class="exp-bx">10+ <span>Year Experience</span></div>
                      </li>
                   </ul>
                </div>
