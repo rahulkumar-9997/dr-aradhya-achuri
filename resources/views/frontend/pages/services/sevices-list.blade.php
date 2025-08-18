@@ -4,7 +4,7 @@
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
-        <div class="page-banner breadcrumb-overlay" style="background-image:url({{ asset('fronted/assets/aradhya/breadcrumb/services.jpg')}});">
+        <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
                     <h1>Services</h1>
@@ -15,7 +15,7 @@
             <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
         </div>
     </div>
-    <section class="section-area section-sp1 team-wraper service-inner-area">
+    <section class="section-area section-sp1 team-wraper service-inner-area other-pages">
         <div class="container">
             <div class="row">
                 @if (!empty($servicesList) && $servicesList->count() > 0)
@@ -79,6 +79,8 @@
                 @endif
             </div>
         </div>
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
     </section>
 
 </div>

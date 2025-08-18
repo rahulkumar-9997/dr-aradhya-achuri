@@ -4,10 +4,10 @@
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
-        <div class="page-banner breadcrumb-overlay" style="background-image:url({{ asset('fronted/assets/aradhya/breadcrumb/blog.jpg')}});">
+        <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
-                    <h1>Blog Grid</h1>
+                    <h1>Blog</h1>
                     <!-- <h6>Some content here</h6> -->
                 </div>
             </div>
@@ -16,7 +16,7 @@
             <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
         </div>
     </div>
-    <section class="section-area section-sp1">
+    <section class="section-area section-sp1 other-pages">
         <div class="container">
             <div class="row">
                 @if (!empty($blogs) && $blogs->count() > 0)
@@ -48,6 +48,9 @@
                 {{ $blogs->links('vendor.pagination.front-pagination') }}
             </div>  
         </div>
+        
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
     </section>
 
 </div>

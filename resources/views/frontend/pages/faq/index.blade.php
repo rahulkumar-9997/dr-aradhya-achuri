@@ -4,7 +4,7 @@
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
-        <div class="page-banner breadcrumb-overlay" style="background-image:url({{ asset('fronted/assets/aradhya/breadcrumb/faqs.jpg')}});">
+        <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
                     <h1>FAQs</h1>

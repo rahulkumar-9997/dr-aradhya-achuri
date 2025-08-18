@@ -28,11 +28,11 @@ $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags(
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
-        <div class="page-banner breadcrumb-overlay" style="background-image:url({{ $breadcrumbImage }});">
+        <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
-                    <h1>Services</h1>
-                    <h6>{{ $services->title ?? $services->short_content }}</h6>
+                    <h1>{{ $services->title }}</h1>
+                    <!-- <h6></h6> -->
                 </div>
             </div>
             <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
@@ -40,7 +40,7 @@ $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags(
             <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
         </div>
     </div>
-    <section class="section-area section-sp1">
+    <section class="section-area section-sp1 other-pages">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -94,6 +94,9 @@ $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags(
                 </div>                
             </div>
         </div>
+        <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
     </section>
 </div>
 @endsection

@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('manage-blog', BlogController::class)->names('manage-blog');
     Route::resource('manage-testimonials', TestimonialController::class)->names('manage-testimonials');
     Route::resource('manage-services', ServicesController::class)->names('manage-services');
+    Route::post('/services/reorder', [ServicesController::class, 'reorder'])->name('services.reorder');
     Route::resource('manage-gallery', GalleryController::class)->names('manage-gallery');
     Route::get('/clear-cache', [CacheController::class, 'clearCache'])->name('clear-cache');
     Route::resource('pages', PageController::class);

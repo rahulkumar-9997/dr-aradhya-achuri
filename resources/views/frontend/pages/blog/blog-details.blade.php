@@ -21,11 +21,11 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
-        <div class="page-banner breadcrumb-overlay" style="background-image:url({{ asset('fronted/assets/aradhya/breadcrumb/blog.jpg')}});">
+        <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
-                    <h1>Blog</h1>
-                    <h6>{{ $blog->title ?? $blog->short_desc }}</h6>
+                    <h1>{{ $blog->title }}</h1>
+                    <!-- <h6></h6> -->
                 </div>
             </div>
             <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
@@ -33,7 +33,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
             <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
         </div>
     </div>
-    <section class="section-area section-sp1 bg-white">
+    <section class="section-area section-sp1 bg-white other-pages">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
@@ -157,6 +157,9 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                 </div>
             </div>
         </div>
+        <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
     </section>
 
 </div>

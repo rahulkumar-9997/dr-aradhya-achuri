@@ -33,10 +33,10 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="{{ route('about-us') }}">About Us</a></li>
+                        <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
+                        <li  class="{{ request()->routeIs('about-us') ? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
                         @if(isset($menuServices))
-                        <li>
+                        <li class="{{ request()->routeIs('services.details*') ? 'active' : '' }}">
                             <a href="javascript:;">Services <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu">
                                 <li class="add-menu-left">
@@ -54,8 +54,8 @@
                         </li>
                         @endif
 
-                        <li><a href="{{ route('blog') }}">Blog</a></li>
-                        <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                        <li class="{{ request()->routeIs('blog*') ? 'active' : '' }}"><a href="{{ route('blog') }}">Blog</a></li>
+                        <li class="{{ request()->routeIs('contact-us') ? 'active' : '' }}"><a href="{{ route('contact-us') }}">Contact Us</a></li>
                     </ul>
                     <ul class="social-media">
                         <li><a target="_blank" href="https://www.facebook.com/" class="btn btn-primary"><i

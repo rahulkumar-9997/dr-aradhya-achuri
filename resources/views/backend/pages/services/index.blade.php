@@ -4,6 +4,16 @@
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/plugins/tabler-icons/tabler-icons.css')}}">
 <link rel="stylesheet" href="{{asset('backend/assets/css/dataTables.bootstrap5.min.css')}}">
+<style>
+    .sortable-handle {
+        cursor: move;
+        text-align: center;
+    }
+
+    .sortable-chosen {
+        background-color: #f8f9fa;
+    }
+</style>
 @endpush
 @section('main-content')
 <div class="content">
@@ -32,6 +42,7 @@
 
 @endsection
 @push('scripts')
+<script src="{{asset('backend/assets/plugins/sortablejs/Sortable.min.js')}}" type="text/javascript"></script>
 <script>
     $(document).ready(function() {
         $('.show_confirm').click(function(event) {
@@ -53,7 +64,55 @@
                 }
             });
         });
-
+    });
+    $(document).ready(function() {
+        var el = $('.sortable')[0];
+        new Sortable(el, {
+            handle: '.sortable-handle',
+            animation: 150,
+            onEnd: function(evt) {
+                var order = [];
+                $('.sortable tr').each(function(index) {
+                    order.push($(this).data('id'));
+                });
+                $.ajax({
+                    url: '{{ route("services.reorder") }}',
+                    type: 'POST',
+                    data: {
+                        order: order,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        let toastClass = response.success ? "bg-success" : "bg-danger";
+                        Toastify({
+                            text: response.message,
+                            duration: 5000,
+                            gravity: "top",
+                            position: "right",
+                            className: toastClass,
+                            escapeMarkup: false,
+                            close: true,
+                        }).showToast();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        let message = "Something went wrong!";
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            message = xhr.responseJSON.message;
+                        }
+                        Toastify({
+                            text: message,
+                            duration: 5000,
+                            gravity: "top",
+                            position: "right",
+                            className: "bg-danger",
+                            escapeMarkup: false,
+                            close: true,
+                        }).showToast();
+                    }
+                });
+            }
+        });
     });
 </script>
 @endpush

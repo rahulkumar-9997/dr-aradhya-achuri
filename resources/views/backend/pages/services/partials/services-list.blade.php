@@ -2,6 +2,7 @@
     <table class="table">
         <thead class="thead-light">
             <tr>
+                <th>Order</th>
                 <th>Title</th>
                 <th>Category</th>
                 <th>Description</th>
@@ -10,9 +11,10 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="sortable">
             @foreach($services as $service)
-            <tr>
+            <tr data-id="{{ $service->id }}">
+                <td class="sortable-handle"><i class="fas fa-arrows-alt"></i></td>
                 <td>{{ $service->title }}</td>
                 <td>
                     @if($service->serviceCategory)

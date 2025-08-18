@@ -4,7 +4,7 @@
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
-        <div class="page-banner breadcrumb-overlay" style="background-image:url({{ asset('fronted/assets/aradhya/breadcrumb/about.jpg')}});">
+        <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
                     <h1>About Us</h1>
@@ -179,7 +179,7 @@
             </div>
         </div>
     </section>
-    <section class="section-sp1 my-expertise-section">
+    <section class="section-sp1 my-expertise-section other-pages">
         <div class="container">
             <div class="heading-bx text-center">
                 <h2 class="title">My Expertise</h2>
@@ -320,6 +320,8 @@
                 </div>
             </div>
         </div>
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
     </section>
     <section class="section-sp1 service-wraper2 research-and-pub-section">
         <div class="container">
@@ -399,7 +401,7 @@
             </div>
         </div>
     </section>
-    <section class="section-sp1 awards-and-achi-section">
+    <section class="section-sp1 awards-and-achi-section other-pages">
         <div class="container">
             <div class="heading-bx text-center">
                 <h2 class="title">My Awards and Achievement</h2>
@@ -444,6 +446,8 @@
                 </div>
             </div>
         </div>
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
     </section>
     <section class="section-sp1 service-wraper2 mb-5 why-choose-section">
         <div class="container">

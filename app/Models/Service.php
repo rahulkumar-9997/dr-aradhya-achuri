@@ -22,6 +22,7 @@ class Service extends Model
         'details_image',
         'icon_image',
         'breadcrumb_image',
+        'sort_order'
     ];
 
     public function serviceCategory()

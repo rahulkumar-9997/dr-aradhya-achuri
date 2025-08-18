@@ -37,7 +37,7 @@ class FrontHomeController extends Controller
 
     public function servicesList(){
         $servicesList = Service::with('serviceCategory')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->paginate(30)
             ->groupBy(function($item) {
                 return $item->serviceCategory->title;

@@ -16,8 +16,9 @@ class ServicesController extends Controller
 {
     public function index()
     {
-        $services = Service::with(['serviceCategory']) ->orderBy('created_at', 'desc')
-        ->paginate(20);
+        $services = Service::with(['serviceCategory'])
+        ->orderBy('sort_order', 'asc') 
+        ->paginate(50);
         return view('backend.pages.services.index', compact('services'));
     }
 
@@ -193,6 +194,33 @@ class ServicesController extends Controller
             DB::rollBack();
             return back()->with('error', 'Error deleting service: ' . $e->getMessage());
         }
+    }
+
+    public function reorder(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            $validated = $request->validate([
+                'order' => 'required|array',
+                'order.*' => 'integer|exists:services,id'
+            ]);
+
+            foreach ($validated['order'] as $index => $id) {
+                Service::where('id', $id)->update(['sort_order' => $index + 1]);
+            }
+
+            DB::commit();
+            return response()->json([
+                'success' => true,
+                'message' => 'Service order updated successfully'
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            DB::rollBack();
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation error: ' . $e->getMessage()
+            ], 422);
+        } 
     }
 
 }

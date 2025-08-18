@@ -17,7 +17,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer(['frontend.layouts.header-menu', 'frontend.layouts.footer'], function ($view) {
             if ($view->getName() === 'frontend.layouts.header-menu') {
-                $menuServices = Service::orderBy('title')->get();
+                $menuServices = Service::orderBy('sort_order', 'asc')->get();
                 $view->with('menuServices', $menuServices);
             }
 

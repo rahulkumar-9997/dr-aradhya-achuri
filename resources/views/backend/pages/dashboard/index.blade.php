@@ -19,9 +19,9 @@
                         <i class="ti ti-file-text fs-24"></i>
                     </span>
                     <div class="ms-2">
-                        <p class="text-white mb-1">Total Pages</p>
+                        <p class="text-white mb-1">Total Blog</p>
                         <div class="d-inline-flex align-items-center flex-wrap gap-2">
-                            <h4 class="text-white">{{ $data['totalPages'] }}</h4>
+                            <h4 class="text-white">{{ $data['totalBlog'] }}</h4>
 
                         </div>
                     </div>
@@ -35,9 +35,9 @@
                         <i class="ti ti-repeat fs-24"></i>
                     </span>
                     <div class="ms-2">
-                        <p class="text-white mb-1">Total Menu</p>
+                        <p class="text-white mb-1">Total Gallery</p>
                         <div class="d-inline-flex align-items-center flex-wrap gap-2">
-                            <h4 class="text-white">{{ $data['totalMenus'] }}</h4>
+                            <h4 class="text-white">{{ $data['totalGallery'] }}</h4>
 
                         </div>
                     </div>
@@ -51,9 +51,9 @@
                         <i class="ti ti-gift fs-24"></i>
                     </span>
                     <div class="ms-2">
-                        <p class="text-white mb-1">Total Menu Items</p>
+                        <p class="text-white mb-1">Total Testimonials</p>
                         <div class="d-inline-flex align-items-center flex-wrap gap-2">
-                            <h4 class="text-white">{{ $data['totalMenuItems'] }}</h4>
+                            <h4 class="text-white">{{ $data['totalTestimonials'] }}</h4>
 
                         </div>
                     </div>
@@ -62,15 +62,15 @@
         </div>
 
         <div class="col-xl-3 col-sm-6 col-12 d-flex">
-            <div class="card bg-info sale-widget flex-fill">
+            <div class="card bg-pink sale-widget flex-fill">
                 <div class="card-body d-flex align-items-center">
                     <span class="sale-icon bg-white text-info">
                         <i class="ti ti-brand-pocket fs-24"></i>
                     </span>
                     <div class="ms-2">
-                        <p class="text-white mb-1">Total Visitor</p>
+                        <p class="text-white mb-1">Total Services</p>
                         <div class="d-inline-flex align-items-center flex-wrap gap-2">
-                            <h4 class="text-white">{{ $data['visitorTracking'] }}</h4>
+                            <h4 class="text-white">{{ $data['visitorServices'] }}</h4>
 
                         </div>
                     </div>

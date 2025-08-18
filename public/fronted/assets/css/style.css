@@ -14385,8 +14385,8 @@ section {
 
 .breadcrumb-overlay {
     position: relative;
-    padding-top: 69px;
-    padding-bottom: 72px;
+    padding-top: 36px;
+    padding-bottom: 22px;
     z-index: 1;
     background-position: center;
     background-size: cover;
@@ -14396,7 +14396,7 @@ section {
 .page-banner h1,
 .page-banner .h1 {
     font-weight: 500;
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 10px;
     color: var(--bs-body-bg);
     text-transform: capitalize;
@@ -21306,7 +21306,7 @@ blockquote p {
 
 .menu-links .nav>li>a {
   color: var(--bs-text-body);
-  font-size: 18px;
+  font-size: 19px;
   padding: 40px 20px;
   cursor: pointer;
   font-weight: 600;
@@ -22970,7 +22970,7 @@ footer .subscribe-form .form-control {
 }
 
 .footer .footer_widget ul li a {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   padding: 6px 0;
   display: block;
@@ -23221,7 +23221,7 @@ h3.footer-title{
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgb(250 145 137);
     z-index: -1;
 }
 /*gallery*/
@@ -23395,15 +23395,15 @@ service-inner-area .service4-boxarea .img1 img {
 }
 
 .services-shap-icon span {
-   width: 80px;
+    width: 80px;
     height: 80px;
-    line-height: 80px;
+    line-height: 48px;
     text-align: center;
     border-radius: 50%;
     background-color: var(--bs-theme-primary);
     display: inline-block;
     color: var(--bs-body-bg);
-    padding: 5px;
+    padding: 17px;
 }
 .services-category-name{
   padding-bottom: 40px;
@@ -23424,8 +23424,10 @@ service-inner-area .service4-boxarea .img1 img {
 .service-details-section .short-serv{
     font-size: 18px;
     margin-bottom: 5px;
-    line-height: 25px;
-    letter-spacing: 2px;
+    line-height: 1.7;
+    font-family: var(--bs-body-font-family);
+    color: var(--bs-text-body);
+    font-weight: 500;
 }
 .services-detail-long .h1,
 .services-detail-long .h2,
@@ -23506,6 +23508,20 @@ service-inner-area .service4-boxarea .img1 img {
 .testimonial-slide .swiper-slide{
   height: unset;
 }
+.other-pages .pt-img3 {
+    top: 30%;
+    right: 7%;
+}
+.other-pages .pt-img5 {
+    top: 25%;
+    left: 5%;
+}
+.other-pages .pt-img4 {
+    top: 10px;
+    left: 40%;
+}
+
+
 @media (max-width: 767px) {
   .menu-logo h3{
     font-size: 25px;
