@@ -14395,12 +14395,12 @@ section {
 
 .page-banner h1,
 .page-banner .h1 {
-    font-weight: 500;
-    font-size: 40px;
+    font-weight: 600;
+    font-size: 30px;
     margin-bottom: 10px;
     color: var(--bs-body-bg);
     text-transform: capitalize;
-    line-height: 55px;
+    line-height: 45px;
     letter-spacing: 2px;
 }
 
@@ -14433,7 +14433,9 @@ section {
 
   .page-banner h1,
   .page-banner .h1 {
-    font-size: 30px;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 600;
   }
 }
 
@@ -16294,7 +16296,7 @@ label.error {
 .feature-bx3 .ttr-title {
     margin-bottom: 12px;
     letter-spacing: 2px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 24px;
 }
 
@@ -17999,7 +18001,7 @@ label.error {
 }
 .work-content h5{
     letter-spacing: 2px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 24px;
 }
 
@@ -19994,8 +19996,15 @@ button.back-to-top {
 
 .blog-single .ttr-post-title .post-title {
     margin-bottom: 10px;
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    color: var(--bs-text-body);
+    font-family: var(--bs-body-font-family);
+    font-weight: 500;
+    text-align: justify;
+}
+.blog-single p{
+  margin-bottom: 5px;
+  text-align: justify;
 }
 
 .blog-post-data ul{    
@@ -23080,7 +23089,7 @@ h1.banner-1-title{
     font-size: 50px;
     line-height: 1.1;
     letter-spacing: 3px;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .banner-1-title span {
@@ -23453,8 +23462,9 @@ service-inner-area .service4-boxarea .img1 img {
 
 .services-detail-long ul{    
     list-style: none;
-    padding: 20px;
+    padding: 0px 10px;
     position: relative;
+    margin-bottom: 5px;
 }
 .services-detail-long ul li{
     position: relative;
@@ -23530,7 +23540,7 @@ service-inner-area .service4-boxarea .img1 img {
     font-size: 15px;
   }
   h1.banner-1-title{
-    font-size: 30px;
+    font-size: 24px;
   }
   .main-banner p{
     font-size: 18px;
@@ -23572,8 +23582,8 @@ service-inner-area .service4-boxarea .img1 img {
   .feature-bx2 .feature-box-xl img, .feature-bx2 .feature-box-xl svg {
       width: 42px;
   }
-  .icon-content .ttr-title{
-    font-size: 24px;
+  .feature-bx1 .icon-content .ttr-title{
+    font-size: 15px;
   }
   .mobile-dnone-col{
     display: none;
@@ -23589,8 +23599,8 @@ service-inner-area .service4-boxarea .img1 img {
     text-align: left;
   }
   .breadcrumb-overlay{
-    padding-top: 30px;
-    padding-bottom: 35px;
+    padding-top: 20px;
+    padding-bottom: 15px;
     background-position: left;
   }
   .growth-history-section h6 {
@@ -23646,5 +23656,11 @@ service-inner-area .service4-boxarea .img1 img {
   }
   .form-wraper textarea.form-control{
     height: 100px;
+  }
+  .order-1-inmobile{
+    order: -1;
+  }
+  .appointment-thumb{
+    display: none;
   }
 }

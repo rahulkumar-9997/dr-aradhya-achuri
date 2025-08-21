@@ -6,13 +6,13 @@
 	</head>
     <body>
 		<div class="page-wraper">
-			<div id="loading-icon-bx">
+			<!-- <div id="loading-icon-bx">
 				<div class="loading-inner">
 					<div class="load-one"></div>
 					<div class="load-two"></div>
 					<div class="load-three"></div>
 				</div>
-			</div>	
+			</div>	 -->
 			@include('frontend.layouts.header-menu')
 			@yield('main-content')
 			@include('frontend.layouts.footer')

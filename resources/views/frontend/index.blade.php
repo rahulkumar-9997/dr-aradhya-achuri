@@ -8,7 +8,7 @@
       <div class="container inner-content">
          <div class="row align-items-center mb-50">
             <div class="col-lg-7 col-md-6 col-sm-7">
-               <h6 class="title-ext banner-main-t">We Provide Personalized Fertility Solutions</h6>
+               <!-- <h6 class="title-ext banner-main-t">Personalized Fertility Solutions</h6> -->
                <div class="mb-50">
                   <h1 class="banner-1-title">
                      Plan better, dream closer. We're with you every step—turning hope into reality.
@@ -180,7 +180,7 @@
                   </div>
                   <div class="other-di">
                      <h5 class="ttr-title">Fertility Care</h5>
-                     <p>Etiam ante ante, molestie vitae cursus ac, pharetra euismod libero.</p>
+                     <p>Personalized support and care for your fertility journey with right tests & treatments to boost your chances of parenthood</p>
                   </div>
                </div>
             </div>
@@ -193,7 +193,7 @@
                   </div>
                   <div class="other-di">
                      <h5 class="ttr-title">IVF Solutions</h5>
-                     <p>Etiam ante ante, molestie vitae cursus ac, pharetra euismod libero.</p>
+                     <p>Safe and advanced IVF treatments designed for you with modern methods & personal care to help you start your family.</p>
                   </div>
                </div>
             </div>
@@ -206,7 +206,7 @@
                   </div>
                   <div class="other-di">
                      <h5 class="ttr-title">Ovulation Care</h5>
-                     <p>Etiam ante ante, molestie vitae cursus ac, pharetra euismod libero.</p>
+                     <p>Careful monitoring and treatment for healthy ovulation making the process easier to improve your chances of conceiving.</p>
                   </div>
                </div>
             </div>
@@ -522,7 +522,7 @@
          style="background-image: url({{ asset('fronted/assets/images/background/line-bg2.png')}}); background-position: center; background-size: cover;">
          <div class="container">
             <div class="heading-bx text-center">
-               <h6 class="title-ext text-secondary">Blos & Articles</h6>
+               <h6 class="title-ext text-secondary">Blog & Articles</h6>
                <h2 class="title">Latest Blog Articles</h2>
                <p>
                   Stay informed with the latest fertility trends, treatment insights, and expert advice.

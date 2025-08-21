@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-30">
+                <div class="col-lg-6 mb-30 order-1-inmobile">
                     <div class="heading-bx">
                         <h2 class="title">
                             Our Mission is to Empower Parenthood
