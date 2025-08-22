@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Dr. Aradhya Achuri')
+@section('title','Dr. Aradhya Achuri Leading Fertility & IVF Clinic')
 @section('description', 'Fertility Specialist')
 @section('main-content')
 <div class="page-content bg-white">
@@ -11,7 +11,7 @@
                <!-- <h6 class="title-ext banner-main-t">Personalized Fertility Solutions</h6> -->
                <div class="mb-50">
                   <h1 class="banner-1-title">
-                     Plan better, dream closer. We're with you every step—turning hope into reality.
+                     Leading Fertility & IVF Clinic<br>Because Parenthood is Possible
                      <!-- Fertility 
 									<span>
 										<img class="d-none d-sm-block" src="assets/aradhya/banner-5-img-4.png" alt="">
@@ -22,7 +22,8 @@
                      The better you plan, the closer you are to your dream of parenthood. We’ll guide you
                      every step of the way, turning hope into reality.
                   </p>
-                  <a href="{{ route('about-us') }}" class="btn btn-secondary btn-lg shadow">Read More</a>
+                  <!-- <a href="{{ route('about-us') }}" class="btn btn-secondary btn-lg shadow">Read More</a> -->
+                  <a href="{{ route('contact-us') }}" class="btn btn-primary banner-enquiry shadow">Contact Us<i class="btn-icon-bx fas fa-chevron-right"></i></a>
                </div>
 
             </div>
@@ -44,7 +45,7 @@
                      <li><img class="about-thumb2" src="{{asset('fronted/assets/aradhya/about-299x299.jpg')}}" alt=""></li>
                      <li><img class="about-thumb3" src="{{asset('fronted/assets/aradhya/about-185x185.jpg')}}" alt=""></li>
                      <li>
-                        <div class="exp-bx">10+ <span>Year Experience</span></div>
+                        <div class="exp-bx">14+ <span>Years Experience</span></div>
                      </li>
                   </ul>
                </div>
@@ -437,7 +438,7 @@
                <div class="row align-items-center">
                   <div class="col-xl-5 col-lg-6 col-md-6">
                      <div class="appointment-form form-wraper">
-                        <h3 class="title">Book An Appointment From Our Doctor</h3>
+                        <h3 class="title">Book An Appointment with Dr. Aradhya Achuri</h3>
                         @include('frontend.layouts.enquiry-form')
                      </div>
                   </div>
@@ -467,8 +468,8 @@
    <section class="section-area section-sp3 testimonial-wraper">
       <div class="container">
          <div class="heading-bx text-center">
-            <h6 class="title-ext text-secondary">Testimonial</h6>
-            <h2 class="title m-b0">See What Are The Patients <br>Saying About us</h2>
+            <h6 class="title-ext text-secondary">Testimonials</h6>
+            <h2 class="title m-b0">What our Patients say about us</h2>
          </div>
          <div class="row align-items-center">
             <div class="col-lg-12">
@@ -522,8 +523,8 @@
          style="background-image: url({{ asset('fronted/assets/images/background/line-bg2.png')}}); background-position: center; background-size: cover;">
          <div class="container">
             <div class="heading-bx text-center">
-               <h6 class="title-ext text-secondary">Blog & Articles</h6>
-               <h2 class="title">Latest Blog Articles</h2>
+               
+               <h2 class="title">Latest Articles about IVF, Parenthood & Fertility</h2>
                <p>
                   Stay informed with the latest fertility trends, treatment insights, and expert advice.
                   Explore our comprehensive articles on IVF, ovulation monitoring, and reproductive health,

@@ -7,7 +7,7 @@
         <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
-                    <h1>About Us</h1>
+                    <h1>About Dr. Aradhya Achuri</h1>
                     <!-- <h6>Some content here</h6> -->
                 </div>
             </div>
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="{{ route('contact-us') }}" class="btn btn-primary shadow">Contact US</a>
+                    <a href="{{ route('contact-us') }}" class="btn btn-primary shadow">Contact us</a>
                 </div>
             </div>
         </div>
@@ -83,17 +83,20 @@
     <section class="growth-history-section">
         <div class="container">
             <div class="heading-bx text-center">
-                <h6 class="title-ext text-secondary">Our Growth History</h6>
+                <h6 class="title-ext text-secondary">Dr. Aradhya Achuri Profile</h6>
             </div>
         </div>
     </section>
     <section class="section-sp1 service-wraper2 qualification-section">
         <div class="container">
             <div class="heading-bx text-center">
-                <h2 class="title">My Qualification</h2>
+                <h2 class="title">Qualification</h2>
+                <h3 class="text-secondary qualification-subtitle">
+                    “Diploma in Reproductive Medicine, Germany (Kiel School of Reproductive Medicine)”
+                </h3>
             </div>
             <div class="row align-items-center">
-                <div class="col-lg-5 col-md-5 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2">
+                <div class="col-lg-5 col-md-5 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2 qualification-img">
                     <div class="form-left-con core-vaule-left-con position-relative text-center margin-right">
                         <figure class="mb-0 inner-img-be">
                             <img src="{{asset('fronted/assets/aradhya/dr.aradhya-achuri.jpg')}}" alt="form-left-img" class="mb-0 img-fluid inner-img">
@@ -182,7 +185,7 @@
     <section class="section-sp1 my-expertise-section other-pages">
         <div class="container">
             <div class="heading-bx text-center">
-                <h2 class="title">My Expertise</h2>
+                <h2 class="title">Fields of Expertise</h2>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-7 col-md-7">
@@ -344,7 +347,7 @@
                                     <img alt="Professional Understanding" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
                                     <div class="media-body ng-star-inserted">
                                         <p>
-                                            ​Adnexal pathology in adolescents in APCOG 2013
+											Adnexal pathology in adolescents in APCOG 2013
                                         </p>
                                     </div>
                                 </div>
@@ -404,7 +407,7 @@
     <section class="section-sp1 awards-and-achi-section other-pages">
         <div class="container">
             <div class="heading-bx text-center">
-                <h2 class="title">My Awards and Achievement</h2>
+                <h2 class="title">Awards and Achievement</h2>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-7 col-md-7">

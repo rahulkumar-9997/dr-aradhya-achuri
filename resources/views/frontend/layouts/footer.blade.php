@@ -14,7 +14,7 @@
                         </div>
                         <div class="ft-contact">
                             <p>
-                                Dr. Aradya Achuri is a highly experienced specialist providing expert care in
+                                Dr. Aradhya Achuri is a highly experienced specialist providing expert care in
                                 the fields of reproductive health and infertility. We offer a range of services
                                 aimed at supporting individuals and families on their journey to parenthood.
                             </p>
@@ -63,7 +63,7 @@
                             <li><a href="{{ url('/') }}"><span>Home</span></a></li>
                             <li><a href="{{ route('about-us') }}"><span>About Us</span></a></li>
                             <li><a href="{{ route('services') }}"><span>Services</span></a></li>
-                            <li><a href="{{ route('faq') }}"><span>FAQs</span></a></li>
+                            <!--li><a href="{{ route('faq') }}"><span>FAQs</span></a></li-->
                             <li><a href="{{ route('blog') }}"><span>Blogs</span></a></li>
                             <li><a href="{{ route('contact-us') }}"><span>Contact Us</span></a></li>
                         </ul>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-3 col-6">
                     <div class="widget footer_widget">
-                        <h3 class="footer-title">Our Service</h3>
+                        <h3 class="footer-title">Our Services</h3>
                         @if(isset($footerServices))
                             <ul>
                                 @foreach ($footerServices as $footerService)

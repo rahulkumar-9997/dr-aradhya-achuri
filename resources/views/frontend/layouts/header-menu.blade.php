@@ -21,7 +21,28 @@
                 <div class="secondary-menu">
                     <ul>
                         <li class="num-bx"><a href="tel:+91 70935 32797"><i class="fas fa-phone-alt"></i> +91 70935 32797</a></li>
-                        <li class="btn-area"><a href="{{ route('contact-us') }}" class="btn btn-primary shadow">CONTACT US <i class="btn-icon-bx fas fa-chevron-right"></i></a></li>
+                        <li class="header-social">
+                            <div class="footer-social-link btn-area">
+                                <ul>
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/fertsupport">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a target="_blank" href="https://www.instagram.com/draradhyaachuri">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://in.linkedin.com/in/aradhya-achuri-8b557380">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="menu-links navbar-collapse collapse justify-content-center" id="menuDropdown">
@@ -33,8 +54,8 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
-                        <li  class="{{ request()->routeIs('about-us') ? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
+                        <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                        <li class="{{ request()->routeIs('about-us') ? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
                         @if(isset($menuServices))
                         <li class="{{ request()->routeIs('services.details*') ? 'active' : '' }}">
                             <a href="javascript:;">Services <i class="fas fa-plus"></i></a>

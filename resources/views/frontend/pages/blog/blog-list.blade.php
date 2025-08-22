@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Blog | Dr. Aradhya Achuri')
+@section('title','Latest Articles about IVF, Parenthood & Fertility | Dr. Aradhya Achuri')
 @section('description', 'Fertility Specialist')
 @section('main-content')
 <div class="page-content bg-white">
@@ -7,7 +7,7 @@
         <div class="page-banner breadcrumb-overlay">
             <div class="container">
                 <div class="page-banner-entry text-center">
-                    <h1>Blog</h1>
+                    <h1>Latest Articles about IVF, Parenthood & Fertility</h1>
                     <!-- <h6>Some content here</h6> -->
                 </div>
             </div>
