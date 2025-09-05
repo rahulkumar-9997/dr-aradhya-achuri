@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('title','Edit Services')
 @push('styles')
-<link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}"> -->
 @endpush
 @section('main-content')
 <div class="content">
@@ -153,7 +153,7 @@
                     <div class="col-lg-12">
                         <div class="summer-description-box mb-3">
                             <label class="form-label">Content <span class="text-danger">*</span></label>
-                            <textarea id="summernote" name="content" class="@error('content') is-invalid @enderror" hidden>{{ old('content', $service->content) }}</textarea>
+                            <textarea name="content" class="ckeditor4 @error('content') is-invalid @enderror" hidden>{{ old('content', $service->content) }}</textarea>
                             @error('content')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -178,6 +178,13 @@
 
 @endsection
 @push('scripts')
-
+<script src="{{ asset('backend/assets/ckeditor-4/ckeditor.js') }}"></script>
+<script>
+    document.querySelectorAll('.ckeditor4').forEach(function(el) {
+        CKEDITOR.replace(el, {
+            removePlugins: 'exportpdf'
+        });
+    });
+</script>
 
 @endpush

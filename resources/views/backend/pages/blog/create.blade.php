@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('title','Add new blog')
 @push('styles')
-<link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}"> -->
 @endpush
 @section('main-content')
 <div class="content">
@@ -105,7 +105,7 @@
                     <div class="col-lg-12">
                         <div class="summer-description-box mb-3">
                             <label class="form-label">Content <span class="text-danger">*</span></label>
-                            <textarea id="summernote" name="content" hidden>{{ old('content') }}</textarea>
+                            <textarea class="ckeditor4" name="content" hidden>{{ old('content') }}</textarea>
                             @error('content')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -139,7 +139,7 @@
                                         <input type="file" name="paragraphs_image[]" class="form-control">
                                     </td>
                                     <td>
-                                        <textarea name="paragraphs_content[]" class="summernoteclass"></textarea>
+                                        <textarea name="paragraphs_content[]" id="paragraph_0" class="ckeditor4"></textarea>
                                         <button type="button" class="btn btn-danger btn-sm remove-paragraph" style="display: none;">Remove</button>
                                     </td>
                                 </tr>
@@ -172,6 +172,14 @@
 
 @endsection
 @push('scripts')
+<script src="{{ asset('backend/assets/ckeditor-4/ckeditor.js') }}"></script>
+<script>
+    document.querySelectorAll('.ckeditor4').forEach(function(el) {
+        CKEDITOR.replace(el, {
+            removePlugins: 'exportpdf'
+        });
+    });
+</script>
 <script>
 $(document).ready(function() {
     $('#add_paragraphs').change(function() {
@@ -184,24 +192,23 @@ $(document).ready(function() {
     if($('#add_paragraphs').is(':checked')) {
         $('#blogParagraphsSection').show();
     }
+    let paragraphIndex = 1;
     $('.add-more-blog-paragraphs').click(function() {
-        var newRow = $('.paragraph-row:first').clone();
-        newRow.find('input').val('');
+        var newRow = $('.paragraph-row:first').clone(false, false);
+        newRow.find('.cke').remove();
+        newRow.find('input[type="text"]').val('');
+        newRow.find('input[type="file"]').val('');
         newRow.find('textarea').val('');
+        var newId = 'paragraph_' + paragraphIndex++;
+        var textarea = newRow.find('textarea');
+        textarea.attr('id', newId);
         newRow.find('.remove-paragraph').show();
         $('#paragraphsContainer').append(newRow);
-        /*
-        // Reinitialize Summernote for the new textarea
-        newRow.find('.summernoteclass').summernote({
-            height: 150,
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough']],
-                ['para', ['ul', 'ol', 'paragraph']],
-            ]
+        CKEDITOR.replace(newId, {
+            removePlugins: 'exportpdf'
         });
-        */
     });
+
     $(document).on('click', '.remove-paragraph', function() {
         if($('.paragraph-row').length > 1) {
             $(this).closest('.paragraph-row').remove();

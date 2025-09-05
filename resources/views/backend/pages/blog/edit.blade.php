@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('title','Edit new blog')
 @push('styles')
-<link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('backend/assets/plugins/summernote/summernote-bs4.min.css')}}"> -->
 @endpush
 @section('main-content')
 <div class="content">
@@ -54,7 +54,7 @@
                             <label class="form-label" for="short_description">
                                 Short Description
                             </label>
-                            <textarea class="form-control @error('short_description') is-invalid @enderror" id="short_description"
+                            <textarea class="form-control @error('short_description') is-invalid @enderror" id="short_description" rows="2"
                                 name="short_description" rows="2">{{ old('short_description', $blog->short_desc) }}</textarea>
                             @error('short_description')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -134,17 +134,14 @@
                         </div>
                     </div>
                     @endif
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="summer-description-box mb-3">
-                                <label class="form-label">Content</label>
-                                <textarea id="summernote" name="content">
-                                    {{ old('meta_description', $blog->content) }}
-                                </textarea>
-                            </div>
+                    <div class="col-lg-12">
+                        <div class="summer-description-box mb-3">
+                            <label class="form-label">Content</label>
+                            <textarea name="content" class="ckeditor4">
+                                {{ old('meta_description', $blog->content) }}
+                            </textarea>
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -184,7 +181,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <textarea name="paragraphs_content[]" class="summernoteclass">{{ old('paragraphs_content.'.$index, $paragraph->content) }}</textarea>
+                                        <textarea name="paragraphs_content[]" class="ckeditor4">{{ old('paragraphs_content.'.$index, $paragraph->content) }}</textarea>
                                         <input type="hidden" name="paragraph_ids[]" value="{{ $paragraph->id }}">
                                         <button type="button" class="btn btn-danger btn-sm remove-paragraph"
                                             style="{{ $blog->paragraphs->count() > 1 ? '' : 'display: none;' }}">Remove</button>
@@ -220,6 +217,14 @@
 
 @endsection
 @push('scripts')
+<script src="{{ asset('backend/assets/ckeditor-4/ckeditor.js') }}"></script>
+<script>
+    document.querySelectorAll('.ckeditor4').forEach(function(el) {
+        CKEDITOR.replace(el, {
+            removePlugins: 'exportpdf'
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
         $(document).on('click', '.remove-image', function() {
@@ -234,7 +239,9 @@
         $('#add_paragraphs').change(function() {
             $('#blogParagraphsSection').toggle($(this).is(':checked'));
         });
+        let paragraphIndex = 1; 
         $(document).on('click', '.add-more-blog-paragraphs', function () {
+            var newId = 'paragraph_' + paragraphIndex++;
             var rowCount = $('table tbody tr').length;
             var newRow = `
                 <tr class="paragraph-row">
@@ -245,14 +252,14 @@
                         <input type="file" name="paragraphs_image[]" class="form-control">
                     </td>
                     <td>
-                        <textarea name="paragraphs_content[]" class="summernoteclass"></textarea>
+                        <textarea name="paragraphs_content[]" id="${newId}" class="ckeditor4"></textarea>
                         <button type="button" class="btn btn-danger btn-sm remove-paragraph mt-2">Remove</button>
                     </td>
                 </tr>
             `;
             $('#paragraphsContainer').append(newRow);
-            $('.summernoteclass').last().summernote({
-                height: 150
+            CKEDITOR.replace(newId, {
+                removePlugins: 'exportpdf'
             });
             $('#blogParagraphsSection').show();
         });
