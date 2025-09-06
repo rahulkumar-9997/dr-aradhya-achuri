@@ -20140,12 +20140,26 @@ button.back-to-top {
      color: var(--bs-heading-primary);
 }
 .blog-single .blog-post-data h5 strong{
-  font-size: 18px;
+    font-size: 18px;
     line-height: 25px;
     margin-bottom: 8px;
     font-weight: 700;
     letter-spacing: 2px;
      color: var(--bs-heading-primary);
+}
+.blog-post-data p {
+    display: block;
+    margin: 0 0 10px;
+}
+.blog-single .ttr-post-text.blog-post-data ul li strong,
+.blog-single .ttr-post-text.blog-post-data ul li b {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--bs-heading-primary);
+    font-family: var(--bs-heading-font-family);
 }
 .blog-single .blog-post-data h6 strong
 {
