@@ -38,7 +38,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
             <div class="row">
                 <div class="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
                     <!-- blog start -->
-                    <div class="blog-card blog-single">
+                    <div class="blog-card blog-single blog-details-page">
                         @if($blog->featured_image)
                         <div class="post-media">
                             <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="{{ $blog->title }}">
