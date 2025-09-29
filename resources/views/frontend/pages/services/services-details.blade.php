@@ -35,9 +35,9 @@ $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags(
                     <!-- <h6></h6> -->
                 </div>
             </div>
-            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
-            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
         </div>
     </div>
     <section class="section-area section-sp1 other-pages">
@@ -71,9 +71,9 @@ $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags(
                 <div class="col-lg-8 mb-30 mobile-order">
                     <div class="ttr-media mb-30">
                         @if($services->details_image)
-                            <img src="{{ asset('upload/services/' . $services->details_image) }}" alt="{{ $services->title }}" class="rounded">
+                            <img src="{{ asset('upload/services/' . $services->details_image) }}" alt="{{ $services->title }}" class="rounded" loading="lazy" decoding="async">
                         @else
-                            <img src="{{ asset('upload/services/' . $services->main_image) }}" alt="{{ $services->title }}" class="rounded">
+                            <img src="{{ asset('upload/services/' . $services->main_image) }}" alt="{{ $services->title }}" class="rounded" loading="lazy" decoding="async">
                         @endif                        
                     </div>
                     <div class="clearfix">
@@ -92,9 +92,9 @@ $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags(
                 </div>                
             </div>
         </div>
-        <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
     </section>
 </div>
 @endsection

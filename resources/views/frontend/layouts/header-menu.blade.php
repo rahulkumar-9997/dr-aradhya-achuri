@@ -6,7 +6,7 @@
                 <div class="menu-logo logo-dark">
                     <a href="{{ url('/') }}">
                         <h3>
-                            Dr Aradhya Achuri
+                            Dr. Aradhya Achuri
                         </h3>
                     </a>
                 </div>

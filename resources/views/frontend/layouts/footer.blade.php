@@ -14,9 +14,8 @@
                         </div>
                         <div class="ft-contact">
                             <p>
-                                Dr. Aradhya Achuri is a highly experienced specialist providing expert care in
-                                the fields of reproductive health and infertility. We offer a range of services
-                                aimed at supporting individuals and families on their journey to parenthood.
+                                Dr. Aradhya Achuri is a highly experienced IVF specialist providing expert care in
+                                the fields of reproductive health and infertility. Her Fertility Clinic offers a range of services aimed at supporting individuals and families on their journey to parenthood.
                             </p>
                             <div class="contact-bx">
                                 <div class="icon"><i class="fas fa-phone-alt"></i></div>

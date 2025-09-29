@@ -6,8 +6,8 @@
 <meta name="keywords" content="@yield('keywords')">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @yield('meta')
-<link rel="icon" href="{{asset('fronted/assets/aradhya/favicon.png')}}" type="image/x-icon">
-<link rel="shortcut icon" type="image/x-icon" href="{{asset('fronted/assets/aradhya/favicon.png')}}">
+<link rel="icon" href="{{asset('fronted/assets/aradhya/fav.png')}}" type="image/x-icon">
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('fronted/assets/aradhya/fav.png')}}">
 <title>@yield('title')</title>
 <link rel="canonical" href="{{ url()->current() }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,3 +15,12 @@
 <link rel="stylesheet" href="{{asset('fronted/assets/vendor/swiper/swiper.min.css')}}">
 <link href="{{asset('fronted/assets/vendor/magnific-popup/magnific-popup.min.css')}}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{asset('fronted/assets/css/style.css')}}">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1HDV6BEZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R1HDV6BEZD');
+</script>

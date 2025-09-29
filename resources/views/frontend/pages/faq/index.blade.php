@@ -11,9 +11,9 @@
                     <!-- <h6>Some content here</h6> -->
                 </div>
             </div>
-            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
-            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
         </div>
     </div>
     <section class="section-area section-sp1 contact-section">
@@ -25,7 +25,7 @@
                 <div class="col-lg-5">
                     <div class="margin-right sticky-top">
                         <figure class="mb-0 inner-img-be">
-                            <img src="{{asset('fronted/assets/aradhya/faq.jpg')}}" alt="My Awards and Achievement" class="mb-0 img-fluid inner-img">
+                            <img src="{{asset('fronted/assets/aradhya/faq.jpg')}}" alt="My Awards and Achievement" class="mb-0 img-fluid inner-img" loading="lazy" decoding="async">
                         </figure>
                     </div>
                 </div>

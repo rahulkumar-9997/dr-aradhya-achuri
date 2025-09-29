@@ -1,6 +1,11 @@
+@php
+$metaDesc ="Looking for the best fertility doctor in Hyderabad? Dr. Aradhya Achuri’s IVF clinic offers advanced fertility treatments, IVF, IUI, and personalized care. Book your appointment today at one of the top fertility centers in Hyderabad.";
+$meta_description = Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
+@endphp
+
 @extends('frontend.layouts.master')
-@section('title','Dr. Aradhya Achuri Leading Fertility & IVF Clinic')
-@section('description', 'Fertility Specialist')
+@section('title','Best Fertility Doctor in Hyderabad | Dr. Aradhya Achuri – IVF Specialist')
+@section('description', $meta_description)
 @section('main-content')
 <div class="page-content bg-white">
    <div class="main-banner"
@@ -8,7 +13,6 @@
       <div class="container inner-content">
          <div class="row align-items-center mb-50">
             <div class="col-lg-7 col-md-6 col-sm-7">
-               <!-- <h6 class="title-ext banner-main-t">Personalized Fertility Solutions</h6> -->
                <div class="mb-50">
                   <h1 class="banner-1-title">
                      Compassionate Fertility Care You Can Trust
@@ -21,21 +25,20 @@
                   <p>
                      From PCOS to challenging fertility concerns, Dr. Aradhya has helped 1000+ families with advanced treatments, surgical precision, and compassionate care at every step.
                   </p>
-                  <!-- <a href="{{ route('about-us') }}" class="btn btn-secondary btn-lg shadow">Read More</a> -->
                   <a href="{{ route('contact-us') }}" class="btn btn-primary banner-enquiry shadow">Contact Us<i class="btn-icon-bx fas fa-chevron-right"></i></a>
                </div>
 
             </div>
             <div class="col-lg-5 col-md-6 col-sm-5">
                <div class="banner-img">
-                  <img src="{{asset('fronted/assets/aradhya/doctor-bg.png')}}" alt="doctor">
+                  <img src="{{asset('fronted/assets/aradhya/doctor-bg.png')}}" alt="doctor" loading="lazy" decoding="async">
                </div>
             </div>
          </div>
       </div>
-      <img class="pt-img1 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img2 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+      <img class="pt-img1 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img2 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
    </div>
    <section class="section-sp1 about-area feature-home">
       <div class="container">
@@ -43,9 +46,9 @@
             <div class="col-lg-6 mb-30">
                <div class="about-thumb-area">
                   <ul>
-                     <li><img class="about-thumb1" src="{{asset('fronted/assets/aradhya/about-241x241.jpg')}}" alt=""></li>
-                     <li><img class="about-thumb2" src="{{asset('fronted/assets/aradhya/about-299x299.jpg')}}" alt=""></li>
-                     <li><img class="about-thumb3" src="{{asset('fronted/assets/aradhya/about-185x185.jpg')}}" alt=""></li>
+                     <li><img class="about-thumb1" src="{{asset('fronted/assets/aradhya/about-241x241.jpg')}}" alt="about" loading="lazy" decoding="async"></li>
+                     <li><img class="about-thumb2" src="{{asset('fronted/assets/aradhya/about-299x299.jpg')}}" alt="about" loading="lazy" decoding="async"></li>
+                     <li><img class="about-thumb3" src="{{asset('fronted/assets/aradhya/about-185x185.jpg')}}" alt="about" loading="lazy" decoding="async"></li>
                      <li>
                         <div class="exp-bx">14+ <span>Years Experience</span></div>
                      </li>
@@ -57,11 +60,7 @@
                   <!-- <h6 class="title-ext text-secondary">About Us</h6> -->
                   <h2 class="title">Our Goal Is To Empower Parenthood</h2>
                   <p>
-                     At Dr. Aradhya Achuri’s Fertility Clinic, we are dedicated to offering advanced
-                     reproductive solutions and compassionate care. Our mission is to make parenthood a
-                     reality for every hopeful individual or couple. With state-of-the-art treatments and
-                     personalized support, we help you navigate the journey to parenthood with
-                     confidence.
+                     At Dr. Aradhya Achuri’s Fertility Clinic, we are led by a trusted fertility specialist who has already <strong>helped 1000+ families achieve their dream of parenthood</strong>. We are dedicated to offering advanced reproductive solutions and compassionate care. Our mission is to make parenthood a reality for every hopeful individual or couple. With <strong>state-of-the-art treatments and personalized support</strong>, we help you navigate the journey to parenthood with confidence.
                   </p>
                </div>
                <div class="row">
@@ -69,7 +68,7 @@
                      <div class="feature-container feature-bx1 feature1">
                         <div class="icon-md">
                            <span class="icon-cell">
-                              <img src="{{asset('fronted/assets/aradhya/about-icon/fertility-support.svg')}}">
+                              <img src="{{asset('fronted/assets/aradhya/about-icon/fertility-support.svg')}}" loading="lazy" decoding="async" alt="support">
                            </span>
                         </div>
                         <div class="icon-content">
@@ -81,7 +80,7 @@
                      <div class="feature-container feature-bx1 feature2">
                         <div class="icon-md">
                            <span class="icon-cell">
-                              <img src="{{asset('fronted/assets/aradhya/about-icon/compassionate-care.svg')}}" alt="Compassionate Care">
+                              <img src="{{asset('fronted/assets/aradhya/about-icon/compassionate-care.svg')}}" alt="Compassionate Care" loading="lazy" decoding="async">
                            </span>
                         </div>
                         <div class="icon-content">
@@ -93,7 +92,7 @@
                      <div class="feature-container feature-bx1 feature3">
                         <div class="icon-md">
                            <span class="icon-cell">
-                              <img src="{{asset('fronted/assets/aradhya/about-icon/personalized-solutions.svg')}}" alt="Personalized Solutions">
+                              <img src="{{asset('fronted/assets/aradhya/about-icon/personalized-solutions.svg')}}" alt="Personalized Solutions" loading="lazy" decoding="async">
                            </span>
                         </div>
                         <div class="icon-content">
@@ -105,7 +104,7 @@
                      <div class="feature-container feature-bx1 feature4">
                         <div class="icon-md">
                            <span class="icon-cell">
-                              <img src="{{asset('fronted/assets/aradhya/about-icon/trusted-results.svg')}}" alt="Trusted Results">
+                              <img src="{{asset('fronted/assets/aradhya/about-icon/trusted-results.svg')}}" alt="Trusted Results" loading="lazy" decoding="async">
                            </span>
                         </div>
                         <div class="icon-content">
@@ -118,8 +117,8 @@
             </div>
          </div>
       </div>
-      <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+      <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
    </section>
    <section class="section-sp1 service-wraper2">
       <div class="container">
@@ -132,7 +131,7 @@
                <div class="feature-container feature-bx3">
                   <div class="some-se-img">
                      <div class="img-dis">
-                        <img src="{{asset('fronted/assets/aradhya/fertility-care.png')}}" alt="Fertility Care">
+                        <img src="{{asset('fronted/assets/aradhya/fertility-care.png')}}" alt="Fertility Care" loading="lazy" decoding="async">
                      </div>
                   </div>
                   <div class="other-di">
@@ -145,7 +144,7 @@
                <div class="feature-container feature-bx3">
                   <div class="some-se-img">
                      <div class="img-dis">
-                        <img src="{{asset('fronted/assets/aradhya/IVF-solutions.png')}}" alt="IVF Solutions">
+                        <img src="{{asset('fronted/assets/aradhya/IVF-solutions.png')}}" alt="IVF Solutions" loading="lazy" decoding="async">
                      </div>
                   </div>
                   <div class="other-di">
@@ -158,7 +157,7 @@
                <div class="feature-container feature-bx3">
                   <div class="some-se-img">
                      <div class="img-dis">
-                        <img src="{{asset('fronted/assets/aradhya/ovulation-care.png')}}" alt="Ovulation Care">
+                        <img src="{{asset('fronted/assets/aradhya/ovulation-care.png')}}" alt="Ovulation Care" loading="lazy" decoding="async">
                      </div>
                   </div>
                   <div class="other-di">
@@ -229,21 +228,21 @@
             </div>
          </div>
       </div>
-      <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
-      <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img3 animate3" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
+      <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img3 animate3" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
    </section>
    <section class="section-area section-sp1 service-wraper">
       <div class="row align-items-center">
          <div class="col-xl-4 col-lg-7 mb-30">
             <div class="heading-bx">
                <!-- <h6 class="title-ext text-secondary">Services</h6> -->
-               <h2 class="title">We Offer a Wide Range of Trusted Medical Care</h2>
+               <h2 class="title">IVF & Fertility Treatment Process Explained</h2>
                <p>
-                  From choosing the right services to receiving world-class treatment, we’re with you every step of the way.
+                  With Dr. Aradhya Achuri, the IVF journey is transparent and guided step by step. We walk with you through every stage.
                </p>
             </div>
-            <a href="services.html" class="btn btn-secondary btn-lg shadow">All Services</a>
+            <a href="{{ route('services') }}" class="btn btn-secondary btn-lg shadow">All Services</a>
          </div>
          <div class="col-xl-8 mb-15">
             <div class="swiper-container service-slide">
@@ -344,10 +343,10 @@
             </div>
          </div>
       </div>
-      <img class="pt-img1 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/square-dots-orange.png')}}" alt="">
-      <img class="pt-img3 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+      <img class="pt-img1 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/square-dots-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img3 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
    </section>
    @if (!empty($data['galleryList']) && $data['galleryList']->count() > 0)
    <section class="section-area section-sp1 gallery-area"
@@ -360,19 +359,31 @@
          <div class="swiper-container dr-gallery">
             <div class="swiper-wrapper popup-gallery">
                @foreach ($data['galleryList'] as $gallery)
-                  <div class="swiper-slide">
-                     <div class="gallery-item">                        
-                        <div class="gallery-img">
-                           <img src="{{ asset('upload/gallery/' . $gallery->image) }}" alt="{{ $gallery->title }}">
-                        </div>
-                        <div class="gallery-content magnific-image">
-                           <a class="popup-img gallery-link" href="{{ asset('upload/gallery/' . $gallery->image) }}">
-                              <i class="fas fa-plus"></i>
-                           </a>
-                        </div>
+               <div class="swiper-slide">
+                  <div class="gallery-item">
+                     <div class="gallery-img">
+                        <img
+                           src="{{ url('/images/gallery/' . $gallery->image . '?w=400&h=300&q=75') }}"
+                           srcset="{{ url('/images/gallery/' . $gallery->image . '?w=200&h=150&q=75') }} 200w,
+                           {{ url('/images/gallery/' . $gallery->image . '?w=400&h=300&q=75') }} 400w,
+                           {{ url('/images/gallery/' . $gallery->image . '?w=800&h=600&q=75') }} 800w"
+                           sizes="(max-width: 576px) 100vw, 
+                           (max-width: 768px) 50vw, 
+                           400px"
+                           width="400"
+                           height="300"
+                           alt="{{ $gallery->title }}"
+                           loading="lazy"
+                           decoding="async">
+                     </div>
+                     <div class="gallery-content magnific-image">
+                        <a class="popup-img gallery-link" href="{{ asset('upload/gallery/' . $gallery->image) }}">
+                           <i class="fas fa-plus"></i>
+                        </a>
                      </div>
                   </div>
-               @endforeach           
+               </div>
+               @endforeach
             </div>
             <div class="gallery-next-prev">
                <div class="swiper-button-prev test-btn-prev">
@@ -394,29 +405,29 @@
                <div class="row align-items-center">
                   <div class="col-xl-5 col-lg-6 col-md-6">
                      <div class="appointment-form form-wraper">
-                        <h3 class="title">Book An Appointment with Dr. Aradhya Achuri</h3>
+                        <h3 class="title">Book An Appointment with<br>Dr. Aradhya Achuri</h3>
                         @include('frontend.layouts.enquiry-form')
                      </div>
                   </div>
                   <div class="col-xl-7 col-lg-6 col-md-6">
                      <div class="appointment-thumb">
-                        <img src="{{asset('fronted/assets/images/appointment/mobile.png')}}" alt="">
+                        <img src="{{asset('fronted/assets/images/appointment/mobile.png')}}" alt="mobile" loading="lazy" decoding="async">
                         <div class="images-group">
-                           <img class="img1" src="{{asset('fronted/assets/images/appointment/women.png')}}" alt="">
-                           <img class="img2" src="{{asset('fronted/assets/images/appointment/map-pin.png')}}" alt="">
-                           <img class="img3" src="{{asset('fronted/assets/images/appointment/setting.png')}}" alt="">
-                           <img class="img4" src="{{asset('fronted/assets/images/appointment/check.png')}}" alt="">
-                           <img class="img5" src="{{asset('fronted/assets/images/appointment/chat.png')}}" alt="">
+                           <img class="img1" src="{{asset('fronted/assets/images/appointment/women.png')}}" alt="women" loading="lazy" decoding="async">
+                           <img class="img2" src="{{asset('fronted/assets/images/appointment/map-pin.png')}}" alt="mappin" loading="lazy" decoding="async">
+                           <img class="img3" src="{{asset('fronted/assets/images/appointment/setting.png')}}" alt="setting" loading="lazy" decoding="async">
+                           <img class="img4" src="{{asset('fronted/assets/images/appointment/check.png')}}" alt="check" loading="lazy" decoding="async">
+                           <img class="img5" src="{{asset('fronted/assets/images/appointment/chat.png')}}" alt="chat" loading="lazy" decoding="async">
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/trangle-orange.png')}}" alt="">
-            <img class="pt-img2 animate-wave" src="{{asset('fronted/assets/aradhya/shap/wave-orange.png')}}" alt="">
+            <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/trangle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img2 animate-wave" src="{{asset('fronted/assets/aradhya/shap/wave-orange.png')}}" alt="shap" loading="lazy" decoding="async">
             <img class="pt-img3 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png'
-            )}}" alt="">
-            <img class="pt-img4 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
+            )}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img4 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
          </div>
       </div>
    </section>
@@ -436,18 +447,17 @@
                         <div class="testimonial-bx">
                            <div class="testimonial-content">
                               <p>
-                                   {{ \Illuminate\Support\Str::limit(strip_tags($testimonial->content), 180) }}
+                                 {{ \Illuminate\Support\Str::limit(strip_tags($testimonial->content), 180) }}
                               </p>
                            </div>
                            <div class="read_more_test">
-                              <a href="javascript: void(0);" 
-                              class="btn btn-secondary btn-sm"
-                              data-ajax-testimonials-popup="true"
-                              data-size="lg"
-                              data-title="{{ $testimonial->title }}"
-                              data-url="{{ route('ajax.testimonial', $testimonial->id) }}"
-                              data-bs-toggle="tooltip"
-                              >Read More</a>
+                              <a href="javascript: void(0);"
+                                 class="btn btn-secondary btn-sm"
+                                 data-ajax-testimonials-popup="true"
+                                 data-size="lg"
+                                 data-title="{{ $testimonial->title }}"
+                                 data-url="{{ route('ajax.testimonial', $testimonial->id) }}"
+                                 data-bs-toggle="tooltip">Read More</a>
                            </div>
                            <div class="client-info">
                               <h5 class="name">{{ $testimonial->title }}</h5>
@@ -456,8 +466,8 @@
                               <i class="fas fa-quote-left"></i>
                            </div>
                         </div>
-                     </div> 
-                     @endforeach                    
+                     </div>
+                     @endforeach
                   </div>
                   <div class="testimonials-nxt-pre">
                      <div class="swiper-button-prev test-btn-prev"><i class="las la-arrow-left"></i>
@@ -469,55 +479,69 @@
             </div>
          </div>
       </div>
-      <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img3 animate3" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      <img class="pt-img4 animate4" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
+      <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img3 animate3" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img4 animate4" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
    </section>
    @endif
    @if (!empty($data['blog']) && $data['blog']->count() > 0)
-      <section class="section-area section-sp1 blog-area"
-         style="background-image: url({{ asset('fronted/assets/images/background/line-bg2.png')}}); background-position: center; background-size: cover;">
-         <div class="container">
-            <div class="heading-bx text-center">
-               
-               <h2 class="title">Latest Articles about IVF, Parenthood & Fertility</h2>
-               <p>
-                  Stay informed with the latest fertility trends, treatment insights, and expert advice.
-                  Explore our comprehensive articles on IVF, ovulation monitoring, and reproductive health,
-                  all designed to support your fertility journey.
-               </p>
-            </div>
-            <div class="row">
-               @foreach ($data['blog'] as $blog)
-                  <div class="col-xl-4 col-md-6 mb-20">
-                     <div class="blog-card h-100">
-                        <div class="post-media image-file">
-                           <a href="{{ route('blog.details', $blog->slug) }}">
-                              <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="{{ $blog->title }}">
-                           </a>
-                        </div>
-                        <div class="post-info">
-                           
-                           <h5 class="post-title">
-                              <a href="{{ route('blog.details', $blog->slug) }}">
-                                 {{ $blog->title }}
-                              </a>
-                           </h5>
-                           <a href="{{ route('blog.details', $blog->slug) }}" class="btn btn-outline-primary btn-sm">
-                              Read More
-                              <i class="btn-icon-bx fas fa-chevron-right"></i>
-                           </a>
+   <section class="section-area section-sp1 blog-area"
+      style="background-image: url({{ asset('fronted/assets/images/background/line-bg2.png')}}); background-position: center; background-size: cover;">
+      <div class="container">
+         <div class="heading-bx text-center">
+
+            <h2 class="title">Latest Articles about IVF, Parenthood & Fertility</h2>
+            <p>
+               Stay informed with the latest fertility trends, treatment insights, and expert advice.
+               Explore our comprehensive articles on IVF, ovulation monitoring, and reproductive health,
+               all designed to support your fertility journey.
+            </p>
+         </div>
+         <div class="row">
+            @foreach ($data['blog'] as $blog)
+            <div class="col-xl-4 col-md-6 mb-20">
+               <div class="blog-card h-100">
+                  <a href="{{ route('blog.details', $blog->slug) }}">
+                     <div class="post-media image-file">
+                        <div class="blog-hom-img">
+                           @php
+                              $imageUrl = '/images/blog/' . $blog->featured_image;
+                              $breakpoints = [200, 400, 800];
+                              $aspectRatio = 250 / 400;
+                           @endphp
+                           <img 
+                              src="{{ url($imageUrl . '?w=' . $breakpoints[1] . '&q=75') }}"
+                              srcset="@foreach($breakpoints as $width) {{ url($imageUrl . '?w=' . $width . '&q=75') }} {{ $width }}w{{ !$loop->last ? ',' : '' }} @endforeach"
+                              sizes="100vw"
+                              style="aspect-ratio: {{ $aspectRatio }};"
+                              alt="{{ $blog->title }}"
+                              loading="lazy"
+                              decoding="async"
+                           >
                         </div>
                      </div>
-                  </div>
-               @endforeach
+                     <div class="post-info">
+                        <h5 class="post-title">
+                           <div class="blog-hom-title">
+                              {{ $blog->title }}
+                           </div>
+                        </h5>
+                        <div class="btn btn-outline-primary btn-sm">
+                           Read More
+                           <i class="btn-icon-bx fas fa-chevron-right"></i>
+                        </div>
+                     </div>
+                  </a>
+               </div>
             </div>
+            @endforeach
          </div>
-         <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/trangle-orange.png')}}" alt="">
-         <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/square-dots-orange.png')}}" alt="">
-         <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-         <img class="pt-img4 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-      </section>
+      </div>
+      <img class="pt-img1 animate1" src="{{asset('fronted/assets/aradhya/shap/trangle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/square-dots-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+      <img class="pt-img4 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+   </section>
    @endif
 </div>
 @endsection

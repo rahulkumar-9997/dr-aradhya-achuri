@@ -1,6 +1,10 @@
+@php
+$metaDesc ="Discover IVF, IUI, ICSI & fertility treatments in Hyderabad with Dr. Aradhya Achuri. Safe, advanced care for your parenthood journey.";
+$meta_description = Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
+@endphp
 @extends('frontend.layouts.master')
-@section('title','Our Services | Dr. Aradhya Achuri')
-@section('description', 'Fertility Specialist')
+@section('title','IVF & Fertility Services in Hyderabad | Dr. Aradhya Achuri')
+@section('description', $meta_description)
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
@@ -10,9 +14,9 @@
                     <h1>Services</h1>
                 </div>
             </div>
-            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
-            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
         </div>
     </div>
     <section class="section-area section-sp1 team-wraper service-inner-area other-pages">
@@ -26,31 +30,32 @@
                             </div>
                         </div>
                         @foreach($services as $service)
-                            <div class="col-lg-4 col-md-6">
-                                <div class="service4-boxarea">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service4-boxarea">
+                                <a href="{{ route('services.details', $service->slug) }}">
                                     <div class="services-shap-icon">
-                                    <span>
-                                        @if($service->icon_image)
-                                            <img src="{{ asset('upload/services/' . $service->icon_image) }}" alt="{{ $service->title }}">
-                                        @else
-                                            <img src="{{ asset('fronted/assets/aradhya/services/1.png') }}" alt="Default Icon">
-                                        @endif
-                                    </span>
+                                        <span>
+                                            @if($service->icon_image)
+                                            <img src="{{ asset('upload/services/' . $service->icon_image) }}" alt="{{ $service->title }}" loading="lazy" decoding="async">
+                                            @else
+                                            <img src="{{ asset('fronted/assets/aradhya/services/1.png') }}" alt="Default Icon" loading="lazy" decoding="async">
+                                            @endif
+                                        </span>
                                     </div>
                                     <div class="content-area">
                                         <div class="services-title">
-                                            <a href="{{ route('services.details', $service->slug) }}" class="title">
+                                            <div class="title">
                                                 {{ $service->title }}
-                                            </a>
+                                            </div>
                                             @if($service->short_content)
-                                                <p>
-                                                    {{ Str::limit($service->short_content, 100) }}
-                                                </p>
+                                            <p>
+                                                {{ Str::limit($service->short_content, 100) }}
+                                            </p>
                                             @else
-                                                {!! clean_html_content(Str::limit($service->content, 100)) !!}
+                                            {!! clean_html_content(Str::limit($service->content, 100)) !!}
                                             @endif
                                         </div>
-                                        <a href="{{ route('services.details', $service->slug) }}" class="readmore">
+                                        <div class="readmore">
                                             Learn More
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <g clip-path="url(#clip0_5927_10805)">
@@ -62,25 +67,35 @@
                                                     </clipPath>
                                                 </defs>
                                             </svg>
-                                        </a>
+                                        </div>
                                     </div>
-                                    
                                     <div class="img1 image-anime services-mask">
                                         @if($service->main_image)
-                                            <img src="{{ asset('upload/services/' . $service->main_image) }}" alt="{{ $service->title }}">
+                                        <img
+                                            src="{{ url('/images/services/' . $service->main_image . '?w=400&h=300&q=75') }}"
+                                            srcset="{{ url('/images/services/' . $service->main_image . '?w=200&h=150&q=75') }} 200w,
+                                            {{ url('/images/services/' . $service->main_image . '?w=400&h=300&q=75') }} 400w,
+                                            {{ url('/images/services/' . $service->main_image . '?w=800&h=600&q=75') }} 800w"
+                                            sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 400px"
+                                            width="400"
+                                            height="300"
+                                            alt="{{ $service->title }}"
+                                            loading="lazy"
+                                            decoding="async">
                                         @else
-                                            <img src="{{ asset('fronted/assets/aradhya/services/1.jpg') }}" alt="Default Service Image">
+                                        <img src="{{ asset('fronted/assets/aradhya/services/1.jpg') }}" alt="Default Service Image" loading="lazy" decoding="async">
                                         @endif
                                     </div>
-                                </div>
+                                </a>
                             </div>
+                        </div>
                         @endforeach
                     @endforeach
                 @endif
             </div>
         </div>
-        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
     </section>
 
 </div>

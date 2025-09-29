@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\EnquiryMail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Blog;
 use App\Models\Testimonial;
@@ -13,6 +14,39 @@ use App\Models\Service;
 
 class FrontHomeController extends Controller
 {
+    public function resizeImage(Request $request, $folder, $image)
+    {
+        $imagePath = public_path("upload/{$folder}/{$image}");
+        if (!file_exists($imagePath)) {
+            abort(404);
+        }
+        $width = $request->get('w', null);
+        $height = $request->get('h', null);
+        $quality = $request->get('q', 85);
+        if (!$width && !$height) {
+            return response()->file($imagePath);
+        }
+        $img = Image::make($imagePath);
+        if ($width && $height) {
+            $img->resize($width, $height, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        } elseif ($width) {
+            $img->resize($width, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        } elseif ($height) {
+            $img->resize(null, $height, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        }
+        $img->encode('webp', $quality);
+        return $img->response('webp');
+    }
+
     public function home(){
         
         $data['blog'] = Blog::where('status', 'Published')->orderBy('created_at', 'desc')
@@ -84,16 +118,19 @@ class FrontHomeController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
-            'phone_number' => 'required|string|max:10',
-            'service' => 'nullable|string|max:10',
+            'phone_number' => 'required|regex:/^[6-9][0-9]{9}$/',
+            'service' => 'nullable|string|max:255',
             'message' => 'required|string|max:1000',
         ]);
-
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
                 'errors' => $validator->errors(),
             ], 422);
+        }
+
+        if ($request->filled('hp_name')) {
+            return response()->json(['status'=>'error'], 422);
         }
 
         $validated = $validator->validated();
@@ -105,7 +142,8 @@ class FrontHomeController extends Controller
             'message' => $validated['message'] ?? null,
         ];
         try {
-            Mail::to('info.draradhyaachuri@gmail.com')->send(new EnquiryMail($data));
+            Mail::to('akshat@gdsons.co.in')->send(new EnquiryMail($data));
+            // Mail::to('info.draradhyaachuri@gmail.com')->send(new EnquiryMail($data));
         } catch (\Exception $e) {
             Log::error('Failed to send enquiry email: ' . $e->getMessage());
         }

@@ -28,9 +28,9 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                     <!-- <h6></h6> -->
                 </div>
             </div>
-            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
-            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
         </div>
     </div>
     <section class="section-area section-sp1 bg-white other-pages">
@@ -41,7 +41,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                     <div class="blog-card blog-single blog-details-page">
                         @if($blog->featured_image)
                         <div class="post-media">
-                            <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="{{ $blog->title }}">
+                            <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" alt="{{ $blog->title }}" loading="lazy" decoding="async">
                         </div>
                         @endif
                         <div class="info-bx">
@@ -77,7 +77,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                                                             <figure class="para-img-se">
                                                                 <img src="{{ asset('upload/blog/' . $paragraph->image) }}"
                                                                     alt="{{ $paragraph->alt_text ?? $paragraph->title ?? 'Blog image' }}"
-                                                                    class="img-fluid">
+                                                                    class="img-fluid" loading="lazy" decoding="async"> 
                                                             </figure>
                                                         </a>
                                                     </div>
@@ -98,7 +98,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                                         <div class="photo-gallery wow fadeInUp" @if($index> 0) data-wow-delay="{{ 0.2 * $index }}s" @endif>
                                             <a class="popup-img" href="{{ asset('upload/blog/' . $image->image) }}" data-cursor-text="View">
                                                 <figure class="image-anime ">
-                                                    <img src="{{ asset('upload/blog/' . $image->image) }}" alt="{{ $image->alt_text }}">
+                                                    <img src="{{ asset('upload/blog/' . $image->image) }}" alt="{{ $image->alt_text }}" loading="lazy" decoding="async">
                                                 </figure>
                                             </a>
                                         </div>
@@ -137,7 +137,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                                 @foreach ($blogList as $blog)
                                 <div class="widget-post clearfix">
                                     <div class="ttr-post-media">
-                                        <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" width="200" height="143" alt="{{ $blog->title }}">
+                                        <img src="{{ asset('upload/blog/' . $blog->featured_image) }}" width="200" height="143" alt="{{ $blog->title }}" loading="lazy" decoding="async">
                                     </div>
                                     <div class="ttr-post-info">
                                         <div class="ttr-post-header">
@@ -157,9 +157,9 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                 </div>
             </div>
         </div>
-        <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img4 animate1" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
     </section>
 
 </div>

@@ -1,6 +1,10 @@
+@php
+   $metaDesc ="Book an appointment with Dr. Aradhya Achuri, leading fertility doctor in Hyderabad. Call now or visit our IVF clinic for expert care.";
+   $meta_description = Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
+@endphp
 @extends('frontend.layouts.master')
-@section('title','Contact us | Dr. Aradhya Achuri')
-@section('description', 'Fertility Specialist')
+@section('title','Contact Fertility Clinic Hyderabad | Dr. Aradhya Achuri')
+@section('description', $meta_description)
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
@@ -11,9 +15,9 @@
                     <!-- <h6>Some content here</h6> -->
                 </div>
             </div>
-            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
-            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
         </div>
     </div>
     <section class="section-area section-sp1 contact-section">

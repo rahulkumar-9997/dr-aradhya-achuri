@@ -17153,7 +17153,7 @@ label.error {
   border-radius: 20px;
   box-shadow: 0px 10px 60px 0px rgba(31, 34, 120, 0.1);
 }
-.blog-card .post-title a{
+.blog-card .post-title .blog-hom-title{
   color: var(--bs-heading-primary);
   letter-spacing: 2px;
 }
@@ -23454,6 +23454,7 @@ h3.footer-title{
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    color: var(--bs-text-body);
 }
 .service-inner-area .service4-boxarea .img1 {
   position: relative;

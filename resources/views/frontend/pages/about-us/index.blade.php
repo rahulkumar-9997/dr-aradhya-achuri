@@ -1,6 +1,11 @@
+@php
+   $metaDesc ="Learn about Dr. Aradhya Achuri, a trusted fertility doctor in Hyderabad offering expert IVF care, compassionate support & 14+ years of experience";
+   $meta_description = Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
+@endphp
+
 @extends('frontend.layouts.master')
-@section('title','About us | Dr. Aradhya Achuri')
-@section('description', 'Fertility Specialist')
+@section('title','About Dr. Aradhya Achuri | Fertility Specialist Hyderabad')
+@section('description', $meta_description)
 @section('main-content')
 <div class="page-content bg-white">
     <div class="banner-wraper">
@@ -11,9 +16,9 @@
                     <!-- <h6>Some content here</h6> -->
                 </div>
             </div>
-            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="">
-            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+            <img class="pt-img1 animate-wave" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/circle-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+            <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
         </div>
     </div>
     <section class="section-sp1 about-area about-page-area">
@@ -22,7 +27,7 @@
                 <div class="col-lg-6 mb-30">
                     <div class="about-thumb-area-section">
                         <div class="about-innter-img">
-                            <img src="{{asset('fronted/assets/aradhya/about-inner.png')}}">
+                            <img src="{{asset('fronted/assets/aradhya/about-inner.png')}}" alt="about" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -40,7 +45,7 @@
                             <div class="feature-container feature-bx1 feature1 ab-page-feature">
                                 <div class="icon-content">
                                     <h4 class="ttr-title">
-                                        We strive to bring out the best in your fertility journey
+                                        Trusted specialist with global training in fertility care
                                     </h4>
                                 </div>
                             </div>
@@ -49,7 +54,8 @@
                             <div class="feature-container feature-bx1 feature2 ab-page-feature">
                                 <div class="icon-content">
                                     <h4 class="ttr-title">
-                                        We strive to bring out the best in your fertility journey Parenthood and hope can be within reach
+                                        Proven expertise in IVF, hysteroscopy & endometriosis
+
                                     </h4>
                                 </div>
                             </div>
@@ -58,7 +64,8 @@
                             <div class="feature-container feature-bx1 feature3 ab-page-feature">
                                 <div class="icon-content">
                                     <h4 class="ttr-title">
-                                        Helping you achieve the best version of your future family
+                                        Personalized solutions for even the most complex cases
+
                                     </h4>
                                 </div>
                             </div>
@@ -67,7 +74,7 @@
                             <div class="feature-container feature-bx1 feature4 ab-page-feature">
                                 <div class="icon-content">
                                     <h4 class="ttr-title">
-                                        Live every moment with the joy of new beginnings
+                                        Helping families grow with skill, care, and dedication
                                     </h4>
                                 </div>
                             </div>
@@ -77,8 +84,8 @@
                 </div>
             </div>
         </div>
-        <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img2 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
     </section>
     <section class="growth-history-section">
         <div class="container">
@@ -91,15 +98,13 @@
         <div class="container">
             <div class="heading-bx text-center">
                 <h2 class="title">Qualification</h2>
-                <h3 class="text-secondary qualification-subtitle">
-                    “Diploma in Reproductive Medicine, Germany (Kiel School of Reproductive Medicine)”
-                </h3>
+                
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-5 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2 qualification-img">
                     <div class="form-left-con core-vaule-left-con position-relative text-center margin-right">
                         <figure class="mb-0 inner-img-be">
-                            <img src="{{asset('fronted/assets/aradhya/dr.aradhya-achuri.jpg')}}" alt="form-left-img" class="mb-0 img-fluid inner-img">
+                            <img src="{{asset('fronted/assets/aradhya/dr.aradhya-achuri.jpg')}}" alt="form-left-img" class="mb-0 img-fluid inner-img" loading="lazy" decoding="async">
                         </figure>
                     </div>
                 </div>
@@ -113,9 +118,17 @@
                                     </h6>
                                 </div>
                             </div>
-                            <div class="col-md-6 exclDealPoints">
-                                <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Professional Understanding" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+							<div class="col-lg-6">
+                                <div class="media-col mt-6 ng-star-inserted">
+                                    <img alt="correct tick" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
+                                    <div class="media-body ng-star-inserted">
+                                       <p>
+										Diploma in Reproductive Medicine, Germany (Kiel School of Reproductive Medicine)
+										</p>
+                                    </div>
+                                </div>
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img alt="correct" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Fellowship in Minimal Access Surgery (FMAS)
@@ -123,7 +136,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="24/7 Help" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="correct" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Fellowship in Assisted reproductive technology, International Association Of Assisted Reproductive Technology
@@ -131,26 +144,26 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Feel Connected with India" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="correct" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             ICOG certification course in reproductive medicine, Chennai
                                         </p>
                                     </div>
                                 </div>
+							</div>
+							<div class="col-lg-6">
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Traditional Indian Food" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Traditional Indian Food" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Senior resident - Sri Venkateshwara Medical College, Tirupati, AP
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <!--second-->
-                            <div class="col-md-6 exclDealPoints">
+                            
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Multiple Source Materials" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Multiple Source Materials" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             MS OBG –Prathima Institute of Medical Sciences, Telangana
@@ -158,7 +171,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Satisfied Customer" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Satisfied Customer" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Internship - Gandhi Government Hospital, Telangana
@@ -166,7 +179,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             MBBS –Kamineni Institute of Medical Sciences, Telangana
@@ -200,7 +213,7 @@
                             </div>
                             <div class="col-md-6 exclDealPoints">
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Professional Understanding" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async" alt="correct">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Reproductive Endocrinology including infertility work-up and treatment
@@ -208,7 +221,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="24/7 Help" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async" alt="correct">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Ultrasonography (2D/3D)
@@ -216,7 +229,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Feel Connected with India" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Ovulation Induction
@@ -224,7 +237,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Traditional Indian Food" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Intrauterine Insemination
@@ -232,7 +245,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Multiple Source Materials" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             IVF
@@ -240,7 +253,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Satisfied Customer" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="corret" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Mild stimulation protocols
@@ -253,7 +266,7 @@
                             <!--second-->
                             <div class="col-md-6 exclDealPoints">
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Transvaginal Oocyte Retrieval
@@ -261,7 +274,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Transabdominal Oocyte Retrieval
@@ -269,7 +282,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Embryo Transfer
@@ -277,7 +290,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Diagnostic Laparoscopy
@@ -285,7 +298,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Diagnostic Hysteroscopy
@@ -293,7 +306,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Operative Hysteroscopy
@@ -301,7 +314,7 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img  class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" alt="correct" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Ectopic Pregnancy Medical and surgical management
@@ -317,14 +330,14 @@
                 <div class="col-lg-5 col-md-5 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2">
                     <div class="form-left-con core-vaule-left-con position-relative text-center margin-left">
                         <figure class="mb-0 inner-img-be">
-                            <img src="{{asset('fronted/assets/aradhya/my-expertise.jpg')}}" alt="My Expertise" class="mb-0 img-fluid inner-img">
+                            <img src="{{asset('fronted/assets/aradhya/my-expertise.jpg')}}" alt="My Expertise" class="mb-0 img-fluid inner-img" loading="lazy" decoding="async">
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
-        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
     </section>
     <section class="section-sp1 service-wraper2 research-and-pub-section">
         <div class="container">
@@ -332,19 +345,20 @@
                 <h2 class="title">Research & Publications</h2>
             </div>
             <div class="row align-items-center">
-                <div class="col-lg-5 col-md-5 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2">
+                <!--div class="col-lg-5 col-md-5 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2">
                     <div class="form-left-con core-vaule-left-con position-relative text-center margin-right">
                         <figure class="mb-0 inner-img-be">
                             <img src="{{asset('fronted/assets/aradhya/about.jpg')}}" alt="Research & Publications" class="mb-0 img-fluid inner-img">
                         </figure>
                     </div>
-                </div>
-                <div class="col-lg-7 col-md-7">
+                </div-->
+                <div class="col-lg-12 col-md-12">
                     <div class="core-vaule-right-con">
                         <div class="row ng-star-inserted">
+                            
                             <div class="col-md-6 exclDealPoints">
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Professional Understanding" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Professional Understanding" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
 											Adnexal pathology in adolescents in APCOG 2013
@@ -352,15 +366,28 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="24/7 Help" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="24/7 Help" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             A rare case of cervical ectopic pregnancy in RCOG international conference 2014
                                         </p>
                                     </div>
                                 </div>
-                                <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Feel Connected with India" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img alt="Traditional Indian Food" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
+                                    <div class="media-body ng-star-inserted">
+                                        <p>
+                                            A Rare Case of Herniation of Gravid Uterus – Annals of Woman and Child Health, AWCH; 1(1): 2015
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!--second-->
+                            <div class="col-md-6 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img alt="Feel Connected with India" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             A rare case of herniation of gravid uterus – AICOG 2017
@@ -368,26 +395,16 @@
                                     </div>
                                 </div>
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Traditional Indian Food" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Multiple Source Materials" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             FSH receptor polymorphism in an unexpected Poor responder – A Case Report – ISAR 2020
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <!--second-->
-                            <div class="col-md-6 exclDealPoints">
+							
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Multiple Source Materials" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
-                                    <div class="media-body ng-star-inserted">
-                                        <p>
-                                            A Rare Case of Herniation of Gravid Uterus – Annals of Woman and Child Health, AWCH; 1(1): 2015
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Satisfied Customer" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Satisfied Customer" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Improvement of reproductive outcome in hypo-responders using genomics evidence based controlled ovarian stimulation (COS) − Demonstration through case presentations, Fertil Sci Res 2023;10:145-50.
@@ -397,6 +414,74 @@
 
                             </div>
                             <!--second-->
+                            <div class="col-md-12 exclDealPoints">
+								<div class="main-quali-title" style='padding:16px 18px;margin:12px 0 8px 0 ' >
+                                    <h5 class="growth-title" style='text-align:center;font-size:20px' >
+                                        As a panelist &amp; speaker, Dr. Aradhya Achuri has actively participated in discussions addressing the latest challenges and breakthroughs in fertility treatments, contributing to knowledge exchange with leading specialists across India and abroad.
+                                    </h5>
+                                </div>
+							</div>
+							<div class="col-md-4 col-xs-6 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/Dr-Aradhya-Achuri-Publication-1.png')}}" loading="lazy" decoding="async" alt="dr" style='width:100%; height:300px; object-fit:cover; object-position:center; border-radius:12px;' />
+                                    
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 col-xs-6 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img class="me-3 rightIconSize ng-star-inserted" loading="lazy" decoding="async" alt="dr aradhya" src="{{asset('fronted/assets/aradhya/Dr-Aradhya-Achuri-Publication-2.png')}}" style='width:100%; height:300px; object-fit:cover; object-position:center; border-radius:12px;' />
+                                    
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 col-xs-6 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img class="me-3 rightIconSize ng-star-inserted" loading="lazy" decoding="async" alt="dr aradhya" src="{{asset('fronted/assets/aradhya/Dr-Aradhya-Achuri-Publication-3.png')}}" style='width:100%; height:300px; object-fit:cover; object-position:center; border-radius:12px;' />
+                                    
+                                </div>
+
+                            </div>
+							<div class="col-md-4 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img class="me-3 rightIconSize ng-star-inserted" alt="dr aradhya" loading="lazy" decoding="async" src="{{asset('fronted/assets/aradhya/Dr-Aradhya-Achuri-Publication-4.png')}}" style='width:100%; height:300px; object-fit:cover; object-position:center; border-radius:12px;' />
+                                    
+                                </div>
+
+                            </div>
+							
+                            <div class="col-md-4 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img class="me-3 rightIconSize ng-star-inserted" alt="dr aradhya" loading="lazy" decoding="async" src="{{asset('fronted/assets/aradhya/Dr-Aradhya-Achuri-Publication-5.png')}}" style='width:100%; height:300px; object-fit:cover; object-position:center; border-radius:12px;' />
+                                    
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img class="me-3 rightIconSize ng-star-inserted" alt="dr aradhya" loading="lazy" decoding="async" src="{{asset('fronted/assets/aradhya/Dr-Aradhya-Achuri-Publication-6.jpg')}}" style='width:100%; height:300px; object-fit:cover; object-position:center; border-radius:12px;' />
+                                    
+                                </div>
+
+                            </div>
+							<div class="col-md-4 exclDealPoints">
+							</div>
+                            <div class="col-md-4 exclDealPoints">
+								<div class="media-col mt-3 ng-star-inserted">
+                                    <img class="me-3 rightIconSize ng-star-inserted" alt="dr aradhya" loading="lazy" decoding="async" src="{{asset('fronted/assets/aradhya/Dr-Aradhya-Achuri-Publication-7.jpg')}}" style='width:100%; height:300px; object-fit:cover; object-position:center; border-radius:12px;' />
+                                    
+                                </div>
+
+                            </div>
+							<div class="col-md-12 exclDealPoints">
+								<div class="main-quali-title" style='padding:16px 18px;margin:12px 0 8px 0 ' >
+                                    <h5 class="growth-title" style='text-align:center;font-size:20px' >
+Through these contributions, Dr. Aradhya not only enhances professional collaboration but also reinforces her mission of providing the most advanced and compassionate fertility solutions to couples.
+
+
+                                    </h5>
+                                </div>
+							</div>
                         </div>
                     </div>
 
@@ -410,12 +495,12 @@
                 <h2 class="title">Awards and Achievement</h2>
             </div>
             <div class="row align-items-center">
-                <div class="col-lg-7 col-md-7">
+                <div class="col-lg-4 col-md-4">
                     <div class="core-vaule-right-con">
                         <div class="row ng-star-inserted">
                             <div class="col-md-12 exclDealPoints">
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Professional Understanding" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Professional Understanding" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
                                             Dr A.P.J Abdul Kalam woman empowerment excellence award by ACT NOW NGO for rendering exemplary services in the field of fertility - 2023
@@ -427,10 +512,20 @@
                             <!--second-->
                             <div class="col-md-12 exclDealPoints">
                                 <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}">
+                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
-                                            ISAR YOUNG ACHIEVER AWARD
+                                            ISAR YOUNG ACHIEVER AWARD - 2024
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 exclDealPoints">
+                                <div class="media-col mt-3 ng-star-inserted">
+                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
+                                    <div class="media-body ng-star-inserted">
+                                        <p>
+                                            Doctors excellence awards - 2025
                                         </p>
                                     </div>
                                 </div>
@@ -440,17 +535,24 @@
                     </div>
 
                 </div>
-                <div class="col-lg-5 col-md-5 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2">
+                <div class="col-lg-4 col-md-4 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2">
                     <div class="form-left-con core-vaule-left-con position-relative text-center margin-left">
                         <figure class="mb-0 inner-img-be">
-                            <img src="{{asset('fronted/assets/aradhya/awards-and-Achievement.jpg')}}" alt="My Awards and Achievement" class="mb-0 img-fluid inner-img">
+                            <img src="{{asset('fronted/assets/aradhya/awards-and-Achievement.jpg')}}" alt="My Awards and Achievement" class="mb-0 img-fluid inner-img" loading="lazy" decoding="async">
+                        </figure>
+                    </div>
+                </div>
+               <div class="col-lg-4 col-md-4 d-md-flex align-self-center order-xl-0 order-lg-0 order-md-0 order-2">
+                    <div class="form-left-con core-vaule-left-con position-relative text-center margin-left">
+                        <figure class="mb-0 inner-img-be">
+                            <img src="{{asset('fronted/assets/aradhya/awards-and-Achievement-2.jpg')}}" alt="My Awards and Achievement" class="mb-0 img-fluid inner-img" loading="lazy" decoding="async">
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
-        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
-        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="">
+        <img class="pt-img3 animate-rotate" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
+        <img class="pt-img5 animate2" src="{{asset('fronted/assets/aradhya/shap/plus-orange.png')}}" alt="shap" loading="lazy" decoding="async">
     </section>
     <section class="section-sp1 service-wraper2 mb-5 why-choose-section">
         <div class="container">
@@ -461,7 +563,7 @@
                 <div class="col-lg-5">
                     <div class="form-left-con core-vaule-left-con position-relative text-center margin-right">
                         <figure class="mb-0 inner-img-be">
-                            <img src="{{asset('fronted/assets/aradhya/why-choose.jpg')}}" alt="My Awards and Achievement" class="mb-0 img-fluid inner-img">
+                            <img src="{{asset('fronted/assets/aradhya/why-choose.jpg')}}" alt="My Awards and Achievement" class="mb-0 img-fluid inner-img" loading="lazy" decoding="async">
                         </figure>
                     </div>
                 </div>

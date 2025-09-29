@@ -1,11 +1,7 @@
-@import 'tailwindcss';
+/* Import all your vendor CSS files */
+@import '../../../public/fronted/assets/vendor/bootstrap-select/css/bootstrap-select.min.css';
+@import '../../../public/fronted/assets/vendor/swiper/swiper.min.css';
+@import '../../../public/fronted/assets/vendor/magnific-popup/magnific-popup.min.css';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
+/* Import your main style file */
+@import '../../../public/fronted/assets/css/style.css';
