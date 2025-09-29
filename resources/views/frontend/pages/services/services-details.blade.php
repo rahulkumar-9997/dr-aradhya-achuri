@@ -1,5 +1,5 @@
 @php
-$metaTitle = $services->title. ' | Dr. Aradhya Achuri';
+$metaTitle = Str::limit($services->title . ' | Dr. Aradhya Achuri', 57);
 $metaDesc = $services->short_content ?? $services->content;
 $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags($metaDesc), 160));
 @endphp

@@ -1,5 +1,8 @@
 @php
-$metaTitle = $blog->meta_title ?? $blog->title. ' | Dr. Aradhya Achuri';
+$metaTitle = Str::limit(
+    $blog->meta_title ?? ($blog->title . ' | Dr. Aradhya Achuri'),
+    57
+);
 $metaDesc = $blog->meta_description ?? $blog->short_desc ?? $blog->content;
 $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
 @endphp

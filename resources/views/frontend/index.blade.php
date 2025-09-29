@@ -1,10 +1,11 @@
 @php
 $metaDesc ="Looking for the best fertility doctor in Hyderabad? Dr. Aradhya Achuri’s IVF clinic offers advanced fertility treatments, IVF, IUI, and personalized care. Book your appointment today at one of the top fertility centers in Hyderabad.";
 $meta_description = Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
+$metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri', 57);
 @endphp
 
 @extends('frontend.layouts.master')
-@section('title','Best Fertility Doctor in Hyderabad | Dr. Aradhya Achuri – IVF Specialist')
+@section('title', $metaTitle)
 @section('description', $meta_description)
 @section('main-content')
 <div class="page-content bg-white">

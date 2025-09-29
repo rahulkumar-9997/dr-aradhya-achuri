@@ -1,10 +1,11 @@
 @php
    $metaDesc ="Learn about Dr. Aradhya Achuri, a trusted fertility doctor in Hyderabad offering expert IVF care, compassionate support & 14+ years of experience";
    $meta_description = Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
+   $metaTitle = Str::limit('About Dr. Aradhya Achuri | Fertility Specialist Hyderabad', 57);
 @endphp
 
 @extends('frontend.layouts.master')
-@section('title','About Dr. Aradhya Achuri | Fertility Specialist Hyderabad')
+@section('title', $metaTitle)
 @section('description', $meta_description)
 @section('main-content')
 <div class="page-content bg-white">
