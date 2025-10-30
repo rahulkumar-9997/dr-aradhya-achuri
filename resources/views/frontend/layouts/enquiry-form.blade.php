@@ -1,6 +1,7 @@
 <form method="post" action="{{ route('enquiry.submit') }}" id="enquiryFormSubmit" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="hp_name" id="hp_name"/>
+    <input type="hidden" name="form_timer" value="{{ time() }}">
     <div class="form-group">
         <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name *">
     </div>

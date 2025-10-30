@@ -129,6 +129,13 @@ class FrontHomeController extends Controller
             ], 422);
         }
 
+        $formStartTime = $request->input('form_timer');
+        if (time() - $formStartTime < 5) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Spam detected. Please try again slowly.',
+            ], 422);
+        }
         if ($request->filled('hp_name')) {
             return response()->json(['status'=>'error'], 422);
         }
