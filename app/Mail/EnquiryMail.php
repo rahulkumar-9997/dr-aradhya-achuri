@@ -13,16 +13,17 @@ class EnquiryMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $enquiry;
+    public $data;
 
-    public function __construct($enquiry)
+    public function __construct($data)
     {
-        $this->enquiry = $enquiry;
+        $this->data = $data;
     }
 
     public function build()
     {
-        return $this->subject('Enquiry Mail')
+        return $this->subject('New Enquiry from ' . $this->data['name'])
         ->view('frontend.mail.enquiry_mail');
     }
+
 }

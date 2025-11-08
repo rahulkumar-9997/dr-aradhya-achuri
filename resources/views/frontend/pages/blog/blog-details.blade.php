@@ -54,7 +54,7 @@ $metaDescription = \Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                                 </h2>
                             </div>
                             <div class="ttr-post-text blog-post-data">
-                                {!! clean_html_content($blog->content) !!}
+                                {!! $blog->content !!}
                             </div>
                             @if($blog->paragraphs && $blog->paragraphs->count() > 0)
                             <div class="blog-paragraph mt-4">
