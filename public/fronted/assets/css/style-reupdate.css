@@ -18504,7 +18504,7 @@ label.error {
 @media only screen and (max-width: 991px) {
   .appointment-form {
     margin-left: 20px;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
   }
 
@@ -18532,7 +18532,7 @@ label.error {
   .appointment-form {
     margin-left: 10px;
     border-radius: 20px;
-    padding: 20px;
+    padding: 15px;
   }
 
   .appointment-form .form-control {
@@ -23665,6 +23665,9 @@ service-inner-area .service4-boxarea .img1 img {
 
 
 @media (max-width: 767px) {
+  .enquiry_form .form-group label.ms-3 {
+    margin-left: 0px!important;
+  }
   .menu-logo h3{
     font-size: 25px;
   }

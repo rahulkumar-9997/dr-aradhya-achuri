@@ -109,7 +109,7 @@
                 <div class="row align-items-center">
                    <div class="col-lg-12 mb-30">
                         <div class="w-100 float-left map-con">
-                            <div class="container">
+                            <div class="container1">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3806.8623293228397!2d78.3519047!3d17.4183933!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb95514f7777d7%3A0xa8b434db34e10133!2sMedics%20Healthcare!5e0!3m2!1sen!2sin!4v1735297429875!5m2!1sen!2sin" style=" height:360px; width: 100%; border: 0;"></iframe>
                                 
                             </div>
