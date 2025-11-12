@@ -116,3 +116,8 @@
 </div>
 <!-- Footer END ==== -->
 <button class="back-to-top fa fa-chevron-up"></button>
+<div class="">
+    <button data-title="Enquiry Form" data-url="{{ route('ajax.enquiry.form') }}" data-size="lg" class="call-now shake float element call-now-text" id="openEnquiryModal">
+       Enquire Now
+    </button>
+</div>

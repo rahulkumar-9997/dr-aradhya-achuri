@@ -42,10 +42,14 @@
         event.preventDefault();
         var form = $(this);
         var submitButton = form.find('button[type="submit"]');
-        $('.form-control').removeClass('is-invalid');
-        $('.invalid-feedback').remove();
-        submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+        form.find('.form-control').removeClass('is-invalid');
+        form.find('.invalid-feedback').remove();
+        submitButton.prop('disabled', true).html(`
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...
+        `);
+
         var formData = new FormData(this);
+
         $.ajax({
             url: form.attr('action'),
             type: 'POST',
@@ -56,24 +60,71 @@
                 submitButton.prop('disabled', false).html('Submit');
                 if (response.status === 'success') {
                     form[0].reset();
-                    showNotificationAll(response.message, 'success');
+                    $('#commanModel').modal('hide');
+                    showNotificationAll(response.message || 'Enquiry submitted successfully.', 'success');
                 }
             },
             error: function (xhr) {
                 submitButton.prop('disabled', false).html('Submit');
                 var errors = xhr.responseJSON?.errors;
+
                 if (errors) {
                     $.each(errors, function (key, value) {
-                        var inputField = $('#' + key);
-                        inputField.addClass('is-invalid');
-                        inputField.after('<div class="invalid-feedback">' + value[0] + '</div>');
+                        var inputField = form.find('[name="' + key + '"]');
+                        if (inputField.length) {
+                            inputField.addClass('is-invalid');
+                            inputField.after('<div class="invalid-feedback">' + value[0] + '</div>');
+                        }
                     });
                 } else {
-                   showNotificationAll('Something went wrong. Please try again later.', 'error');
+                    showNotificationAll('Something went wrong. Please try again later.', 'error');
                 }
             }
         });
     });
+
+    /**Enquiry modal js  */
+    $(document).on('click', '#openEnquiryModal', function (e) {
+        e.preventDefault();        
+        var title = $(this).data('title');
+        var size = ($(this).data('size') == '') ? 'md' : $(this).data('size');
+        var url = $(this).data('url');
+
+        $("#commanModel .modal-title").html(title);
+        $("#commanModel .modal-dialog").removeClass().addClass('modal-dialog modal-' + size);
+        $("#commanModel .render-data").html('<p class="text-center my-3">Loading...</p>');
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            success: function (data) {
+                if (data.status === 'success') {
+                    $('#commanModel .render-data').html(data.modalContent);
+                    $('#commanModel').modal('show');
+                }
+            },
+            error: function (xhr) {
+                $('#commanModel .render-data').html('<p class="text-danger text-center my-3">Failed to load form. Please try again later.</p>');
+            }
+        });
+    });
+
+    /**Enquiry modal js  */
+    /*update address value  */
+    $(function() {    
+        $(document).on('change', 'input[name="address_option"]', function() {
+            let selected = $(this).val();
+            if (selected.includes('Gramakautam')) {
+                $('.kondapur_address').show();
+                $('.nanakramguda_address').hide();
+            } else {
+                $('.kondapur_address').hide();
+                $('.nanakramguda_address').show();
+            }
+            $('.selected_address').val(selected);
+        });
+    });
+    /*update address value  */
     
  });
 

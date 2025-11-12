@@ -26,6 +26,7 @@ Route::post('enquiry-submit', [FrontHomeController::class, 'EnquirySubmitForm'])
 Route::get('ajax-testimonial/{id}', [FrontHomeController::class, 'AjaxTestimonials'])->name('ajax.testimonial');
 Route::get('faq', [FrontHomeController::class, 'faq'])->name('faq');
 Route::get('/images/{folder}/{image}', [FrontHomeController::class, 'resizeImage']);
+Route::get('/ajax/enquiry-form', [FrontHomeController::class, 'AjaxEnquiryForm'])->name('ajax.enquiry.form');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm']);

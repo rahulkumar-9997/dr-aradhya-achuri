@@ -14,7 +14,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="{{asset('fronted/assets/vendor/bootstrap-select/css/bootstrap-select.min.css')}}"> -->
 <link rel="stylesheet" href="{{asset('fronted/assets/vendor/swiper/swiper.min.css')}}">
 <link href="{{asset('fronted/assets/vendor/magnific-popup/magnific-popup.min.css')}}" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{asset('fronted/assets/css/style-re.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('fronted/assets/css/style-reupdate.css')}}">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1HDV6BEZD"></script>
 <script>

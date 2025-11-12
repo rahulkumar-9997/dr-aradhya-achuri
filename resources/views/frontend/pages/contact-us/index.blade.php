@@ -35,10 +35,29 @@
                                 <h4 class="title mb-30">Feel Free To Contact Us</h4>
                                 <div class="icon-box">
                                     <h6 class="title"><i class="ti-map-alt"></i>Our Clinic</h6>
-                                    <p>
+                                    <p class="mb-0">
                                         <a href="https://goo.gl/maps/dpEkxCsgTW2dDjkk9">
                                             Medics Fertility Clinic Survey No. 55/E, Nanakramguda Circle Nanakramguda, Gachibowli, Telangana 500032
                                         </a>
+                                    </p>
+                                    <p>
+                                        <strong>
+                                            Timing: 
+                                        </strong>
+                                        4PM - 6PM 
+                                    </p>
+
+                                    <p class="mb-0">
+                                        <a href="https://goo.gl/maps/dpEkxCsgTW2dDjkk9">
+                                           Gramakautam, Plot No.1, Plot No.6, Kothaguda Village Serilingampally, M, 2-34/2, Gachibowli - Miyapur Rd, Kondapur, Hyderabad, Telangana 500084
+                                        </a>
+                                        
+                                    </p>
+                                    <p>
+                                        <strong>
+                                            Timing: 
+                                        </strong>
+                                        10AM - 3PM
                                     </p>
                                 </div>
                                 <div class="icon-box">

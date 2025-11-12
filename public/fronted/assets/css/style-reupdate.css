@@ -12151,7 +12151,7 @@ fieldset:disabled .btn {
 }
 
 body {
-  line-height: 1.7;
+  line-height: 1.5;
   color: var(--bs-text-body);
 }
 
@@ -14922,12 +14922,15 @@ section {
 }
 
 .form-group label {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   color: #444;
   margin-bottom: 10px;
   background: transparent;
   border-color: #E1E1F0;
+}
+.enquiry_form .form-group label {
+  margin-bottom: 0px;
 }
 
 .form-control {
@@ -19576,13 +19579,13 @@ button.back-to-top {
 
 @media only screen and (max-width: 1199px) {
   .contact-wraper {
-    padding: 50px 40px 20px;
+    padding: 20px 15px 0px;
   }
 }
 
 @media only screen and (max-width: 575px) {
   .contact-wraper {
-    padding: 30px 30px 0px;
+    padding: 20px 15px 0px;
     border-radius: 20px;
   }
 }
@@ -19655,7 +19658,7 @@ button.back-to-top {
 
 @media only screen and (max-width: 575px) {
   .contact-info {
-    padding: 30px 30px 0px;
+    padding: 20px 15px 0px;
   }
 
   .contact-info .icon-box {
@@ -23807,6 +23810,36 @@ service-inner-area .service4-boxarea .img1 img {
   .blog-single .blog-post-data h3 strong {
     font-size: 20px;
   }
+}
+
+.call-now {
+    position: fixed;
+    bottom: 15px;
+    right: 75px;
+    z-index: 99999;
+    padding: 10px 15px 10px 15px;
+    background: rgb(245 146 130);
+    border-radius: 50px;
+    border: solid white;
+}
+.shake {
+    animation: shake-animation 2.5s;
+    animation-iteration-count: infinite;
+}
+.call-now-text{
+    color: #fff;
+    font-size: 20px; 
+    text-decoration:none;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+a.call-now-text:hover{
+    text-decoration:none;
+    color: #fff;
+}
+
+a.call-now-text:focus{
+    text-decoration:none;
+    color: #fff;
 }
 
 

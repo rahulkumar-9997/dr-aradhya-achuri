@@ -1,7 +1,40 @@
-<form method="post" action="{{ route('enquiry.submit') }}" id="enquiryFormSubmit" enctype="multipart/form-data">
+<form method="post" class="enquiry_form" action="{{ route('enquiry.submit') }}" id="enquiryFormSubmit" enctype="multipart/form-data">
     @csrf
-    <input type="hidden" name="hp_name" id="hp_name"/>
-	<input type="hidden" name="form_timer" value="{{ time() }}">
+    <input type="hidden" name="hp_name" id="hp_name" />
+    <input type="hidden" name="form_timer" value="{{ time() }}">
+    <input type="hidden" name="selected_address" id="selected_address" class="selected_address" value="Survey No. 55/E, Nanakramguda Circle, Gachibowli, Nanakramguda, Hyderabad, Telangana 500032">
+    <div class="form-group mt-0">
+        <label>
+            <input type="radio" name="address_option" value="Gramakautam, Plot No.1, Plot No.6, Kothaguda Village Serilingampally, M, 2-34/2, Gachibowli - Miyapur Rd, Kondapur, Hyderabad, Telangana 500084" checked>
+            Apollo Kondapur
+        </label>
+        <label class="ms-3">
+            <input type="radio" name="address_option" value="Survey No. 55/E, Nanakramguda Circle, Gachibowli, Nanakramguda, Hyderabad, Telangana 500032">
+            Nanakramguda
+        </label>
+    </div>
+
+    <!-- Filled Address Blocks -->
+    <div class="form-group mt-1 kondapur_address">
+        <div class="alert alert-secondary">
+            <strong>Apollo Kondapur Address:</strong><br>
+           
+            <p class="mb-0">Gramakautam, Plot No.1, Plot No.6, Kothaguda Village Serilingampally, M, 2-34/2, Gachibowli - Miyapur Rd, Kondapur, Hyderabad, Telangana 500084</p>
+            <p class="mb-0">
+                <strong>Timing :</strong> 10AM - 3AM
+            </p>
+        </div>
+    </div>
+
+    <div id="nanakramguda_address" class="form-group mt-1 nanakramguda_address" style="display: none;">
+        <div class="alert alert-secondary">
+            <strong>Nanakramguda Address:</strong><br>
+            <p class="mb-0">Survey No. 55/E, Nanakramguda Circle, <br>Gachibowli, Nanakramguda, Hyderabad, <br>Telangana 500032</p>
+            <p class="mb-0">
+                <strong>Timing :</strong> 4PM - 6PM
+            </p>
+        </div>
+    </div>
     <div class="form-group">
         <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name *">
     </div>
