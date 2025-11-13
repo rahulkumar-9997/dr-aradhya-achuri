@@ -57,15 +57,15 @@ $metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri
                </div>
             </div>
             <div class="col-lg-6 mb-30">
-               <div class="heading-bx">
+               <div class="heading-bx ">
                   <!-- <h6 class="title-ext text-secondary">About Us</h6> -->
                   <h2 class="title">Our Goal Is To Empower Parenthood</h2>
                   <p>
                      At Dr. Aradhya Achuri’s Fertility Clinic, we are led by a trusted fertility specialist who has already <strong>helped 1000+ families achieve their dream of parenthood</strong>. We are dedicated to offering advanced reproductive solutions and compassionate care. Our mission is to make parenthood a reality for every hopeful individual or couple. With <strong>state-of-the-art treatments and personalized support</strong>, we help you navigate the journey to parenthood with confidence.
                   </p>
                </div>
-               <div class="row">
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
+               <div class="row eaight-style">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6 mb-sm-1 mb-md-1 mb-xl-3 pe-xl-1">
                      <div class="feature-container feature-bx1 feature1">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -77,7 +77,7 @@ $metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6 mb-sm-1 mb-md-1 mb-xl-3 pe-xl-1">
                      <div class="feature-container feature-bx1 feature2">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -89,7 +89,7 @@ $metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6 mb-sm-1 mb-md-1 mb-xl-3 pe-xl-1">
                      <div class="feature-container feature-bx1 feature3">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -101,7 +101,7 @@ $metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6">
+                  <div class="col-lg-6 col-sm-6 mb-30 mb-sm-20 col-6 mb-sm-1 mb-md-1 mb-xl-3 pe-xl-1">
                      <div class="feature-container feature-bx1 feature4">
                         <div class="icon-md">
                            <span class="icon-cell">
@@ -114,7 +114,7 @@ $metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri
                      </div>
                   </div>
                </div>
-               <a href="{{ route('about-us') }}" class="btn btn-primary shadow">Learn More About Us</a>
+               <a href="{{ route('about-us') }}" class="btn btn-primary shadow home-about-btn">Learn More About Us</a>
             </div>
          </div>
       </div>
