@@ -4,6 +4,7 @@
             <tr>
                 <th>Order</th>
                 <th>Title</th>
+                <th>Sub-title</th>
                 <th>Category</th>
                 <th>Description</th>
                 <th>Main Image</th>
@@ -16,6 +17,7 @@
             <tr data-id="{{ $service->id }}">
                 <td class="sortable-handle"><i class="fas fa-arrows-alt"></i></td>
                 <td>{{ $service->title }}</td>
+                <td>{{ $service->subtitle }}</td>
                 <td>
                     @if($service->serviceCategory)
                         <span class="badge bg-primary">{{ $service->serviceCategory->title }}</span>

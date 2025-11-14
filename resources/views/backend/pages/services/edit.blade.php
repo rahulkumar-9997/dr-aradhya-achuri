@@ -67,6 +67,17 @@
                     </div>
                     <div class="col-sm-4 col-12">
                         <div class="mb-3">
+                            <label class="form-label" for="sub_title">
+                                Sub-title
+                            </label>
+                            <textarea class="form-control @error('sub_title') is-invalid @enderror" id="sub_title" name="sub_title" rows="2">{{ old('sub_title', $service->subtitle) }}</textarea>
+                            @error('sub_title')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <div class="mb-3">
                             <label class="form-label" for="short_description">
                                 Short Description
                             </label>
@@ -76,10 +87,7 @@
                             @enderror
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-3 col-12">
+                    <div class="col-sm-6 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="main_image">
                                 Main Thumb Image
@@ -96,7 +104,9 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-sm-3 col-12">
+                </div>
+                <div class="row">                    
+                    <div class="col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="icon_image">
                                 Icon Image
@@ -113,7 +123,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-sm-3 col-12">
+                    <div class="col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="details_image">
                                 Details Image
@@ -130,7 +140,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-sm-3 col-12">
+                    <div class="col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label" for="breadcrumb_image">
                                 Breadcrumb Image

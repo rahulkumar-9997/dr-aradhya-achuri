@@ -78,7 +78,11 @@ $metaDescription = clean_html_content(\Illuminate\Support\Str::limit(strip_tags(
                     </div>
                     <div class="clearfix">
                         <div class="head-text mb-20 service-details-section">
-                            
+                            @if($services->short_content)
+                            <h2>
+                                {{ $services->subtitle }} 
+                            </h2>
+                            @endif
                             @if($services->short_content)
                             <h6 class="short-serv">
                                 {{ $services->short_content }} 

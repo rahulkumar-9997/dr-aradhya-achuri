@@ -31,6 +31,7 @@ class ServicesController extends Controller
         $validatedData = $request->validate([
             'services_category_id' => 'required|exists:services_categories,id',
             'title' => 'required|string|max:255',
+            'sub_title' => 'nullable|string',
             'short_description' => 'nullable|string',
             'content' => 'required|string',
             'main_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
@@ -59,6 +60,7 @@ class ServicesController extends Controller
             $service = Service::create([
                 'services_category_id' => $validatedData['services_category_id'],
                 'title' => $validatedData['title'],
+                'subtitle' => $validatedData['sub_title'],
                 'short_content' => $validatedData['short_description'] ?? null,
                 'content' => $validatedData['content'],
                 'main_image' => $mainImageName,
@@ -117,6 +119,7 @@ class ServicesController extends Controller
         $validatedData = $request->validate([
             'services_category_id' => 'required|exists:services_categories,id',
             'title' => 'required|string|max:255',
+            'sub_title' => 'nullable|string',
             'short_description' => 'nullable|string',
             'content' => 'required|string',
             'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
@@ -134,6 +137,7 @@ class ServicesController extends Controller
             $data = [
                 'services_category_id' => $validatedData['services_category_id'],
                 'title' => $validatedData['title'],
+                'subtitle' => $validatedData['sub_title'],
                 'short_content' => $validatedData['short_description'] ?? null,
                 'content' => $validatedData['content'],
             ];

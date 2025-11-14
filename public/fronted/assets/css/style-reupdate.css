@@ -23563,6 +23563,15 @@ service-inner-area .service4-boxarea .img1 img {
     color: var(--bs-text-body);
     font-weight: 500;
 }
+.services-detail-long h1,
+.services-detail-long h2,
+.services-detail-long h3,
+.services-detail-long h4,
+.services-detail-long h5,
+.services-detail-long h6{
+  letter-spacing: 1.3px;
+
+}
 .services-detail-long .h1,
 .services-detail-long .h2,
 .services-detail-long .h3,
@@ -23574,6 +23583,7 @@ service-inner-area .service4-boxarea .img1 img {
     margin-bottom: 5px;
     line-height: 25px;
     letter-spacing: 2px;
+
 }
 .services-detail-long span{
     font-family: var(--bs-body-font-family);
@@ -23828,6 +23838,7 @@ service-inner-area .service4-boxarea .img1 img {
     font-size: 20px;
   }
 }
+
 
 .call-now {
     position: fixed;

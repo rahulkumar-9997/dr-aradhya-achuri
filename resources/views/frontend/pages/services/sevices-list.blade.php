@@ -47,12 +47,14 @@ $meta_description = Illuminate\Support\Str::limit(strip_tags($metaDesc), 160);
                                             <div class="title">
                                                 {{ $service->title }}
                                             </div>
-                                            @if($service->short_content)
+                                            @if($service->subtitle)
                                             <p>
-                                                {{ Str::limit($service->short_content, 100) }}
+                                                {{ Str::limit($service->subtitle, 100) }}
                                             </p>
                                             @else
-                                            {!! clean_html_content(Str::limit($service->content, 100)) !!}
+                                            <p>
+                                                {!! clean_html_content(Str::limit($service->short_content, 100)) !!}
+                                            </p>
                                             @endif
                                         </div>
                                         <div class="readmore">
