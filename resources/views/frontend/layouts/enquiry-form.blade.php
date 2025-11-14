@@ -17,9 +17,8 @@
     <!-- Filled Address Blocks -->
     <div class="form-group mt-1 kondapur_address">
         <div class="alert alert-secondary">
-            <strong>Apollo Kondapur Address:</strong><br>
-           
-            <p class="mb-0">Gramakautam, Plot No.1, Plot No.6, Kothaguda Village Serilingampally, M, 2-34/2, Gachibowli - Miyapur Rd, Kondapur, Hyderabad, Telangana 500084</p>
+            <h5>Apollo Kondapur Address:</h5>           
+            <p class="mb-0"><strong>Gramakautam</strong><br> Plot No.1, Plot No.6,<br> Kothaguda Village Serilingampally, <br> M, 2-34/2, Gachibowli - Miyapur Rd, <br>Kondapur, Hyderabad, Telangana 500084</p>
             <p class="mb-0">
                 <strong>Timing :</strong> 10AM - 3AM
             </p>
@@ -28,8 +27,8 @@
 
     <div id="nanakramguda_address" class="form-group mt-1 nanakramguda_address" style="display: none;">
         <div class="alert alert-secondary">
-            <strong>Nanakramguda Address:</strong><br>
-            <p class="mb-0">Survey No. 55/E, Nanakramguda Circle, <br>Gachibowli, Nanakramguda, Hyderabad, <br>Telangana 500032</p>
+            <h5>Nanakramguda Address:</h5>
+            <p class="mb-0">Survey No. 55/E, Nanakramguda Circle, <br>Gachibowli, Nanakramguda, Hyderabad, Telangana 500032</p>
             <p class="mb-0">
                 <strong>Timing :</strong> 4PM - 6PM
             </p>
