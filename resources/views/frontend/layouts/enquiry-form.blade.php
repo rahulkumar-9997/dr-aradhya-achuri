@@ -6,19 +6,19 @@
     <div class="form-group mt-0">
         <label>
             <input type="radio" name="address_option" value="Gramakautam, Plot No.1, Plot No.6, Kothaguda Village Serilingampally, M, 2-34/2, Gachibowli - Miyapur Rd, Kondapur, Hyderabad, Telangana 500084" checked>
-            Apollo Kondapur
+           Apollo Fertility , Kondapur
         </label>
         <label class="ms-3">
             <input type="radio" name="address_option" value="Survey No. 55/E, Nanakramguda Circle, Gachibowli, Nanakramguda, Hyderabad, Telangana 500032">
-            Nanakramguda
+            Medics Fertility , Nanakramguda
         </label>
     </div>
 
     <!-- Filled Address Blocks -->
     <div class="form-group mt-1 kondapur_address">
         <div class="alert alert-secondary">
-            <h5>Apollo Kondapur Address:</h5>           
-            <p class="mb-0"><strong>Gramakautam</strong><br> Plot No.1, Plot No.6,<br> Kothaguda Village Serilingampally, <br> M, 2-34/2, Gachibowli - Miyapur Rd, <br>Kondapur, Hyderabad, Telangana 500084</p>
+            <h5>Apollo Fertility, Kondapur Address:</h5>           
+            <p class="mb-0">Plot No.1, Plot No.6,<br> Kothaguda Village Serilingampally, <br> M, 2-34/2, Gachibowli - Miyapur Rd, <br>Kondapur, Hyderabad, Telangana 500084</p>
             <p class="mb-0">
                 <strong>Timing :</strong> 10AM - 3AM
             </p>
@@ -27,7 +27,7 @@
 
     <div id="nanakramguda_address" class="form-group mt-1 nanakramguda_address" style="display: none;">
         <div class="alert alert-secondary">
-            <h5>Nanakramguda Address:</h5>
+            <h5>Medics Fertility , Nanakramguda Address:</h5>
             <p class="mb-0">Survey No. 55/E, Nanakramguda Circle, <br>Gachibowli, Nanakramguda, Hyderabad, Telangana 500032</p>
             <p class="mb-0">
                 <strong>Timing :</strong> 4PM - 6PM

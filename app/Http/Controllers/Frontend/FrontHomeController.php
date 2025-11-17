@@ -116,7 +116,7 @@ class FrontHomeController extends Controller
     public function EnquirySubmitForm(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'selected_address' => 'required|string',
+			'selected_address' => 'required|string',
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
             'phone_number' => 'required|regex:/^[6-9][0-9]{9}$/',
@@ -143,7 +143,7 @@ class FrontHomeController extends Controller
 
         $validated = $validator->validated();
         $data = [
-            'selected_address' => $validated['selected_address'],
+			'selected_address' => $validated['selected_address'],
             'name' => $validated['name'],
             'email' => $validated['email'],
             'phone' => $validated['phone_number'] ?? null,
@@ -151,9 +151,9 @@ class FrontHomeController extends Controller
             'message' => $validated['message'] ?? null,
         ];
         try {
-			Mail::to([
-				'akshat@gdsons.co.in',
+			Mail::to([				
 				'info.draradhyaachuri@gmail.com',
+				'akshat@gdsons.co.in',
 			])->send(new EnquiryMail($data));
         } catch (\Exception $e) {
             Log::error('Failed to send enquiry email: ' . $e->getMessage());
@@ -197,7 +197,11 @@ class FrontHomeController extends Controller
         ]);
     }
 
-    public function AjaxEnquiryForm(Request $request)
+    public function faq(){
+         return view('frontend.pages.faq.index');
+    }
+	
+	public function AjaxEnquiryForm(Request $request)
     {
         $formView = view('frontend.layouts.enquiry-form')->render();
         return response()->json([
@@ -208,10 +212,6 @@ class FrontHomeController extends Controller
             'title' => 'Enquiry Form',
             'size'  => 'lg',
         ]);
-    }
-
-    public function faq(){
-         return view('frontend.pages.faq.index');
     }
     
 }

@@ -37,7 +37,7 @@
                                     <h6 class="title"><i class="ti-map-alt"></i>Our Clinics</h6>
                                     <p class="mb-0">
                                         <a href="https://goo.gl/maps/dpEkxCsgTW2dDjkk9">
-                                            <strong>Medics Fertility Clinic</strong> <br>Survey No. 55/E, Nanakramguda Circle <br>Nanakramguda, Gachibowli, Telangana 500032
+                                            <strong>Medics Fertility , Nanakramguda</strong> <br>Survey No. 55/E, Nanakramguda Circle <br>Nanakramguda, Gachibowli, Telangana 500032
                                         </a>
                                     </p>
                                     <p>
@@ -49,7 +49,7 @@
 
                                     <p class="mb-0">
                                         <a href="https://goo.gl/maps/dpEkxCsgTW2dDjkk9">
-                                           <strong>Gramakautam</strong>, <br>Plot No.1, Plot No.6, <br>Kothaguda Village Serilingampally, <br>M, 2-34/2, Gachibowli - Miyapur Rd, <br>Kondapur, Hyderabad, Telangana 500084
+                                           <strong>Apollo Fertility , Kondapur</strong>, <br>Plot No.1, Plot No.6, <br>Kothaguda Village Serilingampally, <br>M, 2-34/2, Gachibowli - Miyapur Rd, <br>Kondapur, Hyderabad, Telangana 500084
                                         </a>
                                         
                                     </p>
