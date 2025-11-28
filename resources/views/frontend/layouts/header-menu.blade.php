@@ -57,7 +57,7 @@
                         <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
                         <li class="{{ request()->routeIs('about-us') ? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
                         @if(isset($menuServices))
-                        <li class="{{ request()->routeIs('services.details*') ? 'active' : '' }}">
+                        <li class="service-menu-sub mobile-service {{ request()->routeIs('services.details*') ? 'active' : '' }}">
                             <a href="javascript:;">Services <i class="fas fa-plus"></i></a>
                             <ul class="sub-menu">
                                 <li class="add-menu-left">
