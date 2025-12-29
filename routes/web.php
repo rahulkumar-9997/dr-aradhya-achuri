@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontHomeController;
+use App\Http\Controllers\Frontend\SiteMapController;
 use App\Http\Middleware\TrackVisitor;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\ForgotPasswordController;
@@ -27,7 +28,7 @@ Route::get('ajax-testimonial/{id}', [FrontHomeController::class, 'AjaxTestimonia
 Route::get('faq', [FrontHomeController::class, 'faq'])->name('faq');
 Route::get('/images/{folder}/{image}', [FrontHomeController::class, 'resizeImage']);
 Route::get('/ajax/enquiry-form', [FrontHomeController::class, 'AjaxEnquiryForm'])->name('ajax.enquiry.form');
-
+Route::get('/sitemap.xml', [SiteMapController::class, 'index'])->name('sitemap.xml');
 Route::prefix('admin')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm']);
     Route::post('/login', [LoginController::class, 'login'])->name('login');
