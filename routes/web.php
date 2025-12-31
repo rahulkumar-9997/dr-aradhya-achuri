@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontHomeController;
-use App\Http\Controllers\Frontend\SiteMapController;
 use App\Http\Middleware\TrackVisitor;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\ForgotPasswordController;
@@ -14,6 +13,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\ServicesController;
+use App\Http\Controllers\Frontend\SiteMapController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
 Route::get('about-us', [FrontHomeController::class, 'aboutUs'])->name('about-us');

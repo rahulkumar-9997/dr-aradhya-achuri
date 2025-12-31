@@ -85,6 +85,17 @@
                      <ul>
                         <li><a href="{{ route('manage-services.index') }}">Services</a></li>
                      </ul>
+                  </li>
+                  <li class="submenu">
+                     <a href="javascript:void(0);">
+                        <i class="ti ti-brand-apple fs-16 me-2"></i>
+                        <span>Manage Lead</span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul>
+                        <li><a href="{{ route('manage-services.index') }}">Dashboard</a></li>
+                        <li><a href="{{ route('manage-services.index') }}">Dashboard</a></li>
+                     </ul>
                   </li>                
                   
                   
