@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\ServicesController;
+use App\Http\Controllers\Backend\LeadController;
 use App\Http\Controllers\Frontend\SiteMapController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
@@ -60,4 +61,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('menu/{menu}/item/{item}', [MenuController::class, 'updateItem'])->name('menu.item.update');
     Route::delete('menu/{menu}/item/{item}', [MenuController::class, 'destroyItem'])->name('menu.item.destroy');
     Route::post('menus/{menu}/items/order', [MenuController::class, 'orderItems'])->name('menus.items.order');
+    Route::resource('manage-lead', LeadController::class);
+    Route::prefix('manage-lead')->group(function () {
+        Route::resource('form', LeadController::class);
+    });
+    
 });

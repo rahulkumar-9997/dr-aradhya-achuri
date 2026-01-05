@@ -34,5 +34,8 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'api' => [
+        'token' => env('API_TOKEN', 'leads_wizards_9fc3b94b8ba5f69794461e3a694478181d5ba668b14b557b68f63152bcafd60d'),
+    ],
 
 ];
