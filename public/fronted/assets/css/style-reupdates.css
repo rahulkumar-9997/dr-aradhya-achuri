@@ -4804,6 +4804,7 @@ fieldset:disabled .btn {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    position: relative;/*rahul add this*/
   }
 
   .navbar-expand-lg .navbar-toggler {
@@ -21420,7 +21421,8 @@ blockquote p {
 .menu-links .nav>li {
   margin: 0px;
   font-weight: 400;
-  position: relative;
+  /* position: relative; */
+  position: static;
 }
 
 .menu-links .nav>li.has-mega-menu {
@@ -23865,6 +23867,7 @@ service-inner-area .service4-boxarea .img1 img {
   }
   .menu-links .nav>li.service-menu-sub.mobile-service .sub-menu {
       width: 100%; 
+      position: relative;
   }
   .service-menu-sub  .sub-menu .add-menu-left ul {
       columns: auto;
@@ -23907,16 +23910,26 @@ a.call-now-text:focus{
 }
 
 .menu-links .nav>li.service-menu-sub .sub-menu {
-    width: 550px; 
+    /* width: 550px; 
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(30, 10, 58, 0.04); */
     border-radius: 10px;
     box-shadow: 0px 6px 12px rgba(30, 10, 58, 0.04);
+    width: 120%;
+    left: 0 !important;
+    right: 0;
+    position: absolute;
+    left: 0 !important;
+    right: 0;
+    position: absolute;
+    border-bottom: 4px solid #fa9189;
 }
 
 /* Inside UL ko two columns bana de */
 .sub-menu .add-menu-left ul {
-    columns: 2;   
-    -webkit-columns: 2; 
-    -moz-columns: 2; 
+    columns: 3;   
+    -webkit-columns: 3; 
+    -moz-columns: 3; 
     column-gap: 20px; 
     padding: 10px 10px;
 }
@@ -23939,6 +23952,12 @@ a.call-now-text:focus{
     left: 1px;
      margin-top: 1px;
     color: var(--bs-theme-primary);
+}
+
+.menu .navbar .dropdown-menu.destination-mega-drop {
+    width: 95%;
+    left: 0 !important;
+    right: 0;
 }
 
     
