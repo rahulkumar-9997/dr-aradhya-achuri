@@ -123,6 +123,14 @@
                                 <div class="media-col mt-6 ng-star-inserted">
                                     <img alt="correct tick" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
+                                       <p>										
+                                            Certification course in aesthetic gynecology , Mumbai
+										</p>
+                                    </div>
+                                </div>
+                                <div class="media-col mt-6 ng-star-inserted">
+                                    <img alt="correct tick" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
+                                    <div class="media-body ng-star-inserted">
                                        <p>
 										Diploma in Reproductive Medicine, Germany (Kiel School of Reproductive Medicine)
 										</p>
@@ -187,14 +195,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="media-col mt-3 ng-star-inserted">
-                                    <img alt="Careful While Travelling" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
-                                    <div class="media-body ng-star-inserted">
-                                        <p>
-                                            Certification course in aesthetic gynecology , Mumbai
-                                        </p>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <!--second-->
                         </div>
