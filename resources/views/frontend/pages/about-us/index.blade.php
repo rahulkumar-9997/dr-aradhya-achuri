@@ -124,7 +124,7 @@
                                     <img alt="correct tick" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                        <p>										
-                                            Certification course in Aesthetic Gynecology , Mumbai
+                                            Certification Course in Aesthetic Gynecology , Mumbai
 										</p>
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                     <img alt="correct" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
-                                            Fellowship in Assisted reproductive technology, International Association Of Assisted Reproductive Technology
+                                            Fellowship in Assisted Reproductive Technology, International Association Of Assisted Reproductive Technology
                                         </p>
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@
                                     <img alt="Traditional Indian Food" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
-                                            Senior resident - Sri Venkateshwara Medical College, Tirupati, AP
+                                            Senior Resident - Sri Venkateshwara Medical College, Tirupati, AP
                                         </p>
                                     </div>
                                 </div>
