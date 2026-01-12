@@ -1,4 +1,5 @@
 <!-- Footer ==== -->
+@include('frontend.layouts.addres-form')
 <footer class="footer" style="background-image: linear-gradient(rgba(250, 145, 137, 0.5), rgba(250, 145, 137, 0.5)), url({{ asset('fronted/assets/images/background/footer.jpg') }});">
     <div class="footer-top">
         <div class="container">

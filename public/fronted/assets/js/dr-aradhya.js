@@ -61,7 +61,8 @@
                 if (response.status === 'success') {
                     form[0].reset();
                     $('#commanModel').modal('hide');
-                    showNotificationAll(response.message || 'Enquiry submitted successfully.', 'success');
+                    /*showNotificationAll(response.message || 'Enquiry submitted successfully.', 'success');*/
+                    $("#successModalEnquiry").modal('show');    
                 }
             },
             error: function (xhr) {

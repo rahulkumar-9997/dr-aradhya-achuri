@@ -124,7 +124,7 @@
                                     <img alt="correct tick" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                        <p>										
-                                            Certification course in aesthetic gynecology , Mumbai
+                                            Certification course in Aesthetic Gynecology , Mumbai
 										</p>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                     <img alt="correct" class="me-3 rightIconSize ng-star-inserted" src="{{asset('fronted/assets/aradhya/correctTick.svg')}}" loading="lazy" decoding="async">
                                     <div class="media-body ng-star-inserted">
                                         <p>
-                                            ICOG certification course in reproductive medicine, Chennai
+                                            ICOG Certification Course in Reproductive Medicine, Chennai
                                         </p>
                                     </div>
                                 </div>
