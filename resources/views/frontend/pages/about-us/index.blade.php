@@ -55,7 +55,7 @@
                             <div class="feature-container feature-bx1 feature2 ab-page-feature">
                                 <div class="icon-content">
                                     <h4 class="ttr-title">
-                                        Proven expertise in IVF, hysteroscopy & endometriosis
+                                        Proven expertise in IVF, Hysteroscopy, Laparoscopy & Endometriosis
 
                                     </h4>
                                 </div>

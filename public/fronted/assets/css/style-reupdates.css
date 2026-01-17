@@ -17696,7 +17696,7 @@ label.error {
 }
 .main-banner p{
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 32px;
 }
 
 .main-banner .title-ext.text-secondary {
@@ -23958,6 +23958,12 @@ a.call-now-text:focus{
     width: 95%;
     left: 0 !important;
     right: 0;
+}
+.banner-service-link .banner-link{
+    border-radius: 10px;
+    /* padding: 0 5px 0 5px; */
+    color: #fa9189;
+    font-weight: 600;
 }
 
     

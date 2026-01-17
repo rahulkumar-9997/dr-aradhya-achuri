@@ -7,9 +7,10 @@
             </div>
             <div class="modal-body">
                 <div class="alert alert-success">
-                    <p><strong>Thank you for sharing your details with us. Someone from our team will get in touch with you. Meanwhile you can reach us at any of these 2 locations.</strong></p>
+                    <p><strong>Thank you for sharing your details with us. Someone from our team will get in touch with
+                            you. Meanwhile you can reach us at any of these 2 locations.</strong></p>
                 </div>
-                <div class="locations mt-3">                    <!--  -->
+                <div class="locations mt-3">
                     <div class="form-group mt-1 kondapur_address">
                         <div class="alert alert-secondary">
                             <h5>Apollo Fertility, Kondapur Address:</h5>
