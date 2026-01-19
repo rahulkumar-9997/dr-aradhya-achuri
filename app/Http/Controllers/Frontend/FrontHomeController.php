@@ -103,6 +103,14 @@ class FrontHomeController extends Controller
         return view('frontend.pages.services.services-details', compact('services', 'servicesList'));
     }
 
+    public function bannerServicesList($slug){
+        $bannerService = BannerService::with(['serviceLinks.service'])
+                ->where('slug', $slug)
+                ->firstOrFail();
+        //return response()->json($bannerService);
+        return view('frontend.pages.banner-services.banner-services-details', compact('bannerService'));
+    }
+
     
     public function blogList(){
         $blogs = Blog::orderBy('id', 'desc')->where('status', 'published')->paginate(30);

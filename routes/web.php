@@ -21,7 +21,7 @@ Route::get('/', [FrontHomeController::class, 'home'])->name('home');
 Route::get('about-us', [FrontHomeController::class, 'aboutUs'])->name('about-us');
 Route::get('services', [FrontHomeController::class, 'servicesList'])->name('services');
 Route::get('services/{slug}', [FrontHomeController::class, 'servicesDetails'])->name('services.details');
-Route::get('/{slug}', [FrontHomeController::class, 'show'])->name('banner.service');
+Route::get('/{slug}', [FrontHomeController::class, 'bannerServicesList'])->name('banner.service');
 
 Route::get('blog', [FrontHomeController::class, 'blogList'])->name('blog');
 Route::get('blog/{slug}', [FrontHomeController::class, 'blogDetails'])->name('blog.details');
