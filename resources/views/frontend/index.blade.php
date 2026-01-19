@@ -23,27 +23,19 @@ $metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri
 									</span>
 									Care -->
                   </h1>
+                  @if (!empty($data['bannerServices']) && $data['bannerServices']->count() > 0)
                   <p class="banner-1-text">
-                        Fertility Treatment | 
-                        <span class="banner-service-link">
-                           <a class="banner-link" href="https://www.draradhyaachuri.com/services/ivf-in-vitro-fertilization">IVF</a>
-                        </span>
-                        • 
-                        <span class="banner-service-link">
-                           <a class="banner-link" href="https://www.draradhyaachuri.com/services/iui-intrauterine-insemination">IUI</a>
-                        </span>
-                        • Ovulation Induction
-                        Laparoscopy & Hysteroscopy | PCOS Management | Recurrent Pregnancy Loss |                        
-                        <span class="banner-service-link">
-                           <a class="banner-link" href="https://www.draradhyaachuri.com/services/urinary-leakage">Urinary Incontinence (Urinary Leak)</a>
-                        </span>
-                        | 
-                        <span class="banner-service-link">
-                           <a class="banner-link" href="https://www.draradhyaachuri.com/services/vaginal-rejuvenation-vaginoplasty">
-                              Vaginismus Treatment
-                           </a>
-                        </span>
+                     @foreach($data['bannerServices'] as $bannerService)
+                        @if($bannerService->has_services)
+                           <span class="banner-service-link">
+                              <a class="banner-link" href="{{ url($bannerService->slug) }}">{{ $bannerService->title }}</a>
+                           </span>
+                        @else
+                           {{ $bannerService->title }}
+                        @endif                        
+                     @endforeach
                   </p>
+                  @endif
                   <a href="{{ route('contact-us') }}" class="btn btn-primary banner-enquiry shadow">Contact Us<i class="btn-icon-bx fas fa-chevron-right"></i></a>
                </div>
 

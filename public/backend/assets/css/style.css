@@ -11588,8 +11588,8 @@ span.select2-container.select2-container--default.select2-container--open {
 .select2-container--classic .select2-selection--multiple .select2-selection__choice,
 .select2-container--default .select2-selection--multiple .select2-selection__choice,
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-  background-color: #155EEF;
-  border-color: #155EEF;
+  background-color: #fc6c61;
+  border-color: #fc6c61;
   color: #ffffff;
 }
 
@@ -16581,9 +16581,10 @@ div#global-loader .whirly-loader:not(:required) {
   /* background: rgba(254, 159, 67, 0.08);
   border-radius: 5px; */
   color: #000000;
+  font-weight: 600;
 }
 .sidebar .sidebar-menu > ul > li.submenu-open ul > li.active a span, .sidebar .sidebar-menu > ul > li.submenu-open ul > li.active a i, .settings-sidebar .sidebar-menu > ul > li.submenu-open ul > li.active a span, .settings-sidebar .sidebar-menu > ul > li.submenu-open ul > li.active a i {
-  color: #000000;
+  color: #FE9F43;
 }
 .sidebar .sidebar-menu > ul > li.submenu-open .submenu-hdr, .settings-sidebar .sidebar-menu > ul > li.submenu-open .submenu-hdr {
   font-weight: 700;
@@ -16605,7 +16606,7 @@ div#global-loader .whirly-loader:not(:required) {
   border-radius: 50px 0 0px 50px;
 }
 .sidebar .sidebar-menu > ul > li > ul > li.submenu > a.subdrop span, .sidebar .sidebar-menu > ul > li > ul > li.submenu > a.subdrop i, .settings-sidebar .sidebar-menu > ul > li > ul > li.submenu > a.subdrop span, .settings-sidebar .sidebar-menu > ul > li > ul > li.submenu > a.subdrop i {
-  color: #fff;
+  color: #FE9F43;
 }
 .sidebar .sidebar-menu > ul > li > ul > li.submenu > a.subdrop .menu-arrow, .settings-sidebar .sidebar-menu > ul > li > ul > li.submenu > a.subdrop .menu-arrow {
   background: #FFEDDD;
@@ -16665,7 +16666,7 @@ div#global-loader .whirly-loader:not(:required) {
   padding-bottom: 4px;
   font-size: 14px;
   font-weight: 400;
-  color: #fff;
+  color: #a3aab0;
   padding: 8px 10px 8px 30px;
 }
 .sidebar .sidebar-menu .submenu-open .submenu ul li a::after, .settings-sidebar .sidebar-menu .submenu-open .submenu ul li a::after {
@@ -16684,11 +16685,11 @@ div#global-loader .whirly-loader:not(:required) {
   left: 15px;
 }
 .sidebar .sidebar-menu .submenu-open .submenu ul li a:hover, .settings-sidebar .sidebar-menu .submenu-open .submenu ul li a:hover {
-  color: #fff;
+  color: #FE9F43;
 }
 .sidebar .sidebar-menu .submenu-open .submenu ul li a:hover:after, .settings-sidebar .sidebar-menu .submenu-open .submenu ul li a:hover:after {
-  background: #fff;
-  border: 2px solid #fff;
+  background: #FE9F43;
+  border: 2px solid #FFEDDD;
 }
 .sidebar .sidebar-menu .menu-arrow, .settings-sidebar .sidebar-menu .menu-arrow {
   display: -webkit-box;
@@ -17083,8 +17084,7 @@ body.mini-sidebar.expand-menu .sidebar .sidebar-menu > ul > li.submenu-open ul l
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .sidebar .sidebar-logo .logo img {
-  width: 185px;
-  border-radius: 5px;
+  width: 180px;
 }
 .sidebar .sidebar-logo .logo-small {
   display: none;

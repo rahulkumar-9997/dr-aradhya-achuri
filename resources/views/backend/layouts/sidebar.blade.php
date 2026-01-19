@@ -17,10 +17,20 @@
          <ul>
             <li class="submenu-open">
                <ul>
-                  <li class="active">
-                     <a href="{{ route('dashboard') }}">
+                  <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                     <a href="{{ route('dashboard') }}" class="firsta">
+                        <span class="shape1"></span>
+                        <span class="shape2"></span>
                         <i class="ti ti-layout-grid fs-16 me-2"></i>
                         <span>Dashboard</span>
+                     </a>
+                  </li>
+                  <li class="{{ request()->routeIs('banner-services.*') ? 'active' : '' }}">
+                     <a href="{{ route('banner-services.index') }}" class="firsta">
+                        <span class="shape1"></span>
+                        <span class="shape2"></span>
+                        <i class="ti ti-layout-grid fs-16 me-2"></i>
+                        <span>Home Banner</span>
                      </a>
                   </li>
                   <!-- <li class="submenu">
@@ -46,43 +56,51 @@
                      </ul>
                   </li> -->
                   
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
+                  <li class="submenu {{ request()->routeIs('manage-blog.*') ? 'active' : '' }}">
+                     <a href="javascript:void(0);" class="firsta">
+                        <span class="shape1"></span>
+                        <span class="shape2"></span>
                         <i class="ti ti-brand-blogger fs-16 me-2"></i>
                         <span>Manage Blog</span>
                         <span class="menu-arrow"></span>
                      </a>
-                     <ul>
+                     <ul style="{{ request()->routeIs('manage-blog.*') ? 'display:block;' : '' }}">
                         <li><a href="{{ route('manage-blog.index') }}">Blog</a></li>
                      </ul>
                   </li>
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
+                  <li class="submenu {{ request()->routeIs('manage-gallery.*') ? 'active' : '' }}">
+                     <a href="javascript:void(0);" class="firsta">
+                        <span class="shape1"></span>
+                        <span class="shape2"></span>
                         <i class="ti ti-brand-appgallery fs-16 me-2"></i>
                         <span>Manage Gallery</span>
                         <span class="menu-arrow"></span>
                      </a>
-                     <ul>
+                     <ul style="{{ request()->routeIs('manage-gallery.*') ? 'display:block;' : '' }}">
                         <li><a href="{{ route('manage-gallery.index') }}">Gallery</a></li>
                      </ul>
                   </li>                
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
+                  <li class="submenu {{ request()->routeIs('manage-testimonials.*') ? 'active' : '' }}">
+                     <a href="javascript:void(0);" class="firsta">
+                        <span class="shape1"></span>
+                        <span class="shape2"></span>
                         <i class="ti ti-brand-apple fs-16 me-2"></i>
                         <span>Manage Testimonials</span>
                         <span class="menu-arrow"></span>
                      </a>
-                     <ul>
+                     <ul style="{{ request()->routeIs('manage-testimonials.*') ? 'display:block;' : '' }}">
                         <li><a href="{{ route('manage-testimonials.index') }}">Testimonials</a></li>
                      </ul>
                   </li>    
-                  <li class="submenu">
-                     <a href="javascript:void(0);">
+                  <li class="submenu {{ request()->routeIs('manage-services.*') ? 'active' : '' }}">
+                     <a href="javascript:void(0);" class="firsta">
+                        <span class="shape1"></span>
+                        <span class="shape2"></span>
                         <i class="ti ti-brand-apple fs-16 me-2"></i>
                         <span>Manage Services</span>
                         <span class="menu-arrow"></span>
                      </a>
-                     <ul>
+                     <ul style="{{ request()->routeIs('manage-services.*') ? 'display:block;' : '' }}">
                         <li><a href="{{ route('manage-services.index') }}">Services</a></li>
                      </ul>
                   </li>  

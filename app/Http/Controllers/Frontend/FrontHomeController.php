@@ -11,6 +11,8 @@ use App\Models\Blog;
 use App\Models\Testimonial;
 use App\Models\Gallery;
 use App\Models\Service;
+use App\Models\BannerService;
+
 
 class FrontHomeController extends Controller
 {
@@ -48,7 +50,19 @@ class FrontHomeController extends Controller
     }
 
     public function home(){
-        
+        $data['bannerServices'] = BannerService::with(['serviceLinks' => function($query) {
+                $query->select('id', 'banner_services_id', 'services_id')
+                    ->with(['service' => function($q) {
+                        $q->select('id', 'title', 'slug');
+                    }]);
+            }])
+            ->select('id', 'title', 'slug')
+            ->orderBy('id', 'asc')
+            ->get()
+            ->map(function($banner) {
+                $banner->has_services = $banner->serviceLinks->isNotEmpty();
+                return $banner;
+        });
         $data['blog'] = Blog::where('status', 'Published')->orderBy('created_at', 'desc')
         ->inRandomOrder()
         ->limit(6)
@@ -61,7 +75,7 @@ class FrontHomeController extends Controller
         ->inRandomOrder()
         ->limit(30)
         ->get();
-        //return response()->json($data['blog']);
+        //return response()->json($data['bannerServices']);
         return view('frontend.index', compact('data'));
     }
 
