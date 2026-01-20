@@ -104,9 +104,7 @@ class FrontHomeController extends Controller
     }
 
     public function bannerServicesList($slug){
-        $bannerService = BannerService::with(['serviceLinks.service'])
-                ->where('slug', $slug)
-                ->firstOrFail();
+        $bannerService = BannerService::with(['serviceLinks.service'])->where('slug', $slug)->firstOrFail();
         //return response()->json($bannerService);
         return view('frontend.pages.banner-services.banner-services-details', compact('bannerService'));
     }

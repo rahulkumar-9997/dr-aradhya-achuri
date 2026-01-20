@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    /* Open Add Lead Form Modal */
+    var leadFormRoute = window.route.leadFormList;
+    loadFormList();
     $(document).on("click", 'a[data-ajax-lead-add-popup="true"]', function () {
         var title = $(this).data("title");
         var size = $(this).data("size") == "" ? "md" : $(this).data("size");
@@ -159,50 +162,46 @@ $(document).ready(function () {
             addField();
         }
     });
-});
 
-/* Form submit */
-/* Form submit */
-$(document)
-    .off("submit", "#addLeadForm")
-    .on("submit", "#addLeadForm", function (event) {
-        event.preventDefault();
-        var form = $(this);
-        var submitButton = form.find('button[type="submit"]');
-        $(".form-control").removeClass("is-invalid");
-        $(".invalid-feedback").empty();
-        submitButton
-            .prop("disabled", true)
-            .html(
-                '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...'
-            );
-        var formData = new FormData(this);
-        var fieldOptions = [];
-        $(".field-row").each(function (index) {
-            var $row = $(this);
-            var $type = $row.find(".field-type-select");
-            var $options = $row.find(".field-options");
-            if (
-                $type.val() === "select" ||
-                $type.val() === "radio" ||
-                $type.val() === "checkbox"
-            ) {
-                fieldOptions[index] = $options.val();
-            } else {
-                fieldOptions[index] = "";
-            }
-        });
-        fieldOptions.forEach(function (value, index) {
-            formData.append("field_options[]", value);
-        });
+    /* Form submit */
+    $(document).off("submit", "#addLeadForm").on("submit", "#addLeadForm", function (event) {
+            event.preventDefault();
+            var form = $(this);
+            var submitButton = form.find('button[type="submit"]');
+            $(".form-control").removeClass("is-invalid");
+            $(".invalid-feedback").empty();
+            submitButton
+                .prop("disabled", true)
+                .html(
+                    '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...'
+                );
+            var formData = new FormData(this);
+            var fieldOptions = [];
+            $(".field-row").each(function (index) {
+                var $row = $(this);
+                var $type = $row.find(".field-type-select");
+                var $options = $row.find(".field-options");
+                if (
+                    $type.val() === "select" ||
+                    $type.val() === "radio" ||
+                    $type.val() === "checkbox"
+                ) {
+                    fieldOptions[index] = $options.val();
+                } else {
+                    fieldOptions[index] = "";
+                }
+            });
+            fieldOptions.forEach(function (value, index) {
+                formData.append("field_options[]", value);
+            });
 
-        $.ajax({
-            url: form.attr("action"),
-            type: "POST",
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function (response) {
+            $.ajax({
+                url: form.attr("action"),
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
                 submitButton.prop("disabled", false);
                 submitButton.html("Submit");
 
@@ -219,14 +218,7 @@ $(document)
 
                     if (apiResponse && apiResponse.form) {
                         var formTitle = apiResponse.form.title || "Form";
-                        var formsId = apiResponse.form.formsId || "N/A";
-                        var fieldCount = apiResponse.form.fields
-                            ? apiResponse.form.fields.length
-                            : 0;
-
-                        successMessage = `✅ ${formTitle} created successfully!<br>
-                                     Form ID: ${formsId}<br>
-                                     Total Fields: ${fieldCount}`;
+                        successMessage = `${formTitle} created successfully!`;
                     }
 
                     form[0].reset();
@@ -244,17 +236,12 @@ $(document)
                         close: true,
                         onClick: function () {},
                     }).showToast();
-
-                    if (typeof loadFormList === "function") {
-                        loadFormList();
-                    }
+                    loadFormList();
                 }
             },
             error: function (xhr, status, error) {
                 submitButton.prop("disabled", false);
                 submitButton.html("Submit");
-
-                // Show error toast
                 if (xhr.responseJSON && xhr.responseJSON.message) {
                     Toastify({
                         text: xhr.responseJSON.message,
@@ -266,25 +253,17 @@ $(document)
                         close: true,
                     }).showToast();
                 }
-
-                // Clear previous errors
                 $(".form-control").removeClass("is-invalid");
                 $(".invalid-feedback").empty();
-
-                // Display validation errors
                 var errors = xhr.responseJSON.errors;
                 if (errors) {
                     $.each(errors, function (key, value) {
-                        // Handle array field errors (e.g., field_label.0, field_options.1)
                         if (key.includes(".")) {
                             var parts = key.split(".");
                             var fieldName = parts[0];
                             var index = parts[1];
-
-                            // Find the specific field row
                             var $fieldRow = $(".field-row").eq(index);
                             if ($fieldRow.length) {
-                                // Find the appropriate input and error container
                                 if (fieldName === "field_options") {
                                     $fieldRow
                                         .find(".field-options")
@@ -322,3 +301,50 @@ $(document)
             },
         });
     });
+
+    /**Pagination Click */
+    $(document).on("click", ".form-page-link", function () {
+        const page = $(this).data("page");
+        if (!page || $(this).closest(".page-item").hasClass("disabled")) {
+            return;
+        }
+        currentPage = page;
+        loadFormList(currentPage);
+    });
+    /**Pagination Click */
+
+    function loadFormList(page = 1) {
+        loderShow();
+        $.ajax({
+            url: leadFormRoute,
+            type: "GET",
+            data: {
+                page: page,
+            },
+            success: function (response) {
+                if (response.status === "success" && response.forms_list_html) {
+                    $(".display-forms-list-html").html(
+                        response.forms_list_html
+                    );
+                    feather.replace();
+                    loaderHide();
+                }
+            },
+            error: function (xhr, status, error) {
+                loaderHide();
+                console.error("Error loading form list:", error);
+            },
+            
+        });
+    }
+
+    function loderShow() {
+        $("#loader").show();
+    }
+    function loaderHide() {
+       $("#loader").hide();
+    }
+});
+
+
+

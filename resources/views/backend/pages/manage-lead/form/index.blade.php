@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','Lead List')
+@section('title','Manage Lead Forms')
 @push('styles')
 
 @endpush
@@ -8,7 +8,7 @@
     <div class="page-header">
         <div class="add-item d-flex">
             <div class="page-title">
-                <h4 class="fw-bold">Lead List</h4>
+                <h4 class="fw-bold">Manage Lead Forms</h4>
             </div>
         </div>
         <div class="page-btn">
@@ -25,8 +25,8 @@
     <div class="card">
         <div class="card-body p-2">
             <div class="employee-grid-widget">
-                <div class="row">
-                    
+                <div class="row display-forms-list-html">
+                    @include('backend.pages.manage-lead.form.partials.form-list', ['forms' => $forms, 'pagination' => $pagination])
                 </div>
             </div>
         </div>
@@ -38,5 +38,10 @@
 <!-- modal--->
 @endsection
 @push('scripts')
+<script>
+    window.route = {
+        leadFormList: "{{ route('manage-lead.form.index') }}",
+    };
+</script>
 <script src="{{asset('backend/assets/js/pages/manage-lead/lead-form.js')}}" type="text/javascript"></script>
 @endpush

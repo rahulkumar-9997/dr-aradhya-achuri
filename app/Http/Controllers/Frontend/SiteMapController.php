@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use App\Models\Blog;
 use App\Models\Service;
+use App\Models\BannerService;
 use Carbon\Carbon;
 class SiteMapController extends Controller
 {
@@ -43,7 +44,7 @@ class SiteMapController extends Controller
         });
 
         /* ------------------
-         | Doctors
+         | Service
          ------------------*/
         Service::get()->each(function ($services) use (&$urls) {
             $urls[] = [
@@ -51,7 +52,23 @@ class SiteMapController extends Controller
                 'lastmod' => optional($services->updated_at)->toDateString(),
                 'priority' => '0.7'
             ];
-        });       
+        });
+        
+        /* ------------------
+         | Banner Service
+         ------------------*/
+        BannerService::whereNotNull('slug')
+            ->where('slug', '!=', '')
+            ->whereHas('serviceLinks')
+            ->select('id', 'slug', 'updated_at')
+            ->each(function ($bannerService) use (&$urls) {
+
+                $urls[] = [
+                    'loc' => route('banner.service', $bannerService->slug),
+                    'lastmod' => optional($bannerService->updated_at)->toDateString(),
+                    'priority' => '0.7',
+                ];
+            });
 
         return response()
             ->view('frontend.sitemap.xml', compact('urls'))

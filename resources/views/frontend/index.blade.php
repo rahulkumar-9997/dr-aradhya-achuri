@@ -27,9 +27,11 @@ $metaTitle = Str::limit('Best Fertility Doctor in Hyderabad - Dr. Aradhya Achuri
                   <p class="banner-1-text">
                      @foreach($data['bannerServices'] as $bannerService)
                         @if($bannerService->has_services)
+                           
                            <span class="banner-service-link">
-                              <a class="banner-link" href="{{ url($bannerService->slug) }}">{{ $bannerService->title }}</a>
+                              <a class="banner-link" href="{{ url($bannerService->slug) }}">{{ $bannerService->title }} </a> 
                            </span>
+                           <span class="separator"> | </span>
                         @else
                            {{ $bannerService->title }}
                         @endif                        

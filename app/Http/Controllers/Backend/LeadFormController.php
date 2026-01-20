@@ -1,45 +1,52 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use App\Services\ApiService;
 use Illuminate\Support\Facades\Log;
-class LeadController extends Controller
+
+class LeadFormController extends Controller
 {
     public function index()
     {
         try {
             $apiService = new ApiService();
-            $response = $apiService->makeRequest('GET', 'https://leads.wizards.co.in/api/v1/form');
+            $page  = request()->get('page', 1);
+            $response = $apiService->makeRequest(
+                'GET',
+                'https://leads.wizards.co.in/api/v1/form',
+                [
+                    'page'  => $page,
+                    'limit' => 12,
+                ]
+            );            
+            //Log::info( "Forms fetched successfully" . json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) );
             $forms = [];
+            $pagination = [];
+
             if ($response['success']) {
                 $apiData = $response['data'] ?? [];
-                Log::info(
-                    "Forms fetched successfully\n" .
-                    json_encode($apiData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
-                );
-                $forms = $apiData['response']['forms'] ?? [];                
-            } else {
-                Log::error('Failed to fetch forms from API', ['error' => $response['error']]);
-                return view('backend.pages.manage-lead.dashboard.index', [
-                    'forms' => [],
-                    'error' => 'Failed to load forms: ' . $response['error']
+                $forms = $apiData['response']['forms'] ?? [];
+                $pagination = $apiData['response'] ?? [];
+            }
+            if (request()->ajax()) {
+                return response()->json([
+                    'status' => 'success',
+                    'forms_list_html' => view(
+                        'backend.pages.manage-lead.form.partials.form-list',
+                        compact('forms', 'pagination')
+                    )->render(),                    
                 ]);
             }
-            
-            return view('backend.pages.manage-lead.dashboard.index', [
-                'forms' => $forms,
-                'pagination' => $apiData['response'] ?? [] 
-            ]);
+            return view('backend.pages.manage-lead.form.index', compact('forms', 'pagination'));
             
         } catch (\Exception $e) {
-            Log::error('Error in forms index method: ' . $e->getMessage());            
-            return view('backend.pages.manage-lead.dashboard.index', [
+            Log::error($e->getMessage());
+            return view('backend.pages.manage-lead.form.index', [
                 'forms' => [],
-                'error' => 'An error occurred while loading forms.'
+                'error' => $e->getMessage(),
             ]);
         }
     }
@@ -48,7 +55,7 @@ class LeadController extends Controller
     {
         $form = '
         <div class="modal-body">
-            <form method="POST" action="' . route('form.store') . '" accept-charset="UTF-8" id="addLeadForm" enctype="multipart/form-data">
+            <form method="POST" action="' . route('manage-lead.form.store') . '" accept-charset="UTF-8" id="addLeadForm" enctype="multipart/form-data">
                 ' . csrf_field() . '
                 <div class="row">                    
                     <div class="col-md-12">
@@ -217,8 +224,7 @@ class LeadController extends Controller
 
             $apiService = new ApiService();
             $response = $apiService->makeRequest('POST', 'https://leads.wizards.co.in/api/v1/form', $formData);
-            if ($response['success']) {
-                // $formsListHtml = view('backend.forms.partials.forms-list', compact('forms'))->render();
+            if ($response['success']) {               
                 Log::info('API Response:', $response);
                 return response()->json([
                     'status' => 'success',
