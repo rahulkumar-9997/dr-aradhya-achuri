@@ -1,7 +1,7 @@
 $(document).ready(function () {
     /* Open Add Lead Form Modal */
     var leadFormRoute = window.route.leadFormList;
-    loadFormList();
+    // loadFormList();
     $(document).on("click", 'a[data-ajax-lead-add-popup="true"]', function () {
         var title = $(this).data("title");
         var size = $(this).data("size") == "" ? "md" : $(this).data("size");
@@ -301,7 +301,203 @@ $(document).ready(function () {
             },
         });
     });
+    /*Edit form js code start here */
+    $(document).on("click", 'a[data-ajax-lead-edit-popup="true"]', function (e) {
+        e.preventDefault();
+        var title = $(this).data("title") || "Edit Form";
+        var size = $(this).data("size") || "md";
+        var url = $(this).data("url") || "";        
+        $("#commanModel .modal-title").html(title);
+        $("#commanModel .modal-dialog").addClass("modal-" + size);
+        
+        $.ajax({
+            url: url,
+            type: "GET",
+            success: function (data) {
+                if (data.status === 'success') {
+                    $("#commanModel .render-data").html(data.form);
+                    $("#commanModel").modal("show");
+                    fieldCounter = $(".field-row").length;
+                    if (fieldCounter === 1) {
+                        $(".remove-field-btn").prop("disabled", true);
+                    } else {
+                        $(".remove-field-btn").prop("disabled", false);
+                    }
+                } else {
+                    Toastify({
+                        text: data.message || 'Failed to load form',
+                        duration: 5000,
+                        gravity: "top",
+                        position: "right",
+                        className: "bg-danger",
+                        escapeMarkup: false,
+                        close: true,
+                    }).showToast();
+                }
+            },
+            error: function (xhr) {
+                var errorMessage = xhr.responseJSON?.message || 'Failed to load form';
+                Toastify({
+                    text: errorMessage,
+                    duration: 5000,
+                    gravity: "top",
+                    position: "right",
+                    className: "bg-danger",
+                    escapeMarkup: false,
+                    close: true,
+                }).showToast();
+            },
+        });
+    });
 
+    /* Update form submit handler to handle both create and update */
+    $(document).off("submit", "#addLeadForm, #editLeadForm").on("submit", "#addLeadForm, #editLeadForm", function (event) {
+        event.preventDefault();        
+        var form = $(this);
+        var submitButton = form.find('button[type="submit"]');
+        var isEditForm = form.attr('id') === 'editLeadForm';        
+        $(".form-control").removeClass("is-invalid");
+        $(".invalid-feedback").empty();
+        
+        submitButton
+            .prop("disabled", true)
+            .html(
+                '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> ' + 
+                (isEditForm ? 'Updating...' : 'Saving...')
+            );        
+        var formData = new FormData(this);
+        var fieldOptions = [];
+        $(".field-row").each(function (index) {
+            var $row = $(this);
+            var $type = $row.find(".field-type-select");
+            var $options = $row.find(".field-options");            
+            if (
+                $type.val() === "select" ||
+                $type.val() === "radio" ||
+                $type.val() === "checkbox"
+            ) {
+                fieldOptions[index] = $options.val();
+            } else {
+                fieldOptions[index] = "";
+            }
+        });        
+        fieldOptions.forEach(function (value, index) {
+            formData.append("field_options[]", value);
+        });
+        $.ajax({
+            url: form.attr("action"),
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                submitButton.prop("disabled", false);
+                submitButton.html(isEditForm ? "Update" : "Submit");
+                if (response.status === "success") {
+                    var successMessage = response.message;
+                    var apiResponse = response.api_response;
+                    if (apiResponse && apiResponse.form) {
+                        var formTitle = apiResponse.form.title || "Form";
+                        successMessage = `${formTitle} ${isEditForm ? 'updated' : 'created'} successfully!`;
+                    }
+                    form[0].reset();
+                    $("#commanModel").modal("hide");
+                    $(".field_name_append_here").empty();
+                    fieldCounter = 0;
+                    Toastify({
+                        text: successMessage,
+                        duration: 10000,
+                        gravity: "top",
+                        position: "right",
+                        className: "bg-success",
+                        escapeMarkup: false,
+                        close: true,
+                        onClick: function () {},
+                    }).showToast();
+                    loadFormList();
+                } else {
+                    Toastify({
+                        text: response.message || 'Operation failed',
+                        duration: 10000,
+                        gravity: "top",
+                        position: "right",
+                        className: "bg-danger",
+                        escapeMarkup: false,
+                        close: true,
+                    }).showToast();
+                }
+            },
+            error: function (xhr, status, error) {
+                submitButton.prop("disabled", false);
+                submitButton.html(isEditForm ? "Update" : "Submit");                
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    Toastify({
+                        text: xhr.responseJSON.message,
+                        duration: 10000,
+                        gravity: "top",
+                        position: "right",
+                        className: "bg-danger",
+                        escapeMarkup: false,
+                        close: true,
+                    }).showToast();
+                }
+                
+                $(".form-control").removeClass("is-invalid");
+                $(".invalid-feedback").empty();                
+                var errors = xhr.responseJSON?.errors;
+                if (errors) {
+                    $.each(errors, function (key, value) {
+                        if (key.includes(".")) {
+                            var parts = key.split(".");
+                            var fieldName = parts[0];
+                            var index = parts[1];
+                            var $fieldRow = $(".field-row").eq(index);
+                            
+                            if ($fieldRow.length) {
+                                if (fieldName === "field_options") {
+                                    $fieldRow
+                                        .find(".field-options")
+                                        .addClass("is-invalid");
+                                    $fieldRow
+                                        .find(".field_options_error")
+                                        .text(value[0]);
+                                } else if (fieldName === "field_label") {
+                                    $fieldRow
+                                        .find(".field-label")
+                                        .addClass("is-invalid");
+                                    $fieldRow
+                                        .find(".field_label_error")
+                                        .text(value[0]);
+                                } else if (fieldName === "field_type") {
+                                    $fieldRow
+                                        .find(".field-type-select")
+                                        .addClass("is-invalid");
+                                    $fieldRow
+                                        .find(".field_type_error")
+                                        .text(value[0]);
+                                }
+                            }
+                        } else {
+                            var $input = $("#" + key);
+                            var $errorElement = $("#" + key + "_error");
+
+                            if ($input.length && $errorElement.length) {
+                                $input.addClass("is-invalid");
+                                $errorElement.text(value[0]);
+                            }
+                        }
+                    });
+                }
+            },
+        });
+    });
+
+    /*Reset form when modal is hidden*/
+    $(document).on('hidden.bs.modal', '#commanModel', function () {
+        $(".field_name_append_here").empty();
+        fieldCounter = 0;
+    });
+    /*Edit form code start here*/
     /**Pagination Click */
     $(document).on("click", ".form-page-link", function () {
         const page = $(this).data("page");
@@ -312,7 +508,93 @@ $(document).ready(function () {
         loadFormList(currentPage);
     });
     /**Pagination Click */
+    /*Delete form code */
+    $(document).on('click', '.delete-form-btn', function(event) {
+        event.preventDefault();        
+        var deleteUrl = $(this).data('url');
+        var itemName = $(this).data('name') || 'form';        
+        Swal.fire({
+            title: `Are you sure you want to delete this ${itemName}?`,
+            text: "If you delete this, it will be gone forever.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "Cancel",
+            dangerMode: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deleteForm(deleteUrl);
+            }
+        });
+    });
+    function deleteForm(deleteUrl) {
+        $.ajax({
+            url: deleteUrl,
+            type: 'DELETE',
+            dataType: 'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            beforeSend: function() {
+                Swal.fire({
+                    title: 'Deleting...',
+                    text: 'Please wait while we delete the form.',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+            },
+            success: function(response) {
+                Swal.close();                
+                if (response.status === 'success') {
+                    Swal.fire({
+                        title: 'Deleted!',
+                        text: response.message || 'Form has been deleted successfully.',
+                        icon: 'success',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                    setTimeout(function() {
+                        loadFormList();
+                    }, 500);
+                    
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response.message || 'Failed to delete form.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                Swal.close();                
+                var errorMessage = 'Failed to delete form.';
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    errorMessage = xhr.responseJSON.message;
+                } else if (xhr.status === 404) {
+                    errorMessage = 'Form not found. It may have already been deleted.';
+                } else if (xhr.status === 500) {
+                    errorMessage = 'Server error occurred. Please try again later.';
+                }
+                
+                Swal.fire({
+                    title: 'Error!',
+                    text: errorMessage,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                if (xhr.status === 404) {
+                    setTimeout(function() {
+                        loadFormList();
+                    }, 500);
+                }
+            }
+        });
+    }
 
+    /*Delete form code */
     function loadFormList(page = 1) {
         loderShow();
         $.ajax({

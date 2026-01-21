@@ -1,10 +1,10 @@
 @if(isset($forms) && count($forms) > 0)
 @foreach ($forms as $form)
 <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 mb-3">
-    <div class="card h-100">
-        <div class="card-body p-2 d-flex flex-column">
+    <div class="card h-100 bg-white rounded-xl p-6 shadow-md border border-gray-200">
+        <div class="card-body p-3 d-flex flex-column">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h4 class="d-inline-flex align-items-center">
+                <h4 class="d-inline-flex align-items-center text-color-primary">
                     {{ $form['title'] }}
                 </h4>
                 <div class="dropdown">
@@ -12,14 +12,15 @@
                             data-feather="more-vertical" class="feather-user"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end ">
                         <li>
-                            <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal"
-                                data-bs-target="#edit-department"><i data-feather="edit"
-                                    class="info-img me-2"></i>Edit</a>
+                            <a href="javascript:void(0);" class="dropdown-item" data-url="{{ route('manage-lead.form.edit', $form['id']) }}"
+                                data-ajax-lead-edit-popup="true" data-size="lg" data-title="Edit Form">
+                                <i data-feather="edit" class="info-img me-2"></i>Edit
+                            </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="dropdown-item mb-0" data-bs-toggle="modal"
-                                data-bs-target="#delete-modal"><i data-feather="trash-2"
-                                    class="info-img me-2"></i>Delete</a>
+                            <a href="javascript:void(0);" data-url="{{ route('manage-lead.form.destroy', $form['id']) }}" data-name="{{ $form['title'] }}"  class="dropdown-item mb-0 delete-form-btn">
+                                <i data-feather="trash-2" class="info-img me-2"></i>Delete
+                            </a>
                         </li>
                     </ul>
                 </div>

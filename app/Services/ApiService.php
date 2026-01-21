@@ -40,11 +40,11 @@ class ApiService
         try {
             $response = $this->client->request($method, $url, $options);
             $responseBody = $response->getBody()->getContents();
-            Log::info("API Request", [
-                'method' => $method,
-                'url' => $url,
-                'query' => $data
-            ]);
+            // Log::info("API Request", [
+            //     'method' => $method,
+            //     'url' => $url,
+            //     'query' => $data
+            // ]);
             //Log::info("API Request ApiService.php: {$method} {$url}", $data);
             //Log::info("API Response ApiService.php: " . $responseBody);
             $decodedResponse = json_decode($responseBody, true);
