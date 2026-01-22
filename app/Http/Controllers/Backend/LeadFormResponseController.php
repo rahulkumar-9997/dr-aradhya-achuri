@@ -57,9 +57,8 @@ class LeadFormResponseController extends Controller
         }
 
         if (!empty($formData['nextActions'])) {
-            foreach ($formData['nextActions'] as $nextAction) {
-                $nextActionsHtml .= $this->generateNextActionHtml($nextAction);
-            }
+            Log::info('Generating next actions HTML for form ID: ' . ($formData['id'] ?? 'unknown'));
+            $nextActionsHtml = $this->generateNextActionsHtml($formData['nextActions'], count($formData['fields'] ?? []));
         }
         
         return '
@@ -76,6 +75,7 @@ class LeadFormResponseController extends Controller
                 </div>
                 <div class="form-fields-container">
                     ' . $fieldsHtml . '
+                    ' . $nextActionsHtml . '
                 </div>
                 <div class="row"> 
                     <div class="modal-footer pb-0">
@@ -288,5 +288,68 @@ class LeadFormResponseController extends Controller
         
         return $fieldHtml;
     }
+
+    private function generateNextActionsHtml($nextActions, $fieldCount = 0)
+    {
+        $optionsHtml = '<option value="">Select Next Action</option>';
+        
+        foreach ($nextActions as $action) {
+            $statusClass = '';
+            switch ($action['status'] ?? '') {
+                case 'COMPLETED':
+                    $statusClass = 'text-success';
+                    break;
+                case 'CANCELLED':
+                    $statusClass = 'text-danger';
+                    break;
+                case 'SKIPPED':
+                    $statusClass = 'text-warning';
+                    break;
+                case 'PENDING':
+                    $statusClass = 'text-primary';
+                    break;
+                default:
+                    $statusClass = 'text-secondary';
+            }
+            
+            $optionsHtml .= '
+            <option value="' . htmlspecialchars($action['id'] ?? '') . '" data-status="' . htmlspecialchars($action['status'] ?? '') . '" class="' . $statusClass . '">
+                ' . htmlspecialchars($action['label'] ?? '') . ' 
+                <span class="badge bg-' . $this->getStatusBadgeClass($action['status'] ?? '') . ' ms-2">
+                    ' . htmlspecialchars($action['status'] ?? '') . '
+                </span>
+            </option>';
+        }
+        
+        $animationDelay = ($fieldCount * 0.1) . 's';
+        
+        return '
+        <div class="card mb-3 animate__animated animate__fadeInUp" style="animation-delay: ' . $animationDelay . '">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="next_action_id" class="form-label fw-bold">
+                        <i class="ti ti-arrow-right-circle me-2"></i>Next Action
+                    </label>
+                    <select class="form-select form-select-lg" 
+                            id="next_action_id" 
+                            name="next_action_id" 
+                            required>
+                        ' . $optionsHtml . '
+                    </select>
+                    <div class="invalid-feedback">Please select a next action</div>
+                    <div class="form-text">Select what should be done next with this lead</div>
+                </div>
+                
+                <!-- Status Display -->
+                <div class="next-action-status mt-3" id="nextActionStatus" style="display: none;">
+                    <div class="alert alert-info mb-0">
+                        <i class="ti ti-info-circle me-2"></i>
+                        <span id="selectedActionInfo">Select an action to see details</span>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    }
+
 
 }
