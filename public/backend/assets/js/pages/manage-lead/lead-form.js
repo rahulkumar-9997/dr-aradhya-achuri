@@ -626,6 +626,36 @@ $(document).ready(function () {
     function loaderHide() {
        $("#loader").hide();
     }
+    /*Copy form url to clipboard */
+    $(document).on('click', '.copy-form-url', function (e) {
+        e.preventDefault();
+        const $btn = $(this);
+        const url  = $btn.data('url');
+        if (!url) return;
+        navigator.clipboard.writeText(url)
+            .then(function () {
+                $btn.html(`
+                    <i data-feather="check" class="info-img me-1"></i>
+                    Copied
+                `);
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+                setTimeout(function () {
+                    $btn.html(`
+                        <i data-feather="copy" class="info-img me-1"></i>
+                        Copy Link
+                    `);
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                    }
+                }, 2000);
+            })
+            .catch(function () {
+                alert('Failed to copy URL');
+            });
+    });
+    /*Copy form url to clipboard */
 });
 
 

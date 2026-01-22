@@ -13,7 +13,7 @@
         </div>
         <div class="page-btn">
             <a href="javascript:void(0)" data-ajax-lead-add-popup="true" data-size="lg" data-title="Add new Form"
-                data-url="{{ route('manage-lead.form.create') }}" data-bs-toggle="tooltip" title="Add new Form"
+                data-url="{{ route('manage-lead.forms.create') }}" data-bs-toggle="tooltip" title="Add new Form"
                 class="btn btn-orange">
                 <i class="ti ti-circle-plus me-1"></i>
                 Create Form
@@ -40,8 +40,9 @@
 @push('scripts')
 <script>
     window.route = {
-        leadFormList: "{{ route('manage-lead.form.index') }}",
+        leadFormList: "{{ route('manage-lead.forms.index') }}",
     };
 </script>
 <script src="{{asset('backend/assets/js/pages/manage-lead/lead-form.js')}}" type="text/javascript"></script>
+<script src="{{asset('backend/assets/js/pages/manage-lead/form-response.js')}}" type="text/javascript"></script>
 @endpush

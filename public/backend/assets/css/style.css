@@ -3545,7 +3545,7 @@ button:focus {
 
 .dropdown-menu {
   border-color: #E6EAED;
-  box-shadow: 0px 4px 60px 0px rgba(231, 231, 231, 0.47);
+  box-shadow:0 4px 6px rgb(0 0 0 / 36%);
   font-size: 0.875rem;
   color: #646B72;
   background-color: #ffffff;
@@ -46151,6 +46151,9 @@ span.flatpickr-weekday {
   100% {
     transform: rotate(-360deg);
   }
+}
+.border1 {
+    border: 1px solid #fc6c61 !important;
 }
 .shadow-md{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

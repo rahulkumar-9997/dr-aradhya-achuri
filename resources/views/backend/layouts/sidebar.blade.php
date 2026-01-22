@@ -95,8 +95,12 @@
                         <span class="menu-arrow"></span>
                      </a>
                      <ul style="{{ request()->routeIs('manage-lead.*') ? 'display:block;' : '' }}">
-                        <li><a href="{{ route('manage-lead.index') }}">Dashboard</a></li>
-                        <li><a href="{{ route('manage-lead.form.index') }}">Form</a></li>
+                        <li>
+                              <a href="{{ route('manage-lead.leads.index') }}">Dashboard</a>
+                        </li>
+                        <li>
+                              <a href="{{ route('manage-lead.forms.index') }}">Form</a>
+                        </li>
                      </ul>
                   </li>
                </ul>

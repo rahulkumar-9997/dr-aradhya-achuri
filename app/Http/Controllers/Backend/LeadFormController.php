@@ -56,7 +56,7 @@ class LeadFormController extends Controller
     {
         $form = '
         <div class="modal-body">
-            <form method="POST" action="' . route('manage-lead.form.store') . '" accept-charset="UTF-8" id="addLeadForm" enctype="multipart/form-data">
+            <form method="POST" action="' . route('manage-leads.form.store') . '" accept-charset="UTF-8" id="addLeadForm" enctype="multipart/form-data">
                 ' . csrf_field() . '
                 <div class="row">                    
                     <div class="col-md-12">
@@ -257,7 +257,7 @@ class LeadFormController extends Controller
         try {
             $apiService = new ApiService();
             $response = $apiService->makeRequest('GET', "https://leads.wizards.co.in/api/v1/form/{$formId}");
-            Log::info( "Forms fetched successfully" . json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) );            
+            Log::info( "Forms fetched successfully for edit" . json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) );            
             if (!$response['success']) {
                 return response()->json([
                     'status' => 'error',
@@ -295,7 +295,7 @@ class LeadFormController extends Controller
         
         return '
         <div class="modal-body">
-            <form method="POST" action="' . route('manage-lead.form.update', $formData['id']) . '" accept-charset="UTF-8" id="editLeadForm" enctype="multipart/form-data">
+            <form method="POST" action="' . route('manage-lead.forms.update', $formData['id']) . '" accept-charset="UTF-8" id="editLeadForm" enctype="multipart/form-data">
                 ' . csrf_field() . '
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="form_id" value="' . ($formData['id'] ?? '') . '">                
@@ -367,9 +367,22 @@ class LeadFormController extends Controller
     {
         $optionsValue = '';
         Log::info('Generating field HTML', ['field' => $field['options']]);
-        if (!empty($field['options']) && is_array($field['options'])) {
-            $optionsValue = implode(', ', $field['options']);
-        }        
+        if (!empty($field['options'])) {
+            if (is_string($field['options'])) {
+                $decodedOptions = json_decode($field['options'], true);
+                if (json_last_error() === JSON_ERROR_NONE && is_array($decodedOptions)) {
+                    $optionsValue = implode(', ', $decodedOptions);
+                    Log::info('Parsed JSON options', ['decoded' => $decodedOptions]);
+                } else {
+                    $optionsValue = $field['options'];
+                    Log::info('Treated options as string', ['value' => $optionsValue]);
+                }
+            } elseif (is_array($field['options'])) {
+                $optionsValue = implode(', ', $field['options']);
+                Log::info('Options already array', ['value' => $optionsValue]);
+            }
+        }
+        
         $optionsContainerStyle = in_array($field['type'], ['select', 'radio', 'checkbox']) ? '' : 'style="display: none;"';        
         $requiredChecked = ($field['required'] ?? false) ? 'checked' : '';        
         $fieldTypes = [
@@ -631,4 +644,20 @@ class LeadFormController extends Controller
             return redirect()->back()->with('error', 'Server Error: ' . $e->getMessage());
         }
     }
+
+    public function show($formId)
+    {
+        $apiService = new ApiService();
+        $response = $apiService->makeRequest('GET', "https://leads.wizards.co.in/api/v1/form/{$formId}");
+        
+        Log::info( "Forms data fetched successfully" . json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) );
+        if ($response['success']) {
+            $form = $response['data'];
+            return view('backend.pages.manage-lead.form.show', compact('form'));
+        } else {
+            return redirect()->back()->with('error', 'Failed to retrieve form details');
+        }
+    }
+
+
 }

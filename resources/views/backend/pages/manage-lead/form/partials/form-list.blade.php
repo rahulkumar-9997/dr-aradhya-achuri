@@ -1,7 +1,10 @@
 @if(isset($forms) && count($forms) > 0)
 @foreach ($forms as $form)
+@php
+    $publicFormUrl = 'https://forms.wizards.co.in/' . $form['id'] . '/submit';
+@endphp
 <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 mb-3">
-    <div class="card h-100 bg-white rounded-xl p-6 shadow-md border border-gray-200">
+    <div class="card h-100 bg-white rounded-xl p-6 shadow-md border1">
         <div class="card-body p-3 d-flex flex-column">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h4 class="d-inline-flex align-items-center text-color-primary">
@@ -12,14 +15,24 @@
                             data-feather="more-vertical" class="feather-user"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end ">
                         <li>
-                            <a href="javascript:void(0);" class="dropdown-item" data-url="{{ route('manage-lead.form.edit', $form['id']) }}"
+                            <a href="javascript:void(0);" class="dropdown-item" data-url="{{ route('manage-lead.forms.edit', $form['id']) }}"
                                 data-ajax-lead-edit-popup="true" data-size="lg" data-title="Edit Form">
                                 <i data-feather="edit" class="info-img me-2"></i>Edit
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" data-url="{{ route('manage-lead.form.destroy', $form['id']) }}" data-name="{{ $form['title'] }}"  class="dropdown-item mb-0 delete-form-btn">
+                            <a href="javascript:void(0);" data-url="{{ route('manage-lead.forms.destroy', $form['id']) }}" data-name="{{ $form['title'] }}"  class="dropdown-item mb-0 delete-form-btn">
                                 <i data-feather="trash-2" class="info-img me-2"></i>Delete
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" data-url="{{ route('manage-lead.responses.create') }}"  data-name="{{ $form['title'] }}" data-formId="{{ $form['id'] }}" class="dropdown-item" data-ajax-lead-add-response-popup="true" data-size="lg" data-title="Add Response">
+                                <i data-feather="plus" class="info-img me-2"></i>Add Response
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('manage-lead.responses.show', $form['id']) }}"  class="dropdown-item mb-0 delete-form-btn">
+                                <i data-feather="eye" class="info-img me-2"></i>View Response
                             </a>
                         </li>
                     </ul>
@@ -46,9 +59,13 @@
                 <span class="text-primary">{{ $form['userWhatsappCampaignName'] }}</span>
             </p>
             @endif
+            
             <div class="d-flex align-items-center justify-content-between mt-auto">
                 <p class="mb-0">{{ date('d M Y', strtotime($form['createdAt'])) }}</p>
-                <a href="javascript:void(0);" class="btn btn-sm btn-orange">View Details</a>
+                <a href="javascript:void(0);"class="btn btn-sm btn-orange copy-form-url" data-url="{{ $publicFormUrl }}" data-bs-toggle="tooltip" title="Copy form submission URL">
+                    <i data-feather="copy" class="info-img me-1"></i>
+                    Copy Link
+                </a>
             </div>
         </div>
     </div>

@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\LeadController;
 use App\Http\Controllers\Backend\LeadFormController;
+use App\Http\Controllers\Backend\LeadFormResponseController;
 use App\Http\Controllers\Frontend\SiteMapController;
 
 Route::get('/', [FrontHomeController::class, 'home'])->name('home');
@@ -64,9 +65,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('menu/{menu}/item/{item}', [MenuController::class, 'updateItem'])->name('menu.item.update');
     Route::delete('menu/{menu}/item/{item}', [MenuController::class, 'destroyItem'])->name('menu.item.destroy');
     Route::post('menus/{menu}/items/order', [MenuController::class, 'orderItems'])->name('menus.items.order');
-    Route::prefix('manage-lead')->group(function () {
-        Route::resource('/', LeadController::class)->names('manage-lead');
-        Route::resource('form', LeadFormController::class)->names('manage-lead.form');
+    Route::prefix('manage-lead')->name('manage-lead.')->group(function () {
+        Route::resource('leads', LeadController::class);
+        Route::resource('forms', LeadFormController::class);
+        Route::resource('responses', LeadFormResponseController::class);
     });
     Route::resource('banner-services', BannerServicesController::class);
     
