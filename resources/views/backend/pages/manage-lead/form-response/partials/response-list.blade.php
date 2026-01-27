@@ -39,7 +39,11 @@
             <td>
                 <div class="edit-delete-action gap-2">
                     <button type="button" class="btn btn-sm btn-info view-response"
-                        data-response-id="{{ $item['responseId'] }}">
+                        data-response-id="{{ $item['responseId'] }}"
+                        data-form-id="{{ $response['data']['id'] }}"
+                        data-url="{{ route('manage-lead.follow-ups.create') }}?responseId={{ $item['responseId'] }}"
+                        data-response="{{ json_encode($item['answers']) }}"
+                        data-fromtitle="{{ $response['data']['title'] }}">
                         <i class="fas fa-eye"></i> View Follow-ups
                     </button>
                     <!-- <button type="button" class="btn btn-sm btn-primary edit-response"

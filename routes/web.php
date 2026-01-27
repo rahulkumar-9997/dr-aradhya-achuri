@@ -69,7 +69,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::resource('leads', LeadController::class);
         Route::resource('forms', LeadFormController::class);
         Route::resource('responses', LeadFormResponseController::class);
-        Route::resource('follow-ups', LeadFormResponseController::class);
+        Route::get('follow-ups', [FrontHomeController::class, 'createFollowUp'])->name('follow-ups.create');
     });
     Route::resource('banner-services', BannerServicesController::class);
     
