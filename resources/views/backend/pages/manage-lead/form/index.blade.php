@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('title','Manage Lead Forms')
 @push('styles')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 @section('main-content')
 <div class="content">
@@ -43,6 +43,7 @@
         leadFormList: "{{ route('manage-lead.forms.index') }}",
     };
 </script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="{{asset('backend/assets/js/pages/manage-lead/lead-form.js')}}" type="text/javascript"></script>
 <script src="{{asset('backend/assets/js/pages/manage-lead/form-response.js')}}" type="text/javascript"></script>
 @endpush

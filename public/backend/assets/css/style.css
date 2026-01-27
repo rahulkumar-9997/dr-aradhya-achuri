@@ -46163,4 +46163,17 @@ span.flatpickr-weekday {
 .text-color-primary{
   color: #fc6c61;
 }
+.filter-box {
+    box-shadow: 0 1px 0 0 #e8eef3;
+    width: 100%;
+    top: 5px;
+    position: sticky;
+    z-index: 1;
+    background-color: white;
+}
+.client-list-filter {
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: end;
+}
 /*# sourceMappingURL=style.css.map */

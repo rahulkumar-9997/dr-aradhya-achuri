@@ -6,7 +6,7 @@
 <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 mb-3">
     <div class="card h-100 bg-white rounded-xl p-6 shadow-md border1">
         <div class="card-body p-3 d-flex flex-column">
-            <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
                 <h4 class="d-inline-flex align-items-center text-color-primary">
                     {{ $form['title'] }}
                 </h4>
@@ -31,7 +31,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('manage-lead.responses.show', $form['id']) }}"  class="dropdown-item mb-0 delete-form-btn">
+                            <a href="{{ route('manage-lead.responses.show', $form['id']) }}"  class="dropdown-item mb-0">
                                 <i data-feather="eye" class="info-img me-2"></i>View Response
                             </a>
                         </li>

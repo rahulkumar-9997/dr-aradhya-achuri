@@ -56,7 +56,7 @@ class LeadFormController extends Controller
     {
         $form = '
         <div class="modal-body">
-            <form method="POST" action="' . route('manage-leads.form.store') . '" accept-charset="UTF-8" id="addLeadForm" enctype="multipart/form-data">
+            <form method="POST" action="' . route('manage-lead.forms.store') . '" accept-charset="UTF-8" id="addLeadForm" enctype="multipart/form-data">
                 ' . csrf_field() . '
                 <div class="row">                    
                     <div class="col-md-12">
